@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Networking;
 
 public class PlayerVR : PlayerDesktop {
 
@@ -12,11 +11,10 @@ public class PlayerVR : PlayerDesktop {
         startingPosition = cameraRig.transform.position;
     }
 
+    [ClientRpc]
     protected override void RpcOnDeath()
     {
         base.RpcOnDeath();
         cameraRig.transform.position = startingPosition;
-    } 
-
-
+    }
 }
