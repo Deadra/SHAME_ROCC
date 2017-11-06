@@ -9,12 +9,17 @@ public class SceneManager : NetworkBehaviour
     private bool IAmUseless = false;
 
     [SerializeField] NetManager netManager;
+    [SerializeField] EventHub EHub;
     [SerializeField] float respawnTime = 10f;
+    [SerializeField] float spawnRadius = 2f;
     [Header("Enemies Spawn Points")]
-    List<GameObject> enemyPrefabs;
+    
     [SerializeField] List<Transform> spawnPoints;
+    [SerializeField] List<int>       enemyCount;
 
-    List<GameObject> spawnedEnemies;
+    private Dictionary<GameObject, Transform> spawnedEnemies;
+    private List<Transform> pointsToRespawn;
+    private List<GameObject> enemyPrefabs;
 
     void Awake()
     {
@@ -27,10 +32,17 @@ public class SceneManager : NetworkBehaviour
             IAmUseless = true;
             Destroy(this);
         }
+
+        if (spawnPoints.Count != enemyCount.Count)
+            Debug.LogErrorFormat("{0} at {1} object: Spawn Points size must match Enemy Count size", this.GetType(), gameObject.name);
+
         enemyPrefabs = new List<GameObject>();
         enemyPrefabs.AddRange(netManager.enemyPrefabs);
 
-        spawnedEnemies = new List<GameObject>();
+        spawnedEnemies  = new Dictionary<GameObject, Transform>();
+        pointsToRespawn = new List<Transform>();
+
+        EHub.EventEnemyDeath += new EnemyDeathHandler(EntityDeathDetected);
     }
 
     void Start()
@@ -45,16 +57,34 @@ public class SceneManager : NetworkBehaviour
     [Command]
     void CmdSpawnEnemies()
     {
-        foreach (var spawnPoint in spawnPoints)
-            foreach (var enemyPrefab in enemyPrefabs)
-            {
-                var enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-                enemy.GetComponent<FrogAI>().patrolingCenter = GameObject.FindWithTag("FrogPatrolCenter").transform;
-                NetworkServer.Spawn(enemy);
-                spawnedEnemies.Add(enemy);
-            }
+        for (var i = 0; i < spawnPoints.Count; i++)
+        {
+            var spawnPoint = spawnPoints[i];
 
+            for (var j = 0; j < enemyCount[i]; j++)
+                spawnRandomEnemy(spawnPoint);
+        }
     }
+
+    [Command]
+    void CmdRespawnEnemies()
+    {
+        foreach (var spawnPoint in pointsToRespawn)
+            spawnRandomEnemy(spawnPoint);
+
+        pointsToRespawn.Clear();
+    }
+
+    void spawnRandomEnemy(Transform spawnPoint)
+    {
+        var enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+        var enemy = Instantiate(enemyPrefab, Helpers.GetPointInCircle(spawnPoint.position, spawnRadius), spawnPoint.rotation);
+
+        enemy.GetComponent<FrogAI>().patrolingCenter = GameObject.FindWithTag("FrogPatrolCenter").transform;
+        NetworkServer.Spawn(enemy);
+        spawnedEnemies.Add(enemy, spawnPoint);
+    }
+
     public void OnDestroy()
     {
         if (!IAmUseless)
@@ -66,10 +96,16 @@ public class SceneManager : NetworkBehaviour
         while (true)
         { 
             yield return new WaitForSeconds(respawnTime);
-            spawnedEnemies.RemoveAll((GameObject enemy) => { return enemy == null; });
+            CmdRespawnEnemies();
+        }
+    }
 
-            if (spawnedEnemies.Count == 0)
-                CmdSpawnEnemies();
+    void EntityDeathDetected(GameObject died)
+    {
+        if (spawnedEnemies.ContainsKey(died))
+        {
+            pointsToRespawn.Add(spawnedEnemies[died]);
+            spawnedEnemies.Remove(died);
         }
     }
 }

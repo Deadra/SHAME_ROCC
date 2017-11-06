@@ -57,10 +57,11 @@ public class BaseEntity : NetworkBehaviour
     {
         if (!isServer)
             return;
+
         currentHealth -= value;
         OnDamageTaken(value);
 
-        Debug.Log(string.Format("{0} took {1} damage. Remaining health = {2}", gameObject, value, currentHealth));
+        Debug.LogFormat("{0} took {1} damage. Remaining health = {2}", gameObject, value, currentHealth);
 
         if (currentHealth <= 0)
             RpcOnDeath();
@@ -79,7 +80,6 @@ public class BaseEntity : NetworkBehaviour
 
     protected virtual void OnDamageTaken(float value) { }
 
-    [ClientRpc]
     protected virtual void RpcOnDeath()
     {
         EHub.SignalEntityDeath(this);

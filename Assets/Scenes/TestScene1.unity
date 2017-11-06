@@ -1744,7 +1744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1782172394}
   m_Layer: 0
-  m_Name: EnemySpanwPoints
+  m_Name: EnemySpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2261,8 +2261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   netManager: {fileID: 376060464}
+  EHub: {fileID: 2031774380}
+  respawnTime: 10
   spawnPoints:
-  - {fileID: 604741223}
+  - {fileID: 0}
+  enemyCount: 
 --- !u!1 &2107985710
 GameObject:
   m_ObjectHideFlags: 0

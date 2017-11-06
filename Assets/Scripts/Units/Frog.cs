@@ -13,11 +13,11 @@ public class Frog : BaseEntity
             transform.Find("Trigger").GetComponent<Collider>().enabled = false;
     }
 
-    [ClientRpc]
     protected override void RpcOnDeath()
     {
         Instantiate(deathParticle, transform.position, Quaternion.LookRotation(Vector3.up));
-        Destroy(this.gameObject);
+        EHub.SignalEnemyDeath(this.gameObject);
         base.RpcOnDeath();
+        //Destroy(this.gameObject);
     }
 }

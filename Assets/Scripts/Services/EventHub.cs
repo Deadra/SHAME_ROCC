@@ -1,24 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 public delegate void EntityDeathHandler(BaseEntity killedUnit);
+public delegate void EnemyDeathHandler(GameObject enemy);
 
-public class EventHub : MonoBehaviour
+public class EventHub : NetworkBehaviour
 {
-    private static EventHub instance = null;
-    private bool IAmUseless = false;
-
-    public event EntityDeathHandler EntityDeathEvent;
+    [SyncEvent] public event EntityDeathHandler EventEntityDeath;
+    [SyncEvent] public event EnemyDeathHandler  EventEnemyDeath;
 
     public void SignalEntityDeath(BaseEntity killedEntity)
     {
         Debug.Log("EventHub: Signaling units death");
-        if (EntityDeathEvent != null)
+        if (EventEntityDeath != null)
         {
-            EntityDeathEvent(killedEntity);
+            EventEntityDeath(killedEntity);
+        }
+    }
+    public void SignalEnemyDeath(GameObject enemy)
+    {
+        Debug.Log("EventHub: Signaling enemy death");
+        if (EventEnemyDeath != null)
+        {
+            EventEnemyDeath(enemy);
         }
     }
 
-    // Use this for initialization
+    private static EventHub instance = null;
+    private bool IAmUseless = false;
+
     void Awake()
     {
         if (instance == null)
@@ -30,11 +40,6 @@ public class EventHub : MonoBehaviour
             IAmUseless = true;
             Destroy(this);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void OnDestroy()

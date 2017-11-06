@@ -14,7 +14,8 @@ public class FrogAI : BaseAI
         set
         {
             currentState = value;
-            stateText.text = string.Format("{0}", currentState);
+            if (stateText != null)
+                stateText.text = currentState.ToString();
         }
     }
 
@@ -35,7 +36,7 @@ public class FrogAI : BaseAI
     {
         mover = this.GetComponent<FrogMover>();
         currentTarget = patrolingCenter.position;
-        FindObjectOfType<EventHub>().EntityDeathEvent += new EntityDeathHandler(EntityDeathDetected);
+        FindObjectOfType<EventHub>().EventEntityDeath += new EntityDeathHandler(EntityDeathDetected);
     }
 
     void Update()
@@ -90,7 +91,7 @@ public class FrogAI : BaseAI
         }
         else
         {
-            currentTarget = GetPointInCircle(patrolingCenter.position, patrolingRadius);
+            currentTarget = Helpers.GetPointInCircle(patrolingCenter.position, patrolingRadius);
         }
     }
 
@@ -189,7 +190,7 @@ public class FrogAI : BaseAI
         }
     }
 
-    public Vector3 GetPointInCircle(Vector3 center, float radius)
+    /*public Vector3 GetPointInCircle(Vector3 center, float radius)
     {
         float x, z;
         do
@@ -200,7 +201,7 @@ public class FrogAI : BaseAI
         while ((x - center.x) * (x - center.x) + (z - center.z) * (z - center.z) >= radius * radius);
         //Debug.Log(string.Format("{0} units need a circle with radius {1}. Giving coordinates {2}.", numberOfUnits, circleRadius, new Vector3(x, center.y, z)));
         return new Vector3(x, center.y, z);
-    }
+    }*/
 
     void OnDrawGizmos()
     {
