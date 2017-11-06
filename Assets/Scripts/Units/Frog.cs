@@ -15,9 +15,15 @@ public class Frog : BaseEntity
 
     protected override void RpcOnDeath()
     {
-        Instantiate(deathParticle, transform.position, Quaternion.LookRotation(Vector3.up));
+        RpcOnDeathParticles();
         EHub.SignalEnemyDeath(this.gameObject);
         base.RpcOnDeath();
         //Destroy(this.gameObject);
+    }
+
+    [ClientRpc]
+    void RpcOnDeathParticles()
+    {
+        Instantiate(deathParticle, transform.position, Quaternion.LookRotation(Vector3.up));
     }
 }

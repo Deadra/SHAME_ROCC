@@ -6,13 +6,15 @@ public delegate void EnemyDeathHandler(GameObject enemy);
 
 public class EventHub : NetworkBehaviour
 {
-    [SyncEvent] public event EntityDeathHandler EventEntityDeath;
-    [SyncEvent] public event EnemyDeathHandler  EventEnemyDeath;
+    //[SyncEvent]
+    public event EntityDeathHandler EventEntityDeath;
+   // [SyncEvent]
+    public event EnemyDeathHandler  EventEnemyDeath;
 
     public void SignalEntityDeath(BaseEntity killedEntity)
     {
         Debug.Log("EventHub: Signaling units death");
-        if (EventEntityDeath != null)
+        if (EventEntityDeath != null && isServer)
         {
             EventEntityDeath(killedEntity);
         }
@@ -20,7 +22,7 @@ public class EventHub : NetworkBehaviour
     public void SignalEnemyDeath(GameObject enemy)
     {
         Debug.Log("EventHub: Signaling enemy death");
-        if (EventEnemyDeath != null)
+        if (EventEnemyDeath != null && isServer)
         {
             EventEnemyDeath(enemy);
         }

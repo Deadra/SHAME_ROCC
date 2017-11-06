@@ -1177,7 +1177,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604741222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.1, y: 6.7, z: 28.25}
+  m_LocalPosition: {x: -13.8, y: 3.9, z: 18.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782172394}
@@ -2263,9 +2263,10 @@ MonoBehaviour:
   netManager: {fileID: 376060464}
   EHub: {fileID: 2031774380}
   respawnTime: 10
+  spawnRadius: 2
   spawnPoints:
-  - {fileID: 0}
-  enemyCount: 
+  - {fileID: 604741223}
+  enemyCount: 02000000
 --- !u!1 &2107985710
 GameObject:
   m_ObjectHideFlags: 0

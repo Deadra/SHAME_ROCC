@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Менеджер сцены. Спаунит врагов и следит за тем, чтобы они респаунились через некоторое время
+/// </summary>
 public class SceneManager : NetworkBehaviour
 {
     private static SceneManager instance = null;
@@ -10,7 +13,7 @@ public class SceneManager : NetworkBehaviour
 
     [SerializeField] NetManager netManager;
     [SerializeField] EventHub EHub;
-    [SerializeField] float respawnTime = 10f;
+    [SerializeField] float respawnTime = 20f;
     [SerializeField] float spawnRadius = 2f;
     [Header("Enemies Spawn Points")]
     
@@ -54,6 +57,9 @@ public class SceneManager : NetworkBehaviour
             StartCoroutine(RespawnEnemies());
     }
 
+    /// <summary>
+    /// Спаунит врагов в указанных точках в указанном количестве 
+    /// </summary>
     [Command]
     void CmdSpawnEnemies()
     {
@@ -66,6 +72,9 @@ public class SceneManager : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Спаунит столько врагов, сколько их было недавно убито
+    /// </summary>
     [Command]
     void CmdRespawnEnemies()
     {
@@ -75,6 +84,9 @@ public class SceneManager : NetworkBehaviour
         pointsToRespawn.Clear();
     }
 
+    /// <summary>
+    /// Спаунит случайного врага в круге с центром в spawnPoint и радиусом spawnRadius
+    /// </summary>
     void spawnRandomEnemy(Transform spawnPoint)
     {
         var enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
@@ -87,10 +99,15 @@ public class SceneManager : NetworkBehaviour
 
     public void OnDestroy()
     {
+        StopAllCoroutines();
+
         if (!IAmUseless)
             instance = null;
     }
 
+    /// <summary>
+    /// Корутина, спаунящая столько врагов, сколько было недавно убито
+    /// </summary>
     private IEnumerator RespawnEnemies()
     {
         while (true)
@@ -100,6 +117,9 @@ public class SceneManager : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Обработчик, перемещающий точку спауна в список точек, где надо респаунить врага
+    /// </summary>
     void EntityDeathDetected(GameObject died)
     {
         if (spawnedEnemies.ContainsKey(died))

@@ -34,8 +34,8 @@ public class BaseEntity : NetworkBehaviour
 
     public virtual void Start()
     {
-        Debug.LogWarningFormat("{0} is the Server - {1}, Client - {2}, Local Player - {3}",
-                gameObject.name, isServer.ToString(), isClient.ToString(), isLocalPlayer.ToString());
+        //Debug.LogWarningFormat("{0} is the Server - {1}, Client - {2}, Local Player - {3}",
+        //        gameObject.name, isServer.ToString(), isClient.ToString(), isLocalPlayer.ToString());
 
         if (!isLocalPlayer)
         {
@@ -61,7 +61,7 @@ public class BaseEntity : NetworkBehaviour
         currentHealth -= value;
         OnDamageTaken(value);
 
-        Debug.LogFormat("{0} took {1} damage. Remaining health = {2}", gameObject, value, currentHealth);
+        //Debug.LogFormat("{0} took {1} damage. Remaining health = {2}", gameObject, value, currentHealth);
 
         if (currentHealth <= 0)
             RpcOnDeath();
