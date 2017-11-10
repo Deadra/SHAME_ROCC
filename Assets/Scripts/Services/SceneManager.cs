@@ -15,13 +15,13 @@ public class SceneManager : NetworkBehaviour
     [SerializeField] EventHub EHub;
     [SerializeField] float respawnTime = 20f;
     [SerializeField] float spawnRadius = 2f;
+    [SerializeField] float dontSpawnRadius = 20f;
     [Header("Enemies Spawn Points")]
     
     [SerializeField] List<Transform> spawnPoints;
     [SerializeField] List<int>       enemyCount;
 
     private Dictionary<GameObject, Transform> spawnedEnemies;
-    private List<Transform> pointsToRespawn;
     private List<GameObject> enemyPrefabs;
 
     void Awake()
@@ -43,7 +43,6 @@ public class SceneManager : NetworkBehaviour
         enemyPrefabs.AddRange(netManager.enemyPrefabs);
 
         spawnedEnemies  = new Dictionary<GameObject, Transform>();
-        pointsToRespawn = new List<Transform>();
 
         EHub.EventEnemyDeath += new EnemyDeathHandler(EntityDeathDetected);
     }
@@ -52,9 +51,6 @@ public class SceneManager : NetworkBehaviour
     {
         if (isServer)
             CmdSpawnEnemies();
-
-        if (isServer)
-            StartCoroutine(RespawnEnemies());
     }
 
     /// <summary>
@@ -73,18 +69,6 @@ public class SceneManager : NetworkBehaviour
     }
 
     /// <summary>
-    /// Спаунит столько врагов, сколько их было недавно убито
-    /// </summary>
-    [Command]
-    void CmdRespawnEnemies()
-    {
-        foreach (var spawnPoint in pointsToRespawn)
-            spawnRandomEnemy(spawnPoint);
-
-        pointsToRespawn.Clear();
-    }
-
-    /// <summary>
     /// Спаунит случайного врага в круге с центром в spawnPoint и радиусом spawnRadius
     /// </summary>
     void spawnRandomEnemy(Transform spawnPoint)
@@ -92,7 +76,7 @@ public class SceneManager : NetworkBehaviour
         var enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
         var enemy = Instantiate(enemyPrefab, Helpers.GetPointInCircle(spawnPoint.position, spawnRadius), spawnPoint.rotation);
 
-        enemy.GetComponent<FrogAI>().patrolingCenter = GameObject.FindWithTag("FrogPatrolCenter").transform;
+        enemy.GetComponent<FrogAI>().patrolingCenter = spawnPoint;
         NetworkServer.Spawn(enemy);
         spawnedEnemies.Add(enemy, spawnPoint);
     }
@@ -104,28 +88,45 @@ public class SceneManager : NetworkBehaviour
         if (!IAmUseless)
             instance = null;
     }
-
+    
     /// <summary>
-    /// Корутина, спаунящая столько врагов, сколько было недавно убито
+    /// Корутина, спаунящая врага в конкретной точке
     /// </summary>
-    private IEnumerator RespawnEnemies()
+    private IEnumerator RespawnEnemy(Transform spawnPoint)
     {
         while (true)
-        { 
+        {
             yield return new WaitForSeconds(respawnTime);
-            CmdRespawnEnemies();
+
+            if (!Helpers.IsPlayerInTheArea(spawnPoint.position, dontSpawnRadius))
+            {
+                CmdRespawnEnemy(spawnPoint.gameObject);
+                yield break;
+            }
         }
     }
 
     /// <summary>
-    /// Обработчик, перемещающий точку спауна в список точек, где надо респаунить врага
+    /// Спаунит врага в указанной точке
+    /// </summary>
+    [Command]
+    void CmdRespawnEnemy(GameObject spawnPoint)
+    {
+        spawnRandomEnemy(spawnPoint.transform);
+    }
+
+    /// <summary>
+    /// Обработчик, респаунящий врага при смерти
     /// </summary>
     void EntityDeathDetected(GameObject died)
     {
         if (spawnedEnemies.ContainsKey(died))
         {
-            pointsToRespawn.Add(spawnedEnemies[died]);
+            var spawnPoint = spawnedEnemies[died];
             spawnedEnemies.Remove(died);
+
+            IEnumerator courutine = RespawnEnemy(spawnPoint);
+            StartCoroutine(courutine);
         }
     }
 }

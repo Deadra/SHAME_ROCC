@@ -38,6 +38,8 @@ public class NetManager : NetworkManager
     private bool isServer;
     private List<NetworkStartPosition> spawnPoints;
 
+    public List<GameObject> spawnedPlayers { get; private set; }
+
     private void Awake()
     {
         if (instance == null)
@@ -52,11 +54,11 @@ public class NetManager : NetworkManager
 
     private void Start()
     {
-        spawnPrefabs.Insert((int)PlatformType.XDMotion,     XDMotionPrefab);
-        spawnPrefabs.Insert((int)PlatformType.FlyMotion,    FlyMotionPrefab);
-        spawnPrefabs.Insert((int)PlatformType.FiveDMotion,  FiveDMotionPrefab);
-        spawnPrefabs.Insert((int)PlatformType.Desktop,      DesktopPrefab);
-        spawnPrefabs.Insert((int)PlatformType.HTCVive,      HTCVivePrefab);
+        spawnPrefabs.Insert((int)PlatformType.XDMotion, XDMotionPrefab);
+        spawnPrefabs.Insert((int)PlatformType.FlyMotion, FlyMotionPrefab);
+        spawnPrefabs.Insert((int)PlatformType.FiveDMotion, FiveDMotionPrefab);
+        spawnPrefabs.Insert((int)PlatformType.Desktop, DesktopPrefab);
+        spawnPrefabs.Insert((int)PlatformType.HTCVive, HTCVivePrefab);
 
         spawnPoints = new List<NetworkStartPosition>();
         spawnPoints.Add(XDMotionSpawnPoint);
@@ -67,6 +69,8 @@ public class NetManager : NetworkManager
 
         spawnPrefabs.AddRange(enemyPrefabs);
         spawnPrefabs.AddRange(otherPrefabs);
+
+        spawnedPlayers = new List<GameObject>();
 
         if (Settings.gameMode == GameMode.Online)
             StartCoroutine(JointGame());
@@ -174,6 +178,7 @@ public class NetManager : NetworkManager
                                         spawnPoints[selectedClass].transform.position,
                                         spawnPoints[selectedClass].transform.rotation) as GameObject;
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        spawnedPlayers.Add(player);
     }
 
     /// <summary>
@@ -195,16 +200,9 @@ public class NetManager : NetworkManager
     private void StartOfflineGame()
     {
         int platformType = (int)Settings.platformType;
-        Instantiate(spawnPrefabs[platformType],
-                    spawnPoints[platformType].transform.position,
-                    spawnPoints[platformType].transform.rotation);
+        var player = Instantiate(spawnPrefabs[platformType],
+                                 spawnPoints[platformType].transform.position,
+                                 spawnPoints[platformType].transform.rotation);
+        spawnedPlayers.Add(player);
     }
-
-   /* public void AddSpawnablePrefabs(List<GameObject> prefabs)
-    {
-        spawnPrefabs.AddRange(prefabs);
-        foreach (var prefab in spawnPrefabs)
-            if (prefab != null)
-                ClientScene.RegisterPrefab(prefab);
-    }*/
 }

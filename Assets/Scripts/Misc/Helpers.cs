@@ -16,4 +16,20 @@ public class Helpers
 
         return new Vector3(x, center.y, z);
     }
+
+    public static bool IsPlayerInTheArea(Vector3 center, float radius)
+    {
+        var netManager = GameObject.FindObjectOfType<NetManager>();
+        if (netManager == null)
+        {
+            Debug.LogWarning("Helpers: Can't find NetManager on the scene");
+            return false;
+        }
+
+        foreach (var player in netManager.spawnedPlayers)
+            if (Vector3.Distance(player.transform.position, center) < radius)
+                return true;
+
+        return false;
+    }
 }
