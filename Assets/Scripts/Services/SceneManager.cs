@@ -16,10 +16,20 @@ public class SceneManager : NetworkBehaviour
     [SerializeField] float respawnTime = 20f;
     [SerializeField] float spawnRadius = 2f;
     [SerializeField] float dontSpawnRadius = 20f;
-    [Header("Enemies Spawn Points")]
+
+    [System.Serializable]
+    class pair
+    {
+        public Transform spawnPoint;
+        public int enemyCount;
+    }
+    [SerializeField]
+    List<pair> spawnPoints;
+
+   // [Header("Enemies Spawn Points")]
     
-    [SerializeField] List<Transform> spawnPoints;
-    [SerializeField] List<int>       enemyCount;
+    //[SerializeField] List<Transform> spawnPoints;
+    //[SerializeField] List<int>       enemyCount;
 
     private Dictionary<GameObject, Transform> spawnedEnemies;
     private List<GameObject> enemyPrefabs;
@@ -35,10 +45,7 @@ public class SceneManager : NetworkBehaviour
             IAmUseless = true;
             Destroy(this);
         }
-
-        if (spawnPoints.Count != enemyCount.Count)
-            Debug.LogErrorFormat("{0} at {1} object: Spawn Points size must match Enemy Count size", this.GetType(), gameObject.name);
-
+        
         enemyPrefabs = new List<GameObject>();
         enemyPrefabs.AddRange(netManager.enemyPrefabs);
 
@@ -60,12 +67,8 @@ public class SceneManager : NetworkBehaviour
     void CmdSpawnEnemies()
     {
         for (var i = 0; i < spawnPoints.Count; i++)
-        {
-            var spawnPoint = spawnPoints[i];
-
-            for (var j = 0; j < enemyCount[i]; j++)
-                spawnRandomEnemy(spawnPoint);
-        }
+            for (var j = 0; j < spawnPoints[i].enemyCount; j++)
+                spawnRandomEnemy(spawnPoints[i].spawnPoint);
     }
 
     /// <summary>

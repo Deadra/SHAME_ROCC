@@ -2296,9 +2296,10 @@ MonoBehaviour:
   spawnRadius: 2
   dontSpawnRadius: 20
   spawnPoints:
-  - {fileID: 604741223}
-  - {fileID: 512370198}
-  enemyCount: 0100000000000000
+  - spawnPoint: {fileID: 604741223}
+    enemyCount: 1
+  - spawnPoint: {fileID: 512370198}
+    enemyCount: 0
 --- !u!1 &2107985710
 GameObject:
   m_ObjectHideFlags: 0
