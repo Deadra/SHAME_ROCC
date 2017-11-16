@@ -5,13 +5,13 @@ public class StandartBullet : BaseBullet
     [SerializeField] private float damage;
     [SerializeField] private ParticleSystem hitParticle;
 
-    protected override void SetOff(Collision col)
+    protected override void OnHit(RaycastHit hitInfo)
     {
-        BaseEntity entityHit = col.collider.gameObject.GetComponentInParent<BaseEntity>();
+        BaseEntity entityHit = hitInfo.collider.gameObject.GetComponentInParent<BaseEntity>();
 
         if (entityHit != null && entityHit.Team != Team)
-                entityHit.TakeDamage(damage, Holder);
+            entityHit.TakeDamage(damage);
 
-        Instantiate(hitParticle, col.contacts[0].point, Quaternion.LookRotation(col.contacts[0].normal));
+        Instantiate(hitParticle, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
     }
 }

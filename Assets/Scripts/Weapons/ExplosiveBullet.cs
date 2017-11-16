@@ -16,7 +16,7 @@ public class ExplosiveBullet : BaseBullet {
     [SerializeField]
     protected ParticleSystem ps;
 
-    protected override void SetOff(Collision col)
+    protected void SetOff(Collision col)
     {
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
