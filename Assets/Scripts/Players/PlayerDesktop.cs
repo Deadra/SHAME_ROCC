@@ -81,9 +81,5 @@ public class PlayerDesktop : BasePlayer
         currentWeapon.Team = Team;
         currentWeapon.Holder = this;
         currentWeapon.transform.parent = weaponSlot;
-
-        //обнуляем transform относительно parent'a, чтобы пушка появилась точно в руке игрока
-        //currentWeapon.transform.localPosition = Vector3.zero;
-        //currentWeapon.transform.localRotation = Quaternion.identity;
     }
 }

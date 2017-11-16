@@ -51,4 +51,30 @@ public class SpawnManager : NetworkBehaviour
     }
 
     #endregion SpawnBullet
+
+    #region EnableLight
+    /// <summary>
+    /// Включение фонарика на сервере
+    /// </summary>
+    [Command]
+    public void CmdEnableLight(GameObject caller, bool enabled)
+    {
+        var weapon = caller.GetComponent<Flashlight>();
+        weapon.EnableLight(enabled);
+        RpcEnableLight(caller, enabled);
+    }
+
+    /// <summary>
+    /// Включение фонарика на клиенте
+    /// </summary>
+    /// <param name="caller"></param>
+    /// <param name="bullet"></param>
+    [ClientRpc]
+    private void RpcEnableLight(GameObject caller, bool enabled)
+    {
+        var weapon = caller.GetComponent<Flashlight>();
+        weapon.EnableLight(enabled);
+    }
+
+    #endregion EnableLight
 }

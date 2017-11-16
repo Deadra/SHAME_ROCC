@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Networking;
 
 public class Flashlight : BaseWeapon {
 
@@ -11,6 +10,12 @@ public class Flashlight : BaseWeapon {
     {
         ammo = 99;
         switchedOn = !switchedOn;
-        lightSource.enabled = switchedOn;
+        var spawnManager = transform.root.GetComponentInChildren<SpawnManager>();
+        spawnManager.CmdEnableLight(this.gameObject, switchedOn);
+    }
+    
+    public void EnableLight(bool enabled)
+    {
+        lightSource.enabled = enabled;
     }
 }

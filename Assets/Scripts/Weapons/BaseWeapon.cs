@@ -9,8 +9,7 @@ public class BaseWeapon : NetworkBehaviour
     public BaseEntity Holder { get; set; }
     public TeamList Team { get; set; }
 
-    [HideInInspector]
-    [SyncVar]
+    [HideInInspector] [SyncVar]
     public NetworkInstanceId parentNetID;
 
     /// <summary>
