@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class DestroyAtferTime : MonoBehaviour
+public class DestroyAtferTime : NetworkBehaviour
 {
     [SerializeField] private float lifetime;
 

@@ -9,6 +9,8 @@ public class BaseBullet : NetworkBehaviour
     public TeamList Team { get; set; }
 
     public BaseEntity Holder { get; set; }
+    [SerializeField] private bool ricochet = false;
+    [SerializeField] private float ricochetAngle = 10;
 
     void Start()
     {
@@ -19,7 +21,9 @@ public class BaseBullet : NetworkBehaviour
     void OnCollisionEnter(Collision col)
     {
         SetOff(col);
-        Destroy(this.gameObject);
+
+        if (!ricochet || Mathf.Abs(180 - Vector3.Angle(col.relativeVelocity, rb.velocity)) > ricochetAngle)
+            Destroy(this.gameObject);        
     }
 
     protected virtual void SetOff(Collision col)

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33430055071975796}
   - component: {fileID: 135911761197328786}
   - component: {fileID: 23698592463013418}
+  - component: {fileID: 114496983558868046}
   - component: {fileID: 114470784163696288}
   - component: {fileID: 54569786771145792}
   - component: {fileID: 114916084706257824}
@@ -56,6 +57,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -71,6 +73,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -98,7 +101,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &114061128939250634
@@ -145,9 +148,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchForce: 2000
+  ricochet: 1
+  ricochetAngle: 5
   damage: 20
   hitParticle: {fileID: 198727360672484034, guid: b7b60ff79e922ca4dbd5f455379a7ee2,
     type: 2}
+--- !u!114 &114496983558868046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862197066081436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bceafca275d210444bb68fdab555e299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  skinWidth: 0.1
 --- !u!114 &114574828324023246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,14 +201,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5cedb8c0862dc34792a32cd7a8397f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 10
+  lifetime: 5
 --- !u!135 &135911761197328786
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1862197066081436}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4cfe70b839f90d947897334cca913902, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

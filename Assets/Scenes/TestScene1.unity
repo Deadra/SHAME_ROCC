@@ -896,7 +896,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402287327
 GameObject:
@@ -1363,34 +1363,6 @@ Transform:
   m_Father: {fileID: 1078657599}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &891848515
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 891848516}
-  m_Layer: 0
-  m_Name: PatrolCenter
-  m_TagString: FrogPatrolCenter
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &891848516
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 891848515}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0.535, z: 6.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078657598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1396,7 @@ Transform:
   - {fileID: 738122608}
   - {fileID: 14357581}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134480532
 GameObject:
@@ -1818,7 +1790,7 @@ Transform:
   - {fileID: 604741223}
   - {fileID: 512370198}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805787651
 GameObject:
@@ -2028,7 +2000,7 @@ Transform:
   - {fileID: 1161247638}
   - {fileID: 1430924744}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1980144753
 GameObject:
@@ -2259,7 +2231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2031774380
 MonoBehaviour:
@@ -2323,7 +2295,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 604741223}
   - {fileID: 512370198}
-  enemyCount: 0100000001000000
+  enemyCount: 0100000000000000
 --- !u!1 &2107985710
 GameObject:
   m_ObjectHideFlags: 0
