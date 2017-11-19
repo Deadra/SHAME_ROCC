@@ -54,7 +54,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4877195472554870}
   - component: {fileID: 198784900639201860}
+  - component: {fileID: 114116853347299488}
   - component: {fileID: 199757352532407782}
+  - component: {fileID: 114902239040967754}
   m_Layer: 0
   m_Name: BigExplosion
   m_TagString: Untagged
@@ -196,6 +198,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114116853347299488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572417388133356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cedb8c0862dc34792a32cd7a8397f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
+--- !u!114 &114902239040967754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572417388133356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 221
+    i1: 110
+    i2: 101
+    i3: 233
+    i4: 92
+    i5: 71
+    i6: 217
+    i7: 228
+    i8: 217
+    i9: 128
+    i10: 150
+    i11: 58
+    i12: 35
+    i13: 23
+    i14: 59
+    i15: 73
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!198 &198155737563744108
 ParticleSystem:
   m_ObjectHideFlags: 1

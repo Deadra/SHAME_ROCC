@@ -20,8 +20,8 @@ public class SceneManager : NetworkBehaviour
     [System.Serializable]
     class pair
     {
-        public Transform spawnPoint;
-        public int enemyCount;
+        public Transform spawnPoint = null;
+        public int enemyCount = 0;
     }
     [SerializeField]
     List<pair> spawnPoints;
