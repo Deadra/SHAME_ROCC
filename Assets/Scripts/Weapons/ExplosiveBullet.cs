@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Пуля, взрывающаяся и наносящая урон по площади
+/// </summary>
 public class ExplosiveBullet : BaseBullet
 {
 
@@ -17,6 +20,9 @@ public class ExplosiveBullet : BaseBullet
     [SerializeField]
     protected ParticleSystem ps;
 
+    /// <summary>
+    /// Обработчик столкновения
+    /// </summary>
     protected override void OnHit(RaycastHit hitInfo)
     {
         Vector3 explosionPos = transform.position;

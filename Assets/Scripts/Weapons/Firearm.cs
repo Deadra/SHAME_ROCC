@@ -2,6 +2,9 @@
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+/// <summary>
+/// Оружие, стреляющее пулями
+/// </summary>
 public class Firearm : BaseWeapon
 {
     [SerializeField] public Transform bulletSpawnPoint;
@@ -17,6 +20,9 @@ public class Firearm : BaseWeapon
             ammoCounter.text = string.Format("{0}", ammo);
     }
 
+    /// <summary>
+    /// Отвечает за выстрел: спаунит пулю через SpawnManager
+    /// </summary>
     protected override void OnPrimaryFire()
     {
         var spawnManager = transform.root.GetComponentInChildren<SpawnManager>();
@@ -31,6 +37,10 @@ public class Firearm : BaseWeapon
         return transform.root.GetComponentsInChildren<Collider>();
     }
 
+    /// <summary>
+    /// Задаёт параметры пули сразу после того, как она появилась на сцене.
+    /// </summary>
+    /// <remarks>Эту функцию вызывает SpawnManager</remarks>
     public void SpawnBulletSetup(GameObject bullet)
     {
         bullet.GetComponent<BaseBullet>().Team = Team;

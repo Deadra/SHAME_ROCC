@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Базовый класс для оружия
+/// </summary>
 public class BaseWeapon : NetworkBehaviour
 {
     [SerializeField] protected int ammo = 99;

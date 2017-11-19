@@ -1,5 +1,12 @@
 ﻿using UnityEngine;
 using UnityEditor;
+/// <summary>
+/// Позволяет найти отсутствующие скрипты в префабе. 
+/// </summary>
+/// <remarks>
+/// Для использования надо открыть Window->FindMissingScriptsRecursively, 
+/// выделить нужные префабы и нажать на кнопку. Затем читаем сообщения в логе 
+/// </remarks>
 public class FindMissingScriptsRecursively : EditorWindow
 {
     static int go_count = 0, components_count = 0, missing_count = 0;
