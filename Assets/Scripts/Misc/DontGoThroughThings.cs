@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Класс, мешающий быстро двигающимся физическим объектам проходить 
+/// сквозь другие физические объекты без взаимодействия с ними
+/// </summary>
+/// <remarks>
+/// Этот класс необходимо применять к пулям, поскольку даже установка 
+/// Continuous Collision detection в Rigidbody не мешает им проходить 
+/// сквозь объекты
+/// </remarks>
 public class DontGoThroughThings : MonoBehaviour
 {
     // Careful when setting this to true - it might cause double

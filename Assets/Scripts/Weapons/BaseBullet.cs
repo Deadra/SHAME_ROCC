@@ -16,9 +16,11 @@ public class BaseBullet : NetworkBehaviour
 
     private GameObject hitted;
     private bool destroy = false;
+    private Vector3 startPos;
 
     void Start()
     {
+        startPos = transform.position;
         rb = this.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * launchForce);
     }
@@ -42,12 +44,25 @@ public class BaseBullet : NetworkBehaviour
     {
         RaycastHit hitInfo;
         Vector3 velocity = rb.velocity;
+        float raycastLength;
+        Vector3 raycastDirection;
 
-        if (Physics.Raycast(gameObject.transform.position, velocity, out hitInfo, velocity.magnitude * Time.deltaTime))
+        if (velocity == Vector3.zero) //At the first FixedUpdate velocity is still a zero vector 
+        {
+            raycastLength = launchForce / rb.mass * Time.fixedDeltaTime * (2.0f / 100.0f); //magic number (⌒_⌒;)
+            raycastDirection = transform.forward;
+        }
+        else
+        {
+            raycastLength = velocity.magnitude * Time.fixedDeltaTime;
+            raycastDirection = velocity.normalized;
+        }
+       
+        if (Physics.Raycast(transform.position, raycastDirection, out hitInfo, raycastLength))
         {
             if (hitted != null || !hitInfo.collider || hitInfo.collider.isTrigger)
                 return;
-
+            
             if (hitInfo.collider.gameObject.GetComponent<BaseBullet>() &&
                 hitInfo.collider.gameObject.GetComponent<BaseBullet>().Team == Team)
                 return;

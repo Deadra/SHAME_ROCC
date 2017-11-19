@@ -888,6 +888,8 @@ MonoBehaviour:
   - {fileID: 1633683386684196, guid: b475438c01b12554eacc6e3e94ab58b1, type: 2}
   - {fileID: 1681749052035594, guid: 212401e09edd3ce49aee4c588f457042, type: 2}
   - {fileID: 1772949052365790, guid: cf4e4474020074143b26d556668157a8, type: 2}
+  - {fileID: 1433975551513470, guid: a280b4059a12f10489a027bf6fd7fc30, type: 2}
+  - {fileID: 1296632735036572, guid: 6041912f30efb71419a1395e67407a73, type: 2}
 --- !u!4 &376060465
 Transform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1237,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604741222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.29, y: 3.9, z: 16.72}
+  m_LocalPosition: {x: -6.29, y: 0.4, z: 16.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782172394}
@@ -2293,11 +2295,11 @@ MonoBehaviour:
   netManager: {fileID: 376060464}
   EHub: {fileID: 2031774380}
   respawnTime: 1
-  spawnRadius: 2
+  spawnRadius: 10
   dontSpawnRadius: 20
   spawnPoints:
   - spawnPoint: {fileID: 604741223}
-    enemyCount: 1
+    enemyCount: 2
   - spawnPoint: {fileID: 512370198}
     enemyCount: 0
 --- !u!1 &2107985710

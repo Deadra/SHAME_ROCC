@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33620193499393000}
   - component: {fileID: 135263385658567014}
   - component: {fileID: 23423647052165572}
+  - component: {fileID: 114102033484927132}
   - component: {fileID: 114907886080309406}
   - component: {fileID: 54017158273840222}
   - component: {fileID: 114890074114947128}
@@ -95,12 +96,12 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681749052035594}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.013
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &114018522365733166
@@ -135,6 +136,22 @@ MonoBehaviour:
     i15: 66
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114102033484927132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681749052035594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bceafca275d210444bb68fdab555e299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  skinWidth: 0.1
 --- !u!114 &114717711673918420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39106c7f3c20604eb29f585a318ff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 3500
-  ricochet: 0
+  launchForce: 600
+  ricochet: 1
   ricochetAngle: 5
   damage: 30
   hitParticle: {fileID: 198727360672484034, guid: b7b60ff79e922ca4dbd5f455379a7ee2,
