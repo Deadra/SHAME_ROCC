@@ -16,11 +16,9 @@ public class BaseBullet : NetworkBehaviour
 
     private GameObject hitted;
     private bool destroy = false;
-    private Vector3 startPos;
 
     void Start()
     {
-        startPos = transform.position;
         rb = this.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * launchForce);
     }

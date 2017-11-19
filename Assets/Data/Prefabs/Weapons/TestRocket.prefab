@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4670542284830078}
   - component: {fileID: 199684945391781284}
   - component: {fileID: 198866847947174162}
-  - component: {fileID: 114534358443572940}
   m_Layer: 0
   m_Name: Afterburner
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4941783661228290}
   - component: {fileID: 199792994387911006}
   - component: {fileID: 198393705390505346}
-  - component: {fileID: 114763100824756100}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -199,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7016c35c6dc3d6e45b456f1671d3cc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 120
+  launchForce: 1000
   ricochet: 0
   ricochetAngle: 10
   radius: 8
@@ -250,28 +248,6 @@ MonoBehaviour:
     i15: 115
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114534358443572940
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1147740666964020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114763100824756100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1290171582730892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135791949463775170
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -344,7 +320,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 788133083
+  randomSeed: 2091758238
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3601,7 +3577,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1637258767
+  randomSeed: -394069429
   InitialModule:
     serializedVersion: 3
     enabled: 1
