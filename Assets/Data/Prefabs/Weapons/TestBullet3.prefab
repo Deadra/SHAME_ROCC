@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39106c7f3c20604eb29f585a318ff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 600
+  launchForce: 300
   ricochet: 1
   ricochetAngle: 5
   damage: 30

@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39106c7f3c20604eb29f585a318ff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 315
+  launchForce: 160
   ricochet: 1
   ricochetAngle: 10
   damage: 20
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1862197066081436}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bceafca275d210444bb68fdab555e299, type: 3}
   m_Name: 
