@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class AvatarHandsNeck : MonoBehaviour {
+public class AvatarHandsNeck : NetworkBehaviour {
 
     [SerializeField] Transform leftShoulder;
     [SerializeField] Transform leftHandEnd;

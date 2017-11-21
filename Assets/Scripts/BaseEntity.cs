@@ -45,7 +45,7 @@ public class BaseEntity : NetworkBehaviour
                 component.enabled = false;
             foreach (var component in GetComponentsInChildren<PlatformDataSender>())
                 component.enabled = false;
-            foreach (var component in GetComponentsInChildren<VRManager>())
+            /*foreach (var component in GetComponentsInChildren<VRManager>())
                 component.enabled = false;
             foreach (var component in GetComponentsInChildren<VRTeleport>())
                 component.enabled = false;
@@ -56,11 +56,11 @@ public class BaseEntity : NetworkBehaviour
             foreach (var component in GetComponentsInChildren<SteamVR_TrackedObject>())
                 component.enabled = false;
             foreach (var component in GetComponentsInChildren<SteamVR_RenderModel>())
-                component.enabled = false;
+                component.enabled = false;*/
             foreach (var component in GetComponentsInChildren<SteamVR_Camera>())
                 component.enabled = false;
-            foreach (var component in GetComponentsInChildren<SteamVR_Ears>())
-                component.enabled = false;
+            //foreach (var component in GetComponentsInChildren<SteamVR_Ears>())
+            //    component.enabled = false;
         }
 
         if (!isServer)

@@ -62,7 +62,7 @@ public class PlayerDesktop : BasePlayer
 
         NetworkServer.Spawn(currentWeapon.gameObject);
         RpcSpawnGun(currentWeapon.gameObject, currentWeaponIndex);
-        SpawnGun();
+        SpawnGunSetup();
     }
 
     /// <summary>
@@ -73,13 +73,13 @@ public class PlayerDesktop : BasePlayer
     {
         currentWeaponIndex = weaponIndex;
         currentWeapon = weapon.GetComponent<BaseWeapon>();
-        SpawnGun();
+        SpawnGunSetup();
     }
 
     /// <summary>
     /// Настраивает параметры пушки, помещает её в руку игрока
     /// </summary>
-    private void SpawnGun()
+    private void SpawnGunSetup()
     {
         currentWeapon.Team = Team;
         currentWeapon.Holder = this;
