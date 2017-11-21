@@ -62,8 +62,6 @@ public class PlayerVR : PlayerDesktop {
     {
         leftHand = Instantiate(limbPrefab, leftShoulder);
         rightHand = Instantiate(limbPrefab, rightShoulder);
-        NetworkServer.Spawn(leftHand);
-        NetworkServer.Spawn(rightHand);
 
         RpcSpawnLimbs(leftHand, rightHand);
         SpawnLimbsSetup(leftHand, rightHand);

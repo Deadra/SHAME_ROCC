@@ -402,8 +402,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4232447575539944}
-  - component: {fileID: 114249720550431970}
-  - component: {fileID: 114850264843254220}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1496,22 +1494,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114249720550431970
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1709632236628386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e4d797e1fe64e40ad4f8999d308f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftShoulder: {fileID: 4155091961839240}
-  leftHandEnd: {fileID: 4217834893740968}
-  rightShoulder: {fileID: 4243772217145754}
-  rightHandEnd: {fileID: 4250336135669686}
-  limbPrefab: {fileID: 1915929679036908, guid: eb55b9c8274d8e941827f1a717c88412, type: 2}
 --- !u!114 &114312984556723966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1777,38 +1759,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114850264843254220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1709632236628386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 3
-    i1: 202
-    i2: 55
-    i3: 200
-    i4: 74
-    i5: 91
-    i6: 145
-    i7: 148
-    i8: 43
-    i9: 125
-    i10: 196
-    i11: 37
-    i12: 187
-    i13: 4
-    i14: 31
-    i15: 74
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114901322802581392
 MonoBehaviour:
   m_ObjectHideFlags: 1
