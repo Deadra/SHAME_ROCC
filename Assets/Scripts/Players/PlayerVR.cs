@@ -75,23 +75,23 @@ public class PlayerVR : PlayerDesktop {
         NetworkServer.Spawn(leftHand);
         NetworkServer.Spawn(rightHand);
 
-        RpcSpawnLimbs();
-        SpawnLimbsSetup();
+        RpcSpawnLimbs(leftHand, rightHand);
+        SpawnLimbsSetup(leftHand, rightHand);
     }
 
     /// <summary>
     /// Обновляет пушку в соответствии с инфой, пришедшей от сервера. Выполняется на стороне клиента.
     /// </summary>
     [ClientRpc]
-    void RpcSpawnLimbs()
+    void RpcSpawnLimbs(GameObject leftHand, GameObject rightHand)
     {
-        SpawnLimbsSetup();
+        SpawnLimbsSetup(leftHand, rightHand);
     }
 
     /// <summary>
     /// Настраивает параметры пушки, помещает её в руку игрока
     /// </summary>
-    private void SpawnLimbsSetup()
+    private void SpawnLimbsSetup(GameObject leftHand, GameObject rightHand)
     {
         leftHand.transform.parent = leftShoulder;
         rightHand.transform.parent = rightShoulder;
