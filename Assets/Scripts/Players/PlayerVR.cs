@@ -9,6 +9,16 @@ public class PlayerVR : PlayerDesktop {
     {
         base.Start();
         startingPosition = cameraRig.transform.position;
+
+        if (isLocalPlayer)
+        {
+            if(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Head/HeadModel"))
+                SetLayerRecursively(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Head/HeadModel").gameObject, Layer.OwnedBody);
+            if(transform.Find("Avatar/Body"))
+                SetLayerRecursively(transform.Find("Avatar/Body").gameObject, Layer.OwnedBody);
+            if(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas"))
+                SetLayerRecursively(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas").gameObject, Layer.OwnedUI);
+        }
     }
 
     [ClientRpc]

@@ -18,9 +18,12 @@ public class PlayerDesktop : BasePlayer
 
         if (isLocalPlayer)
         {
-            SetLayerRecursively(transform.Find("CameraBase/Head/HeadModel").gameObject, Layer.OwnedBody);
-            SetLayerRecursively(transform.Find("Body").gameObject, Layer.OwnedBody);
-            SetLayerRecursively(transform.Find("CameraBase/Canvas").gameObject, Layer.OwnedUI);
+            if(transform.Find("CameraBase/Head/HeadModel"))
+                SetLayerRecursively(transform.Find("CameraBase/Head/HeadModel").gameObject, Layer.OwnedBody);
+            if(transform.Find("Body"))
+                SetLayerRecursively(transform.Find("Body").gameObject, Layer.OwnedBody);
+            if(transform.Find("CameraBase/Canvas"))
+                SetLayerRecursively(transform.Find("CameraBase/Canvas").gameObject, Layer.OwnedUI);
             CmdSpawnGun(currentWeaponIndex);
         }
     }

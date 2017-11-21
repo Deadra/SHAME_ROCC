@@ -9,6 +9,8 @@ public class VRManager : VRInputIncapsulator
 
     void Start()
     {
+        if (player == null)
+            player = GetComponent<PlayerVR>();
         teleport = GetComponent<VRTeleport>();
         //player = GetComponentInChildren<PlayerDesktop>();
     }

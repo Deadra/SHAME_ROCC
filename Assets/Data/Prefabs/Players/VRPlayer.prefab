@@ -265,11 +265,13 @@ GameObject:
   - component: {fileID: 4330245759839968}
   - component: {fileID: 114637758959539662}
   - component: {fileID: 114968164370728086}
+  - component: {fileID: 114324610731330566}
   - component: {fileID: 114139490783293584}
   - component: {fileID: 114563954605103142}
   - component: {fileID: 114547388833309448}
   - component: {fileID: 114777948080700778}
   - component: {fileID: 114423144349851618}
+  - component: {fileID: 114095418536493134}
   m_Layer: 0
   m_Name: VRPlayer
   m_TagString: Untagged
@@ -520,7 +522,6 @@ GameObject:
   - component: {fileID: 124949516245212958}
   - component: {fileID: 54143808707282968}
   - component: {fileID: 136998993291287898}
-  - component: {fileID: 114570602920053210}
   - component: {fileID: 114112277696560458}
   m_Layer: 0
   m_Name: Camera (eye)
@@ -1405,6 +1406,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerSide: 1
   inputManager: {fileID: 114637758959539662}
+--- !u!114 &114095418536493134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423233682857516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b2575fd6649ed4e84cc54794e5b19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  maxHealth: 100
+  healthBar: {fileID: 114440839141051644}
+  weapons:
+  - {fileID: 114841809039375206, guid: 73feb25e602365543a461336ef8925a9, type: 2}
+  - {fileID: 114918664034952024, guid: 94a61fb3ff4c5334d81a899f96e5713d, type: 2}
+  - {fileID: 114076436665196004, guid: cf4e4474020074143b26d556668157a8, type: 2}
+  - {fileID: 114106759330178294, guid: b475438c01b12554eacc6e3e94ab58b1, type: 2}
+  - {fileID: 114207465696927178, guid: a280b4059a12f10489a027bf6fd7fc30, type: 2}
+  weaponSlot: {fileID: 4323255195539534}
+  cameraRig: {fileID: 4330245759839968}
 --- !u!114 &114112277696560458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1510,6 +1533,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114324610731330566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423233682857516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfe5a5c0ca9ab14496dc7a57287205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114382369973013774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1659,29 +1693,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114570602920053210
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1972213386370234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12b2575fd6649ed4e84cc54794e5b19c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: 0
-  maxHealth: 100
-  healthBar: {fileID: 114440839141051644}
-  weapons:
-  - {fileID: 114542629546131976, guid: 904e5bb69304ba24e878f8b39827be2f, type: 2}
-  - {fileID: 114076436665196004, guid: cf4e4474020074143b26d556668157a8, type: 2}
-  - {fileID: 114841809039375206, guid: 73feb25e602365543a461336ef8925a9, type: 2}
-  - {fileID: 114918664034952024, guid: 94a61fb3ff4c5334d81a899f96e5713d, type: 2}
-  - {fileID: 114106759330178294, guid: b475438c01b12554eacc6e3e94ab58b1, type: 2}
-  - {fileID: 114207465696927178, guid: a280b4059a12f10489a027bf6fd7fc30, type: 2}
-  weaponSlot: {fileID: 4323255195539534}
-  cameraRig: {fileID: 4330245759839968}
 --- !u!114 &114590314931528790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1728,7 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftController: {fileID: 4306399147228092}
-  player: {fileID: 114570602920053210}
+  player: {fileID: 0}
 --- !u!114 &114660764650844892
 MonoBehaviour:
   m_ObjectHideFlags: 1
