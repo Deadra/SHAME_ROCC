@@ -267,10 +267,8 @@ GameObject:
   - component: {fileID: 114968164370728086}
   - component: {fileID: 114324610731330566}
   - component: {fileID: 114139490783293584}
-  - component: {fileID: 114563954605103142}
   - component: {fileID: 114547388833309448}
   - component: {fileID: 114777948080700778}
-  - component: {fileID: 114649697551515814}
   - component: {fileID: 114701508655471214}
   - component: {fileID: 114423144349851618}
   - component: {fileID: 114095418536493134}
@@ -404,6 +402,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4232447575539944}
+  - component: {fileID: 114249720550431970}
+  - component: {fileID: 114850264843254220}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -740,7 +740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423233682857516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.683395, y: 2.4129811e-17, z: -10.457533}
+  m_LocalPosition: {x: -3.683395, y: 1, z: -10.457533}
   m_LocalScale: {x: 0.98906654, y: 0.9890667, z: 0.9890667}
   m_Children:
   - {fileID: 4224750833149568}
@@ -1496,6 +1496,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114249720550431970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709632236628386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e4d797e1fe64e40ad4f8999d308f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftShoulder: {fileID: 4155091961839240}
+  leftHandEnd: {fileID: 4217834893740968}
+  rightShoulder: {fileID: 4243772217145754}
+  rightHandEnd: {fileID: 4250336135669686}
+  limbPrefab: {fileID: 1915929679036908, guid: eb55b9c8274d8e941827f1a717c88412, type: 2}
 --- !u!114 &114312984556723966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1657,25 +1673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4306399147228092}
-  m_ChildIndex: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
---- !u!114 &114563954605103142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423233682857516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 4070984998829734}
   m_ChildIndex: 0
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
@@ -1730,25 +1727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftController: {fileID: 4306399147228092}
   player: {fileID: 0}
---- !u!114 &114649697551515814
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423233682857516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 4224750833149568}
-  m_ChildIndex: 3
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114660764650844892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1773,7 +1751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4091942247136274}
-  m_ChildIndex: 4
+  m_ChildIndex: 2
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -1792,13 +1770,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4492280429149678}
-  m_ChildIndex: 2
+  m_ChildIndex: 1
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114850264843254220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709632236628386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 3
+    i1: 202
+    i2: 55
+    i3: 200
+    i4: 74
+    i5: 91
+    i6: 145
+    i7: 148
+    i8: 43
+    i9: 125
+    i10: 196
+    i11: 37
+    i12: 187
+    i13: 4
+    i14: 31
+    i15: 74
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114901322802581392
 MonoBehaviour:
   m_ObjectHideFlags: 1

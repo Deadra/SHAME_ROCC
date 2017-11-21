@@ -15,9 +15,6 @@ public class PlayerVR : PlayerDesktop {
 
     public override void Start()
     {
-        base.Start();
-        startingPosition = cameraRig.transform.position;
-
         if (isLocalPlayer)
         {
             if(transform.Find("Avatar/Head/HeadModel"))
@@ -27,6 +24,10 @@ public class PlayerVR : PlayerDesktop {
             if(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas"))
                 SetLayerRecursively(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas").gameObject, Layer.OwnedUI);
         }
+        base.Start();
+        startingPosition = cameraRig.transform.position;
+
+
         CmdSpawnLimbs();
     }
 
@@ -45,23 +46,12 @@ public class PlayerVR : PlayerDesktop {
 
     void DrawLimb(GameObject limb, Transform start, Transform end)
     {
-        if (start == null || end == null)
-        {
-            //Destroy(limb);
+        if (limb == null || start == null || end == null)
             return;
-        }
-        if (limb == null)
-        {
-            //CmdSpawnLimbs();
-            return;
-        }
+ 
         limb.transform.position = Vector3.Lerp(start.position, end.position, 0.5f);
         limb.transform.LookAt(end.position);
         limb.transform.localScale = new Vector3(limb.transform.localScale.x, limb.transform.localScale.y, Vector3.Distance(start.position, end.position));
-    }
-
-    public void SpawnLimbSetup(GameObject limb, bool isLeft)
-    {
     }
 
     /// <summary>

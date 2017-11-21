@@ -45,6 +45,7 @@ public class PlayerDesktop : BasePlayer
         currentWeaponIndex = currentWeaponIndex % weapons.Count;
 
         CmdSpawnGun(currentWeaponIndex);
+        SpawnGunSetup();
     }
 
     /// <summary>

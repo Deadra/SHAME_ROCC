@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class AvatarHandsNeck : NetworkBehaviour {
+public class AvatarHandsNeck : MonoBehaviour {
 
     [SerializeField] Transform leftShoulder;
     [SerializeField] Transform leftHandEnd;
