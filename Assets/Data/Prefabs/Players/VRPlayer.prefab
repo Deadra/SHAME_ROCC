@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4745796808097388}
   - component: {fileID: 33972504759712064}
   - component: {fileID: 23252969702142462}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Eye (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 4184980379454912}
   - component: {fileID: 33630782711262656}
   - component: {fileID: 23787223715885388}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Eye (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4629742024636142}
   - component: {fileID: 33428242456627010}
   - component: {fileID: 23738131471872758}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BodyModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4340238663496330}
   - component: {fileID: 33729609998476512}
   - component: {fileID: 23268601527858192}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Eye (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 4369077770812674}
   - component: {fileID: 33770366171209044}
   - component: {fileID: 23035947491929982}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Eye (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 4254894293154758}
   - component: {fileID: 33419392541169330}
   - component: {fileID: 23222835626136446}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: HeadModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 4547143250644294}
   - component: {fileID: 33835050172782310}
   - component: {fileID: 23958755152163442}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 4382381999572226}
   - component: {fileID: 33487600301419888}
   - component: {fileID: 23507709714363672}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Eye (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294966751
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 4654144981693202}
+  m_Target: {fileID: 4306399147228092}
   m_ChildIndex: 1
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 4323255195539534}
+  m_Target: {fileID: 4070984998829734}
   m_ChildIndex: 0
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 4614663639097878}
+  m_Target: {fileID: 4492280429149678}
   m_ChildIndex: 2
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7

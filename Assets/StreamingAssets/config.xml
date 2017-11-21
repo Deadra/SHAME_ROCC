@@ -12,9 +12,10 @@
   <FiveDServerPort>20446</FiveDServerPort>
 
   <!--Server addresses for online games-->
-  <Server1>10.51.71.11</Server1>
-  <Server2>10.51.71.21</Server2>
-  <Server3>0.0.0.0</Server3>
+  <Server1>10.22.14.144</Server1>
+  <Server2>10.51.71.11</Server2>
+  <Server3>10.51.71.21</Server3>
+  <Server4>0.0.0.0</Server4>
 
   <!--These options may be overridden by launch arguments, mostly when you run the game through the SimServer-->
   <GameMode>Online</GameMode><!--Online or Offline-->

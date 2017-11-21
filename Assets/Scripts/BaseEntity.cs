@@ -39,13 +39,35 @@ public class BaseEntity : NetworkBehaviour
 
         if (!isLocalPlayer)
         {
-            if (GetComponentInChildren<Camera>()) GetComponentInChildren<Camera>().enabled = false;
-            if (GetComponentInChildren<AudioListener>()) GetComponentInChildren<AudioListener>().enabled = false;
-            if (GetComponentInChildren<PlatformDataSender>()) GetComponentInChildren<PlatformDataSender>().enabled = false;
+            foreach (var component in GetComponentsInChildren<Camera>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<AudioListener>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<PlatformDataSender>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<VRManager>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<VRTeleport>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<SteamVR_ControllerManager>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<SteamVR_PlayArea>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<SteamVR_TrackedObject>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<SteamVR_RenderModel>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<SteamVR_Camera>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<SteamVR_Ears>())
+                component.enabled = false;
         }
 
         if (!isServer)
-            if (GetComponentInChildren<BaseAI>()) GetComponentInChildren<BaseAI>().enabled = false;
+        {
+            if (GetComponentInChildren<BaseAI>())
+                GetComponentInChildren<BaseAI>().enabled = false;
+        }
     }
 
     protected virtual void Update()

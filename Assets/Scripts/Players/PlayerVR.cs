@@ -12,8 +12,8 @@ public class PlayerVR : PlayerDesktop {
 
         if (isLocalPlayer)
         {
-            if(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Head/HeadModel"))
-                SetLayerRecursively(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Head/HeadModel").gameObject, Layer.OwnedBody);
+            if(transform.Find("Avatar/Head/HeadModel"))
+                SetLayerRecursively(transform.Find("Avatar/Head/HeadModel").gameObject, Layer.OwnedBody);
             if(transform.Find("Avatar/Body"))
                 SetLayerRecursively(transform.Find("Avatar/Body").gameObject, Layer.OwnedBody);
             if(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas"))
