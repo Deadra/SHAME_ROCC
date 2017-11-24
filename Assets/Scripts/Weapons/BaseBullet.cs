@@ -11,6 +11,7 @@ public class BaseBullet : NetworkBehaviour
     [SerializeField] private float launchForce;
     [SerializeField] private bool  ricochet = false;
     [SerializeField] private float ricochetAngle = 10;
+    [SerializeField] private float minimumRayCastLength = 1.0f;
     public TeamList Team { get; set; }
     public BaseEntity Holder { get; set; }
 
@@ -23,12 +24,22 @@ public class BaseBullet : NetworkBehaviour
         rb.AddForce(transform.forward * launchForce);
     }
 
+    /// <param name="col"></param>
+    void OnCollisionEnter(Collision col)
+    {
+        DestroyBullet(col);
+    }
+
+    void OnCollisionStay(Collision col)
+    {
+        DestroyBullet(col);
+    }
+
     /// <summary>
     /// Уничтожает пулю, если надо. Это нужно делать только после того, как RigidBody пули
     /// вступил в коллизию с каким-то объектом
     /// </summary>
-    /// <param name="col"></param>
-    void OnCollisionEnter(Collision col)
+    private void DestroyBullet(Collision col)
     {
         if (col.gameObject == hitted && destroy)
             Destroy(this.gameObject);
@@ -55,19 +66,22 @@ public class BaseBullet : NetworkBehaviour
             raycastLength = velocity.magnitude * Time.fixedDeltaTime;
             raycastDirection = velocity.normalized;
         }
-       
+
+        if (raycastLength < minimumRayCastLength)
+            raycastLength = minimumRayCastLength;
+
         if (Physics.Raycast(transform.position, raycastDirection, out hitInfo, raycastLength))
         {
+            //Debug.Log("Hit");
             if (hitted != null || !hitInfo.collider || hitInfo.collider.isTrigger)
                 return;
             
             if (hitInfo.collider.gameObject.GetComponent<BaseBullet>() &&
                 hitInfo.collider.gameObject.GetComponent<BaseBullet>().Team == Team)
                 return;
-
             OnHit(hitInfo);
 
-            if (!ricochet || Mathf.Abs(Vector3.Angle(hitInfo.normal, velocity) - 90) > ricochetAngle)
+            if (!ricochet || Mathf.Abs(Vector3.Angle(hitInfo.normal, raycastDirection) - 90) > ricochetAngle)
             {
                 destroy = true;
                 hitted = hitInfo.collider.gameObject;

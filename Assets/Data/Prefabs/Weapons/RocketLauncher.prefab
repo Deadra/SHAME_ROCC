@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 10
-  coolDown: 4
+  coolDown: 1
   bulletSpawnPoint: {fileID: 4977924431335392}
   bulletPrefab: {fileID: 1296632735036572, guid: 6041912f30efb71419a1395e67407a73,
     type: 2}
