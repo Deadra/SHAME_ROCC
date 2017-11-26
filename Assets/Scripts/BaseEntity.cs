@@ -49,6 +49,10 @@ public class BaseEntity : NetworkBehaviour
                 component.enabled = false;
             foreach (var component in GetComponentsInChildren<SteamVR_Camera>())
                 component.enabled = false;
+            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Car.CarController>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Car.CarUserControl>())
+                component.enabled = false;
         }
 
         if (!isServer)
