@@ -9,6 +9,8 @@ public class BaseBullet : NetworkBehaviour
 {
     private Rigidbody rb;
     [SerializeField] private float launchForce;
+    [SerializeField] private float accelerationForce = 0.0f;
+    [SerializeField] private float accelerationTime = 2.0f;
     [SerializeField] private bool  ricochet = false;
     [SerializeField] private float ricochetAngle = 10;
     [SerializeField] private float minimumRayCastLength = 1.0f;
@@ -17,6 +19,7 @@ public class BaseBullet : NetworkBehaviour
 
     private GameObject hitted;
     private bool destroy = false;
+    private float timeFromLaunch = 0.0f;
 
     void Start()
     {
@@ -55,11 +58,12 @@ public class BaseBullet : NetworkBehaviour
         Vector3 velocity = rb.velocity;
         float raycastLength;
         Vector3 raycastDirection;
+        timeFromLaunch += Time.fixedDeltaTime;
 
         if (velocity == Vector3.zero) //At the first FixedUpdate velocity is still a zero vector 
         {
             raycastLength = launchForce / rb.mass * Time.fixedDeltaTime * (2.0f / 100.0f); //magic number (⌒_⌒;)
-            raycastDirection = transform.forward;
+            raycastDirection = transform.forward.normalized;
         }
         else
         {
@@ -87,6 +91,9 @@ public class BaseBullet : NetworkBehaviour
                 hitted = hitInfo.collider.gameObject;
             }
         }
+
+        if (accelerationTime > 0.0f && timeFromLaunch < accelerationTime)
+            rb.AddForce(raycastDirection * accelerationForce, ForceMode.Acceleration);
     }
 
     /// <summary>
