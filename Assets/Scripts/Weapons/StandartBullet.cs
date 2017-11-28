@@ -15,7 +15,7 @@ public class StandartBullet : BaseBullet
     {
         BaseEntity entityHit = hitInfo.collider.gameObject.GetComponentInParent<BaseEntity>();
 
-        if (entityHit != null && entityHit.Team != Team)
+        if (entityHit != null && (Settings.friendlyFire || entityHit.Team != Team))
             entityHit.TakeDamage(damage);
 
         Instantiate(hitParticle, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));

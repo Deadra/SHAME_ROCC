@@ -37,6 +37,8 @@ public class NetManager : NetworkManager
     private static NetworkManager instance = null;
     private bool isServer;
     private List<NetworkStartPosition> spawnPoints;
+    public short NetworkMessageID { get; private set; }
+    public short SettingsMessageID { get; private set; } 
 
     public List<GameObject> spawnedPlayers { get; private set; }
 
@@ -50,6 +52,9 @@ public class NetManager : NetworkManager
                                     this.GetType(), instance.gameObject.name, gameObject.name);
             Destroy(this);
         }
+
+        NetworkMessageID = MsgType.Highest + 1;
+        SettingsMessageID  = MsgType.Highest + 2;
     }
 
     private void Start()
@@ -165,9 +170,6 @@ public class NetManager : NetworkManager
     /// Вызывается на стороне сервера, когда клиент подключается к нему
     /// с помощью ClientScene.AddPlayer
     /// </summary>
-    /// <param name="conn"></param>
-    /// <param name="playerControllerId"></param>
-    /// <param name="extraMessageReader"></param>
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
     {
         NetworkMessage message = extraMessageReader.ReadMessage<NetworkMessage>();
@@ -179,6 +181,9 @@ public class NetManager : NetworkManager
                                         spawnPoints[selectedClass].transform.rotation) as GameObject;
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         spawnedPlayers.Add(player);
+
+        SettingsMessage settingsMessage = Settings.GetSettingsMessage();
+        NetworkServer.SendToClient(conn.connectionId, SettingsMessageID, settingsMessage);
     }
 
     /// <summary>
@@ -189,6 +194,7 @@ public class NetManager : NetworkManager
     {
         NetworkMessage msg = new NetworkMessage();
         msg.prefabIndex = (short)Settings.platformType;
+        client.RegisterHandler(SettingsMessageID, OnSettingsMessage);
 
         ClientScene.AddPlayer(conn, 0, msg);
     }
@@ -204,5 +210,15 @@ public class NetManager : NetworkManager
                                  spawnPoints[platformType].transform.position,
                                  spawnPoints[platformType].transform.rotation);
         spawnedPlayers.Add(player);
+    }
+
+    /// <summary>
+    /// Обработчик сообщения с настройками
+    /// </summary>
+    /// <param name="netMsg"></param>
+    private void OnSettingsMessage(UnityEngine.Networking.NetworkMessage netMsg)
+    {
+        SettingsMessage msg = netMsg.ReadMessage<SettingsMessage>();
+        Settings.UpdateClientSettings(msg);
     }
 }

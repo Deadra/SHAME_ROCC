@@ -25,6 +25,14 @@ public enum PlatformType
 };
 
 /// <summary>
+/// Сообщение, содержащее информацию о настройках, задаваемых сервером
+/// </summary>
+public class SettingsMessage : UnityEngine.Networking.MessageBase
+{
+    public bool friendlyFire;
+}
+
+/// <summary>
 /// Этот класс обеспечивает доступ к настройкам приложения, т.е.
 /// к инфе из конфиг-файла и из параметров запуска
 /// </summary>
@@ -44,6 +52,8 @@ public static class Settings
     {
         get; private set;
     }
+
+    public static bool friendlyFire { get; private set; }
 
     private static string[]  serverIPs;
     private static int[]     serverPorts;
@@ -160,7 +170,11 @@ public static class Settings
                         continue;
 
                     case "PlatformType":
-                        platformType = (PlatformType) Enum.Parse(typeof(PlatformType), child.InnerText);
+                        platformType = (PlatformType)Enum.Parse(typeof(PlatformType), child.InnerText);
+                        continue;
+
+                    case "FriendlyFire":
+                        friendlyFire = bool.Parse(child.InnerText);
                         continue;
                 }
 
@@ -171,4 +185,23 @@ public static class Settings
         }
     }
 
+    /// <summary>
+    /// Создаёт сообщение с настройками для отправки их от сервера клиентам
+    /// </summary>
+    public static SettingsMessage GetSettingsMessage()
+    {
+        SettingsMessage settingsMessage = new SettingsMessage();
+
+        settingsMessage.friendlyFire = Settings.friendlyFire;
+
+        return settingsMessage;
+    }
+    /// <summary>
+    /// Обновляет настроки на стороне клиента на те, что пришли от сервера
+    /// </summary>
+    /// <param name="settings"></param>
+    public static void UpdateClientSettings(SettingsMessage settings)
+    {
+        friendlyFire = settings.friendlyFire;
+    }
 }

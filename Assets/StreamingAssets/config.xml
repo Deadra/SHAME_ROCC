@@ -17,7 +17,12 @@
   <Server3>10.51.71.21</Server3>
   <Server4>0.0.0.0</Server4>
 
-  <!--These options may be overridden by launch arguments, mostly when you run the game through the SimServer-->
+
+  <!--Game settings-->
+  <FriendlyFire>true</FriendlyFire><!--true or false-->
+
+
+  <!--Launch client settings. These options may be overridden by launch arguments, mostly when you run the game through the SimServer-->
   <GameMode>Online</GameMode><!--Online or Offline-->
   <PlatformType>Desktop</PlatformType><!--XDMotion, FlyMotion, FiveDMotion, Desktop or HTCVive-->
 
