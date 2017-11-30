@@ -56,8 +56,8 @@ public class PlatformDataSender : MonoBehaviour
         {
             StopAllCoroutines();
 
-            m_ip   = Settings.GetServerIP(  (PlatformType) platformType);
-            m_port = Settings.GetServerPort((PlatformType) platformType);
+            m_ip   = Settings.GetServerIP(platformType);
+            m_port = Settings.GetServerPort(platformType);
 
             //Создаем соккеты
             m_s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);

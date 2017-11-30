@@ -5,8 +5,6 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using UnityEngine;
 
-//TODO: переделать все Get...(PlatformType platformType) функции в нормальные пропертя или даже удалить их нафиг
-
 public enum GameMode
 {
     Offline = 0,
