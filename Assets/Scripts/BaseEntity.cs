@@ -53,6 +53,12 @@ public class BaseEntity : NetworkBehaviour
                 component.enabled = false;
             foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Car.CarUserControl>())
                 component.enabled = false;
+            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Aeroplane.AeroplaneController>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Aeroplane.AeroplaneUserControl4Axis>())
+                component.enabled = false;
+            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Aeroplane.AeroplaneControlSurfaceAnimator>())
+                component.enabled = false;
         }
 
         if (!isServer)

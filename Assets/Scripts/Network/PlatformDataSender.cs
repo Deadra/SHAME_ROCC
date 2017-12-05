@@ -35,7 +35,15 @@ public class PlatformDataSender : MonoBehaviour
 
     private void Start()
     {
-        Connect();
+        if (platformType != PlatformType.FlyMotion && 
+            platformType != PlatformType.XDMotion && 
+            platformType != PlatformType.FiveDMotion)
+        {
+            Debug.LogError("Wrong Platform Type on PlatformDataSender");
+            Destroy(this);
+        }
+        else
+            Connect();
     }
 
     /// <summary>
@@ -76,6 +84,9 @@ public class PlatformDataSender : MonoBehaviour
                         break;
                     case PlatformType.FiveDMotion:
                         StartCoroutine(SendTelegaData());
+                        break;
+                    default:
+                        Debug.LogError("Wrong Platform Type on PlatformDataSender");
                         break;
                 }
             }
