@@ -12,8 +12,8 @@
   <FiveDServerPort>20446</FiveDServerPort>
 
   <!--Server addresses for online games-->
-  <Server1>10.22.14.144</Server1>
-  <Server2>10.22.14.157</Server2>
+  <Server1>10.51.71.11</Server1>
+  <Server2>10.51.71.21</Server2>
   <Server3>10.51.71.21</Server3>
   <Server4>0.0.0.0</Server4>
 
