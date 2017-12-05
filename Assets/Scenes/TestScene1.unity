@@ -2341,7 +2341,7 @@ MonoBehaviour:
   dontSpawnRadius: 20
   spawnPoints:
   - spawnPoint: {fileID: 604741223}
-    enemyCount: 1
+    enemyCount: 0
   - spawnPoint: {fileID: 512370198}
     enemyCount: 0
 --- !u!1 &2107985710

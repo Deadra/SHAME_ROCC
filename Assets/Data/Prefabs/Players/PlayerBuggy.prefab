@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 33815597633002084}
   - component: {fileID: 23374414150403950}
   - component: {fileID: 64856619660178628}
+  - component: {fileID: 65111363931826684}
   m_Layer: 0
   m_Name: buggy_body
   m_TagString: Untagged
@@ -631,8 +632,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191266563680930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.234947, y: 0.563, z: -27.365261}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.0676332, y: 4.417946e-17, z: -18.332481}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 4340946643722544}
   - {fileID: 4024659388665732}
@@ -1228,6 +1229,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2973461cfa182bf4ba80a2658cc6aae0, type: 3}
+--- !u!65 &65111363931826684
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299946490795364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0446873, y: 1.0073751, z: 0.16122635}
+  m_Center: {x: 0.6400768, y: -0.24788934, z: -0.42235476}
 --- !u!81 &81250304616043162
 AudioListener:
   m_ObjectHideFlags: 1
