@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: d8616fd75ea40534baf43ae372340f38
+timeCreated: 1512465567
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Box001
+    100004: Cylinder075
+    100006: Cylinder077
+    100008: Cylinder080
+    100010: Cylinder107
+    100012: Cylinder108
+    100014: Cylinder130
+    100016: Cylinder131
+    100018: Cylinder132
+    100020: Cylinder133
+    100022: Line138
+    100024: Line139
+    100026: Line140
+    100028: Line143
+    100030: Line146
+    100032: Line155
+    100034: Line160
+    100036: Line161
+    100038: Line163
+    100040: Line179
+    100042: Line182
+    100044: Line184
+    100046: Line185
+    100048: Line186
+    100050: Line187
+    100052: Line188
+    100054: Line189
+    100056: Line190
+    100058: Line191
+    100060: Line193
+    100062: Line194
+    100064: Line195
+    100066: Line196
+    100068: Line199
+    100070: Line200
+    100072: Line201
+    100074: noooooooze
+    100076: pilot003
+    100078: Torus008
+    100080: Torus010
+    100082: Torus012
+    100084: Tube031
+    100086: Tube039
+    100088: Tube040
+    400000: //RootNode
+    400002: Box001
+    400004: Cylinder075
+    400006: Cylinder077
+    400008: Cylinder080
+    400010: Cylinder107
+    400012: Cylinder108
+    400014: Cylinder130
+    400016: Cylinder131
+    400018: Cylinder132
+    400020: Cylinder133
+    400022: Line138
+    400024: Line139
+    400026: Line140
+    400028: Line143
+    400030: Line146
+    400032: Line155
+    400034: Line160
+    400036: Line161
+    400038: Line163
+    400040: Line179
+    400042: Line182
+    400044: Line184
+    400046: Line185
+    400048: Line186
+    400050: Line187
+    400052: Line188
+    400054: Line189
+    400056: Line190
+    400058: Line191
+    400060: Line193
+    400062: Line194
+    400064: Line195
+    400066: Line196
+    400068: Line199
+    400070: Line200
+    400072: Line201
+    400074: noooooooze
+    400076: pilot003
+    400078: Torus008
+    400080: Torus010
+    400082: Torus012
+    400084: Tube031
+    400086: Tube039
+    400088: Tube040
+    2300000: Box001
+    2300002: Cylinder075
+    2300004: Cylinder077
+    2300006: Cylinder080
+    2300008: Cylinder107
+    2300010: Cylinder108
+    2300012: Cylinder130
+    2300014: Cylinder131
+    2300016: Cylinder132
+    2300018: Cylinder133
+    2300020: Line138
+    2300022: Line139
+    2300024: Line140
+    2300026: Line143
+    2300028: Line146
+    2300030: Line155
+    2300032: Line160
+    2300034: Line161
+    2300036: Line163
+    2300038: Line179
+    2300040: Line182
+    2300042: Line184
+    2300044: Line185
+    2300046: Line186
+    2300048: Line187
+    2300050: Line188
+    2300052: Line189
+    2300054: Line190
+    2300056: Line191
+    2300058: Line193
+    2300060: Line194
+    2300062: Line195
+    2300064: Line196
+    2300066: Line199
+    2300068: Line200
+    2300070: Line201
+    2300072: noooooooze
+    2300074: Torus008
+    2300076: Torus010
+    2300078: Torus012
+    2300080: Tube031
+    2300082: Tube039
+    2300084: Tube040
+    3300000: Box001
+    3300002: Cylinder075
+    3300004: Cylinder077
+    3300006: Cylinder080
+    3300008: Cylinder107
+    3300010: Cylinder108
+    3300012: Cylinder130
+    3300014: Cylinder131
+    3300016: Cylinder132
+    3300018: Cylinder133
+    3300020: Line138
+    3300022: Line139
+    3300024: Line140
+    3300026: Line143
+    3300028: Line146
+    3300030: Line155
+    3300032: Line160
+    3300034: Line161
+    3300036: Line163
+    3300038: Line179
+    3300040: Line182
+    3300042: Line184
+    3300044: Line185
+    3300046: Line186
+    3300048: Line187
+    3300050: Line188
+    3300052: Line189
+    3300054: Line190
+    3300056: Line191
+    3300058: Line193
+    3300060: Line194
+    3300062: Line195
+    3300064: Line196
+    3300066: Line199
+    3300068: Line200
+    3300070: Line201
+    3300072: noooooooze
+    3300074: Torus008
+    3300076: Torus010
+    3300078: Torus012
+    3300080: Tube031
+    3300082: Tube039
+    3300084: Tube040
+    4300000: Tube039
+    4300002: Cylinder130
+    4300004: Tube040
+    4300006: Line193
+    4300008: Line194
+    4300010: Line195
+    4300012: Line196
+    4300014: Line199
+    4300016: Line185
+    4300018: Line186
+    4300020: Line187
+    4300022: Line188
+    4300024: Line189
+    4300026: Line190
+    4300028: Line191
+    4300030: Line179
+    4300032: Line160
+    4300034: Line138
+    4300036: Line139
+    4300038: Line140
+    4300040: Cylinder131
+    4300042: Cylinder132
+    4300044: Cylinder133
+    4300046: Line201
+    4300048: Line200
+    4300050: Cylinder080
+    4300052: Line143
+    4300054: Line146
+    4300056: Tube031
+    4300058: Torus010
+    4300060: Torus012
+    4300062: Cylinder107
+    4300064: Cylinder108
+    4300066: Line182
+    4300068: Line163
+    4300070: Line155
+    4300072: Cylinder075
+    4300074: Torus008
+    4300076: Cylinder077
+    4300078: Line184
+    4300080: Line161
+    4300082: noooooooze
+    4300084: Box001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 3868802badf50c14b87ae68654951e7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: e0d7723412f17544d9bd5fc53414a040, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 450396e2e5d3f8a4fa8632e62f6b6d3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 06 - Default
+    second: {fileID: 2100000, guid: 0b0a647f4d1ec3b4ea745b806ae13cc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bamboo Dark
+    second: {fileID: 2100000, guid: 498ccabf5ecabe94aa282643b5819a2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #79'
+    second: {fileID: 2100000, guid: bd3d3f2cbfe022b4baa9fb3a24256b2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #80'
+    second: {fileID: 2100000, guid: 1a13c03007b43374aaaceb0d2cd4b0db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 56f1cb9eb56ee9948827563041dbbe5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leather_4
+    second: {fileID: 2100000, guid: 750ec193f0e3a18488aee3efd3e46483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: old metal with scratches
+    second: {fileID: 2100000, guid: 244f6ecbc8ac9734cae9950de55aca38, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
