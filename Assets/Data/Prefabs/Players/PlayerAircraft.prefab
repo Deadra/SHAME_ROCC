@@ -730,7 +730,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4532971636863252}
   - component: {fileID: 33876265133649110}
-  - component: {fileID: 64684255051291420}
   - component: {fileID: 23044269130856832}
   m_Layer: 5
   m_Name: Minimap
@@ -4378,7 +4377,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734366398828846}
-  m_LocalRotation: {x: 0.7277178, y: 0.0988669, z: -0.6773593, w: 0.042854402}
+  m_LocalRotation: {x: 0.7277179, y: 0.09886691, z: -0.67735934, w: 0.042854406}
   m_LocalPosition: {x: -2.6814156, y: -31.99876, z: -98.02434}
   m_LocalScale: {x: 2.5400023, y: 2.5400019, z: 2.540002}
   m_Children: []
@@ -12286,20 +12285,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64684255051291420
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1253746293523196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65259816069946404
 BoxCollider:
   m_ObjectHideFlags: 1

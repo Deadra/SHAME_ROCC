@@ -525,7 +525,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4116424165697934}
   - component: {fileID: 33797543943055698}
-  - component: {fileID: 64653743605439296}
   - component: {fileID: 23994247937463984}
   m_Layer: 5
   m_Name: Minimap
@@ -1484,20 +1483,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64653743605439296
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1858587172723824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64856619660178628
 MeshCollider:
   m_ObjectHideFlags: 1
