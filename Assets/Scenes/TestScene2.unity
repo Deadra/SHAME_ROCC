@@ -6622,6 +6622,46 @@ Transform:
   m_PrefabParentObject: {fileID: 4568116957302318, guid: 2f4604b785b92354fb0d458bdf9465e1,
     type: 2}
   m_PrefabInternal: {fileID: 248264906}
+--- !u!1 &249417924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 249417925}
+  - component: {fileID: 249417926}
+  m_Layer: 0
+  m_Name: FiveDSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &249417925
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 249417924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 371.9, y: 7.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1857379453}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249417926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 249417924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1050975500, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &249467488
 Prefab:
   m_ObjectHideFlags: 0
@@ -12334,14 +12374,15 @@ MonoBehaviour:
     type: 2}
   FlyMotionPrefab: {fileID: 1810640489198592, guid: 64a57c68c2f7bdf4892ff6be1984d6aa,
     type: 2}
-  FiveDMotionPrefab: {fileID: 0}
+  FiveDMotionPrefab: {fileID: 1221278671109626, guid: 089d3a83fc9663c4ea8e55a5e0767ec2,
+    type: 2}
   DesktopPrefab: {fileID: 1700637616205390, guid: f578afc4175d7fa4cae603dee33c915e,
     type: 2}
   HTCVivePrefab: {fileID: 1423233682857516, guid: 03ca37c84a5b91942b7dc425bb041f4a,
     type: 2}
   XDMotionSpawnPoint: {fileID: 392822740}
   FlyMotionSpawnPoint: {fileID: 52304673}
-  FiveDMotionSpawnPoint: {fileID: 0}
+  FiveDMotionSpawnPoint: {fileID: 249417926}
   DesktopSpawnPoint: {fileID: 1161247639}
   HTCViveSpawnPoint: {fileID: 1430924745}
   enemyPrefabs:
@@ -15759,7 +15800,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512370197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.1, y: 0.4, z: -24.5}
+  m_LocalPosition: {x: 75.5, y: 0.4, z: -81.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782172394}
@@ -17783,7 +17824,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604741222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.29, y: 0.4, z: 16.72}
+  m_LocalPosition: {x: -29, y: -0.3, z: 31.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782172394}
@@ -31984,7 +32025,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161247637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.1, y: 0, z: -30.7}
+  m_LocalPosition: {x: -60.4, y: 18.4, z: -45.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1857379453}
@@ -49612,6 +49653,7 @@ Transform:
   - {fileID: 1430924744}
   - {fileID: 392822739}
   - {fileID: 52304672}
+  - {fileID: 249417925}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49731,6 +49773,81 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e21456eb7a6b18e4480b596463b9692a, type: 2}
   m_PrefabInternal: {fileID: 1859776045}
+--- !u!1 &1871777027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1987373670278690, guid: 2f4604b785b92354fb0d458bdf9465e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1871777030}
+  - component: {fileID: 1871777029}
+  - component: {fileID: 1871777028}
+  m_Layer: 11
+  m_Name: Plane (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1871777028
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 23588208241424062, guid: 2f4604b785b92354fb0d458bdf9465e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871777027}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8d0d9e7a9979f8d4bb6fa7ebd5a38c22, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1871777029
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 33451973331017144, guid: 2f4604b785b92354fb0d458bdf9465e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871777027}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1871777030
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4553578070509440, guid: 2f4604b785b92354fb0d458bdf9465e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871777027}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 45.480938, y: 7.128493, z: -575.7014}
+  m_LocalScale: {x: 3.2793438, y: 1, z: 1.5698314}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1001 &1871921797
 Prefab:
   m_ObjectHideFlags: 0
@@ -53865,13 +53982,13 @@ MonoBehaviour:
   netManager: {fileID: 376060464}
   EHub: {fileID: 2031774380}
   respawnTime: 1
-  spawnRadius: 10
-  dontSpawnRadius: 20
+  spawnRadius: 20
+  dontSpawnRadius: 40
   spawnPoints:
   - spawnPoint: {fileID: 604741223}
-    enemyCount: 0
+    enemyCount: 5
   - spawnPoint: {fileID: 512370198}
-    enemyCount: 0
+    enemyCount: 10
 --- !u!1001 &2035431879
 Prefab:
   m_ObjectHideFlags: 0

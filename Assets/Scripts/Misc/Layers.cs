@@ -10,5 +10,6 @@
 
     Teleportable    = 8,
     OwnedBody       = 9,
-    OwnedUI         = 10
+    OwnedUI         = 10,
+    MiniMapLabel    = 11
 };
