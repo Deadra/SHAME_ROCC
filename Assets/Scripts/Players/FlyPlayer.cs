@@ -14,4 +14,13 @@ public class FlyPlayer : BasePlayer
                 SetLayerRecursively(transform.Find("Camera/Canvas").gameObject, Layer.OwnedUI);
         }
     }
+
+    protected override void Update()
+    {
+        base.Update();
+        Vector3 ground = transform.position;
+        ground.z = 0;
+        if (transform.Find("Minimap/MiniMapCameraHolder"))
+            transform.Find("Minimap/MiniMapCameraHolder").LookAt(ground);
+    }
 }
