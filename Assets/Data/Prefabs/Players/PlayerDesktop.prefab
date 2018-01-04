@@ -170,7 +170,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4622213189078374}
   - component: {fileID: 33217255020156344}
-  - component: {fileID: 135238102467786800}
   - component: {fileID: 23303782730582960}
   m_Layer: 11
   m_Name: Label
@@ -766,7 +765,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1700637616205390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3174715, y: 1.0536155e-18, z: -19.232838}
+  m_LocalPosition: {x: -6.91849, y: 1.5362255e-18, z: -27.593575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4910503442901144}
@@ -1800,18 +1799,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564133625023866}
   m_Enabled: 1
---- !u!135 &135238102467786800
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291968381594802}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136500708030522222
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -257,7 +257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4784313279892752}
   - component: {fileID: 33100047922561448}
-  - component: {fileID: 135297372739777450}
   - component: {fileID: 23263887060119026}
   m_Layer: 11
   m_Name: Label
@@ -4947,7 +4946,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810640489198592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.713135, y: 3.86, z: -77.531494}
+  m_LocalPosition: {x: -10.174321, y: 1.5908629e-18, z: -28.540115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4183089780664240}
@@ -12726,18 +12725,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!135 &135297372739777450
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065657242768548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135570030987323350
 SphereCollider:
   m_ObjectHideFlags: 1
