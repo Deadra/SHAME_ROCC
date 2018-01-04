@@ -12684,20 +12684,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235a6615124795442b98c1f03500003e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxEnginePower: 25
-  m_Lift: 0.015
-  m_ZeroLiftSpeed: 70
+  m_MaxEnginePower: 22
+  m_Lift: 0.02
+  m_ZeroLiftSpeed: 40
   m_RollEffect: 1
   m_PitchEffect: 1
   m_YawEffect: 0.5
-  m_BankedTurnEffect: 0.5
+  m_BankedTurnEffect: 0.7
   m_AerodynamicEffect: 0.03
   m_AutoTurnPitch: 0
   m_AutoRollLevel: 0
   m_AutoPitchLevel: 0
   m_AirBrakesEffect: 3
   m_ThrottleChangeSpeed: 0.3
-  m_DragIncreaseFactor: 0.001
+  m_DragIncreaseFactor: 0.004
 --- !u!114 &114886596509510154
 MonoBehaviour:
   m_ObjectHideFlags: 1
