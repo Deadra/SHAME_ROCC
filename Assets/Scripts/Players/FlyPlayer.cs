@@ -22,7 +22,5 @@ public class FlyPlayer : BasePlayer
         ground.z = 0;
         if (transform.Find("Minimap/MiniMapCameraHolder"))
             transform.Find("Minimap/MiniMapCameraHolder").LookAt(ground);
-
-        Debug.Log(this.GetComponent<Rigidbody>().velocity.magnitude);
     }
 }
