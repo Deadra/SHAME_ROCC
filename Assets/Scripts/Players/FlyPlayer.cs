@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Utility;
 
 public class FlyPlayer : BasePlayer
 {
@@ -18,9 +19,8 @@ public class FlyPlayer : BasePlayer
     protected override void Update()
     {
         base.Update();
-        Vector3 ground = transform.position;
-        ground.z = 0;
-        if (transform.Find("Minimap/MiniMapCameraHolder"))
-            transform.Find("Minimap/MiniMapCameraHolder").LookAt(ground);
+
+        if (Input.GetButtonDown("Reset"))
+            GetComponentInChildren<ObjectResetter>().DelayedReset(0.2f);
     }
 }
