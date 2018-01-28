@@ -2389,21 +2389,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1724684291602798
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4041329254020392}
-  m_Layer: 0
-  m_Name: MiniMapCameraHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1734366398828846
 GameObject:
   m_ObjectHideFlags: 1
@@ -3313,20 +3298,6 @@ Transform:
   m_Father: {fileID: 4043505626951822}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4041329254020392
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1724684291602798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4309817202927790}
-  m_Father: {fileID: 4813219862491278}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4043505626951822
 Transform:
   m_ObjectHideFlags: 1
@@ -3940,10 +3911,10 @@ Transform:
   m_GameObject: {fileID: 1775421427001354}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 50, z: 0}
-  m_LocalScale: {x: 0.018900054, y: 0.00063000247, z: 0.018900093}
+  m_LocalScale: {x: 0.018900054, y: 0.0006300027, z: 0.0189001}
   m_Children: []
-  m_Father: {fileID: 4041329254020392}
-  m_RootOrder: 0
+  m_Father: {fileID: 4813219862491278}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4315034875368766
 Transform:
@@ -5263,7 +5234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4784313279892752}
-  - {fileID: 4041329254020392}
+  - {fileID: 4309817202927790}
   m_Father: {fileID: 4687893494574016}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5854,7 +5825,7 @@ Camera:
   far clip plane: 5000
   field of view: 60
   orthographic: 1
-  orthographic size: 63.86
+  orthographic size: 120
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -12513,6 +12484,7 @@ MonoBehaviour:
   team: 0
   maxHealth: 700
   healthBar: {fileID: 114097349804550658}
+  minimapCamera: {fileID: 1775421427001354}
 --- !u!114 &114326177428972710
 MonoBehaviour:
   m_ObjectHideFlags: 1

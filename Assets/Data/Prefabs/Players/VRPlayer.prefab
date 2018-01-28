@@ -1193,7 +1193,7 @@ Transform:
   m_GameObject: {fileID: 1746732016636546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.96, z: 0}
-  m_LocalScale: {x: 3, y: 0.2, z: 3}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4399515907723938}
   m_RootOrder: 1
@@ -1254,7 +1254,7 @@ Camera:
   far clip plane: 600
   field of view: 60
   orthographic: 1
-  orthographic size: 63.86
+  orthographic size: 120
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1895,6 +1895,7 @@ MonoBehaviour:
   team: 0
   maxHealth: 100
   healthBar: {fileID: 114440839141051644}
+  minimapCamera: {fileID: 1832305787895630}
   weapons:
   - {fileID: 114841809039375206, guid: 73feb25e602365543a461336ef8925a9, type: 2}
   - {fileID: 114918664034952024, guid: 94a61fb3ff4c5334d81a899f96e5713d, type: 2}
