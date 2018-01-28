@@ -18,15 +18,10 @@ public class PlayerVR : PlayerDesktop {
         {
             if (transform.Find("Avatar"))
                 SetLayerRecursively(transform.Find("Avatar").gameObject, Layer.OwnedBody);
-            /*if (transform.Find("Avatar/Head/HeadModel"))
-                SetLayerRecursively(transform.Find("Avatar/Head/HeadModel").gameObject, Layer.OwnedBody);
-            if (transform.Find("Avatar/HandBase"))
-                SetLayerRecursively(transform.Find("Avatar/HandBase").gameObject, Layer.OwnedBody);
-            if (transform.Find("Avatar/Body"))
-                SetLayerRecursively(transform.Find("Avatar/Body").gameObject, Layer.OwnedBody);*/
-            if (transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas"))
-                SetLayerRecursively(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/CameraBase/Canvas").gameObject, Layer.OwnedUI);
-
+            if (transform.Find("[CameraRig]/Camera (head)/Camera (eye)/Canvas"))
+                SetLayerRecursively(transform.Find("[CameraRig]/Camera (head)/Camera (eye)/Canvas").gameObject, Layer.OwnedUI);
+            if (transform.Find("[CameraRig]/Camera (head)/Camera (eye)"))
+                transform.Find("[CameraRig]/Camera (head)/Camera (eye)").tag = "MainCamera";
         }
         base.Start();
         startingPosition = cameraRig.transform.position;

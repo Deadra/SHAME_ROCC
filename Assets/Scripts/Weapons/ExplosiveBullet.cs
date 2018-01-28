@@ -29,22 +29,19 @@ public class ExplosiveBullet : BaseBullet
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)
         {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            Rigidbody rb = Helpers.GetComponentInRoot<Rigidbody>(hit.gameObject);
 
             if (rb != null && rb.tag != "Projectile")
                 rb.AddExplosionForce(power, transform.position, radius, 3.0F);
 
-            BaseEntity entityHit = hit.GetComponent<BaseEntity>();
+            BaseEntity entityHit = Helpers.GetComponentInRoot<BaseEntity>(hit.gameObject);
 
-            if (entityHit != null)
+            if (entityHit != null && (Settings.friendlyFire || entityHit.Team != Team))
             {
-                if (entityHit.Team != Team)
-                {
-                    Vector3 direction = rb.transform.position - transform.position;
-                    float amountOfDamage = baseDamage - baseDamage * (direction.magnitude / radius);
-                    entityHit.TakeDamage(amountOfDamage, Holder);
-                    //Debug.Log(string.Format("Entity {0} took {1} damage.", rb.gameObject, amountOfDamage));
-                }
+                Vector3 direction = rb.transform.position - transform.position;
+                float amountOfDamage = baseDamage - baseDamage * (direction.magnitude / radius);
+                entityHit.TakeDamage(amountOfDamage, Holder);
+                //Debug.Log(string.Format("Entity {0} took {1} damage.", rb.gameObject, amountOfDamage));
             }
 
         }

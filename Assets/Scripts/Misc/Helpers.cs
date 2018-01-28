@@ -30,4 +30,14 @@ public class Helpers
 
         return false;
     }
+
+    public static T GetComponentInRoot<T>(GameObject gameObject)
+    {
+        return gameObject.transform.root.gameObject.GetComponent<T>();
+    }
+
+    public static T GetComponentInRootAndChildren<T>(GameObject gameObject)
+    {
+        return gameObject.transform.root.gameObject.GetComponentInChildren<T>();
+    }
 }

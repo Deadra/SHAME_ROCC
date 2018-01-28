@@ -18,7 +18,9 @@ public class PlayerDesktop : BasePlayer
 
         if (isLocalPlayer)
         {
-            if(transform.Find("CameraBase/Head/HeadModel"))
+            if (transform.Find("CameraBase/Camera").GetComponentInChildren<Camera>())
+                transform.Find("CameraBase/Camera").tag = "MainCamera";
+            if (transform.Find("CameraBase/Head/HeadModel"))
                 SetLayerRecursively(transform.Find("CameraBase/Head/HeadModel").gameObject, Layer.OwnedBody);
             if(transform.Find("Body"))
                 SetLayerRecursively(transform.Find("Body").gameObject, Layer.OwnedBody);
