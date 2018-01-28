@@ -16,6 +16,7 @@ public class BaseEntity : NetworkBehaviour
     }
     [SerializeField] protected float maxHealth;
     [SyncVar] protected float currentHealth;
+
     private bool destroyInLateUpdate;
 
     public EventHub EHub { get; set; }
@@ -73,9 +74,9 @@ public class BaseEntity : NetworkBehaviour
 
     }
 
-    public void TakeDamage(float value)
+    private void TakeDamage(float value)
     {
-        if (!isServer)
+        if (!isLocalPlayer)
             return;
 
         currentHealth -= value;

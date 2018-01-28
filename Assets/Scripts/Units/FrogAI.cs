@@ -192,6 +192,8 @@ public class FrogAI : BaseAI
 
     void OnDrawGizmos()
     {
+        if (!isServer)
+            return;
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(patrolingCenter.position, patrolingRadius);
         Gizmos.DrawLine(transform.position, currentTarget);

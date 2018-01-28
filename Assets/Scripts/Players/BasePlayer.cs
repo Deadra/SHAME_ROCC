@@ -7,11 +7,13 @@ public class BasePlayer : BaseEntity {
     [SerializeField] private Slider healthBar;
     [SerializeField] private GameObject minimapCamera;
     protected Vector3 startingPosition;
+    protected Quaternion startingRotation;
 
     public override void Start()
     {
         base.Start();
         startingPosition = transform.position;
+        startingRotation = transform.rotation;
     }
 
     protected override void Update()
@@ -36,9 +38,9 @@ public class BasePlayer : BaseEntity {
     [ClientRpc]
     protected override void RpcOnDeath()
     {
-        //EHub.SignalEntityDeath(this);
         currentHealth = maxHealth;
         transform.position = startingPosition;
+        transform.rotation = startingRotation;
     }
 
 }

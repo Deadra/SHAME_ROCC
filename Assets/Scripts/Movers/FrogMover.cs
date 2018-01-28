@@ -135,7 +135,7 @@ public class FrogMover : BaseMover
             if (enemy != null && enemy.Team != this.GetComponent<BaseEntity>().Team)
             {
                 //Debug.Log("It's an enemy! Taking damage.");
-                enemy.TakeDamage(15);
+                enemy.TakeDamage(15, this.GetComponent<BaseEntity>());
                 //Debug.Log("poom");
             }
         }
