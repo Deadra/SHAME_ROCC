@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityStandardAssets.Vehicles.Car;
+using UnityStandardAssets.Vehicles.Aeroplane;
 
 public enum TeamList
 {
     Friendly, Hostile, Neutral
 }
 
+/// <summary>
+/// Основная сущность для персонажей игры, как игровых, так и неигровых
+/// </summary>
 public class BaseEntity : NetworkBehaviour
 {
     [SerializeField] private TeamList team;
@@ -35,37 +40,23 @@ public class BaseEntity : NetworkBehaviour
 
     public virtual void Start()
     {
-        //Debug.LogWarningFormat("{0} is the Server - {1}, Client - {2}, Local Player - {3}",
-        //        gameObject.name, isServer.ToString(), isClient.ToString(), isLocalPlayer.ToString());
-
         if (!isLocalPlayer)
         {
-            foreach (var component in GetComponentsInChildren<Camera>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<AudioListener>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<PlatformDataSender>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<SteamVR_RenderModel>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<SteamVR_Camera>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Car.CarController>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Car.CarUserControl>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Aeroplane.AeroplaneController>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Aeroplane.AeroplaneUserControl4Axis>())
-                component.enabled = false;
-            foreach (var component in GetComponentsInChildren<UnityStandardAssets.Vehicles.Aeroplane.AeroplaneControlSurfaceAnimator>())
-                component.enabled = false;
+            gameObject.EnableAllComponentsInRoot<Camera>(false);
+            gameObject.EnableAllComponentsInRoot<AudioListener>(false);
+            gameObject.EnableAllComponentsInRoot<PlatformDataSender>(false);
+            gameObject.EnableAllComponentsInRoot<SteamVR_RenderModel>(false);
+            gameObject.EnableAllComponentsInRoot<SteamVR_Camera>(false);
+            gameObject.EnableAllComponentsInRoot<CarController>(false);
+            gameObject.EnableAllComponentsInRoot<CarUserControl>(false);
+            gameObject.EnableAllComponentsInRoot<AeroplaneController>(false);
+            gameObject.EnableAllComponentsInRoot<AeroplaneUserControl4Axis>(false);
+            gameObject.EnableAllComponentsInRoot<AeroplaneControlSurfaceAnimator>(false);
         }
 
         if (!isServer)
         {
-            if (GetComponentInChildren<BaseAI>())
-                GetComponentInChildren<BaseAI>().enabled = false;
+            gameObject.EnableAllComponentsInRoot<BaseAI>(false);
         }
     }
 
@@ -76,13 +67,11 @@ public class BaseEntity : NetworkBehaviour
 
     private void TakeDamage(float value)
     {
-        if (!isLocalPlayer)
+        if (!hasAuthority)
             return;
 
         currentHealth -= value;
         OnDamageTaken(value);
-
-        //Debug.LogFormat("{0} took {1} damage. Remaining health = {2}", gameObject, value, currentHealth);
 
         if (currentHealth <= 0)
             RpcOnDeath();
@@ -92,11 +81,9 @@ public class BaseEntity : NetworkBehaviour
     {
         TakeDamage(value);
         BaseAI brain = this.GetComponent<BaseAI>();
+
         if (brain != null)
-        {
-            //Debug.Log("got brain");
             brain.AttackedBy(attacker);
-        }
     }
 
     protected virtual void OnDamageTaken(float value) { }
@@ -111,13 +98,5 @@ public class BaseEntity : NetworkBehaviour
     {
         if (destroyInLateUpdate)
             Destroy(this.gameObject);
-    }
-
-    public static void SetLayerRecursively(GameObject go, Layer layer)
-    {
-        foreach (Transform t in go.GetComponentsInChildren<Transform>(true))
-        {
-            t.gameObject.layer = (int)layer;
-        }
     }
 }

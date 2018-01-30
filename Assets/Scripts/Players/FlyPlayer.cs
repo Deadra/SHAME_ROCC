@@ -9,10 +9,9 @@ public class FlyPlayer : BasePlayer
 
         if (isLocalPlayer)
         {
-            if (transform.Find("Camera").GetComponentInChildren<Camera>())
-                transform.Find("Camera").tag = "MainCamera";
-            if (transform.Find("Camera/Canvas"))
-                SetLayerRecursively(transform.Find("Camera/Canvas").gameObject, Layer.OwnedUI);
+            gameObject.DefineMainCamera("Camera");
+
+            gameObject.SetLayerRecursively("Camera/Canvas", Layer.OwnedUI);
         }
     }
 

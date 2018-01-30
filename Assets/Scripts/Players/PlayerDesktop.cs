@@ -18,14 +18,12 @@ public class PlayerDesktop : BasePlayer
 
         if (isLocalPlayer)
         {
-            if (transform.Find("CameraBase/Camera").GetComponentInChildren<Camera>())
-                transform.Find("CameraBase/Camera").tag = "MainCamera";
-            if (transform.Find("CameraBase/Head/HeadModel"))
-                SetLayerRecursively(transform.Find("CameraBase/Head/HeadModel").gameObject, Layer.OwnedBody);
-            if(transform.Find("Body"))
-                SetLayerRecursively(transform.Find("Body").gameObject, Layer.OwnedBody);
-            if(transform.Find("CameraBase/Canvas"))
-                SetLayerRecursively(transform.Find("CameraBase/Canvas").gameObject, Layer.OwnedUI);
+            gameObject.DefineMainCamera("CameraBase/Camera");
+
+            gameObject.SetLayerRecursively("CameraBase/Head/HeadModel", Layer.OwnedBody);
+            gameObject.SetLayerRecursively("Body", Layer.OwnedBody);
+            gameObject.SetLayerRecursively("CameraBase/Canvas", Layer.OwnedUI);
+
             CmdSpawnGun(currentWeaponIndex);
         }
     }

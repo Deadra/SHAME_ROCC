@@ -18,7 +18,6 @@ public class Frog : BaseEntity
         RpcOnDeathParticles();
         EHub.SignalEnemyDeath(this.gameObject);
         base.RpcOnDeath();
-        //Destroy(this.gameObject);
     }
 
     [ClientRpc]
