@@ -2,6 +2,10 @@
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+/// <summary>
+/// Основной класс для игровых персонажей. В момент сметри возрождается на стартовой позиции,
+/// обладает интерфейсом: миникартой и полосой здоровья
+/// </summary>
 public class BasePlayer : BaseEntity {
 
     [SerializeField] private Slider healthBar;

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Этот класс отвечает за перемещения и повороты игрока на компьютере
+/// </summary>
 public class MoverDesktop : BaseMover
 {
     [SerializeField] Transform desktopCamera;

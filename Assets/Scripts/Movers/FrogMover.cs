@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Этот класс отвечает за перемещение лягушки
+/// </summary>
 public class FrogMover : BaseMover
 {
     private Rigidbody rb;
@@ -21,7 +24,6 @@ public class FrogMover : BaseMover
 
     bool canBite = false;
 
-    // Use this for initialization
     public override void Start()
     {
         base.Start();
@@ -30,11 +32,6 @@ public class FrogMover : BaseMover
         nextMove = Time.time;
         nextJump = Time.time;
         Physics.IgnoreCollision(this.GetComponent<Collider>(), transform.Find("FrogHead").GetComponent<Collider>());
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
     }
 
     public void JumpTowards()

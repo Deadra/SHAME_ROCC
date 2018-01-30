@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class DesktopInput : BaseInputManager
+/// <summary>
+/// В зависимости от ввода игрока этот класс вызывает функции управления игровым персонажем 
+/// </summary>
+public class DesktopInput : NetworkBehaviour
 {
     PlayerDesktop player;
     MoverDesktop mover;
@@ -17,9 +21,7 @@ public class DesktopInput : BaseInputManager
             return;
 
         if (Input.GetAxis("Mouse X") != 0)
-        {
             mover.Rotate(Input.GetAxis("Mouse X"));
-        }
 
         if (Input.GetAxis("Mouse Y") != 0)
             mover.TiltHead(Input.GetAxis("Mouse Y"));

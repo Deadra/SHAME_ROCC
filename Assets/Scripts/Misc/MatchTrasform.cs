@@ -6,15 +6,9 @@ public class MatchTrasform : MonoBehaviour {
 
     [SerializeField] Transform objectToMatch;
 
-    void Start()
-    {
-
-    }
-
     void Update () 
     {
-        this.transform.rotation = objectToMatch.transform.rotation;
-        this.transform.position = objectToMatch.transform.position;
-		
+        transform.rotation = objectToMatch.transform.rotation;
+        transform.position = objectToMatch.transform.position;
 	}
 }

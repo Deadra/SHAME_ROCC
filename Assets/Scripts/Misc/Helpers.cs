@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Класс, содержащий вспомогательные статические функции
+/// Класс, содержащий вспомогательные функции
 /// </summary>
 public static class Helpers
 {
@@ -20,7 +20,7 @@ public static class Helpers
         var netManager = GameObject.FindObjectOfType<NetManager>();
         if (netManager == null)
         {
-            Debug.LogWarning("Helpers: Can't find NetManager on the scene");
+            Debug.LogWarning("Helpers.IsPlayerInTheArea: Can't find NetManager on the scene");
             return false;
         }
 
@@ -50,7 +50,8 @@ public static class Helpers
     {
         if (!gameObject.transform.Find(transformPath))
         {
-            Debug.LogErrorFormat("Can't find transform path \"{0}\" at game object {1}", transformPath, gameObject.name);
+            Debug.LogErrorFormat("Helpers.SetLayerRecursively: Can't find transform path \"{0}\" at game object {1}", 
+                                 transformPath, gameObject.name);
             return;
         }
 
@@ -62,13 +63,15 @@ public static class Helpers
     {
         if (!gameObject.transform.Find(transformPath))
         {
-            Debug.LogErrorFormat("Can't find transform path \"{0}\" at game object {1}", transformPath, gameObject.name);
+            Debug.LogErrorFormat("Helpers.DefineMainCamera: Can't find transform path \"{0}\" at game object {1}", 
+                                 transformPath, gameObject.name);
             return;
         }
 
         if (!gameObject.transform.Find(transformPath).GetComponentInChildren<Camera>())
         {
-            Debug.LogErrorFormat("Game object {0} has no Camera component at transform path \"{1}\"", gameObject.name, transformPath);
+            Debug.LogErrorFormat("Helpers.DefineMainCamera: Game object {0} has no Camera component at transform path \"{1}\"", 
+                                 gameObject.name, transformPath);
             return;
         }
 

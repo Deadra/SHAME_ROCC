@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Класс для игрока на XD Motion.
+/// </summary>
 public class XDPlayer : BasePlayer
 {
     public override void Start()

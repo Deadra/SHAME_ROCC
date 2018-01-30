@@ -6,9 +6,7 @@ public delegate void EnemyDeathHandler(GameObject enemy);
 
 public class EventHub : NetworkBehaviour
 {
-    //[SyncEvent]
     public event EntityDeathHandler EventEntityDeath;
-   // [SyncEvent]
     public event EnemyDeathHandler  EventEnemyDeath;
 
     public void SignalEntityDeath(BaseEntity killedEntity)

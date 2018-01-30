@@ -2,12 +2,14 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Класс для игрока на компьютере. Обладает оружием и может его менять.
+/// </summary>
 public class PlayerDesktop : BasePlayer
 {
     [SerializeField] private List<BaseWeapon> weapons;
     [SerializeField] private Transform weaponSlot;
     [HideInInspector] public Transform weaponSlotTransform { get {return weaponSlot.transform;} }
-    //private DesktopUIManager uiManager;
 
     private BaseWeapon currentWeapon;
     private int currentWeaponIndex = 0;
@@ -32,11 +34,6 @@ public class PlayerDesktop : BasePlayer
     {
         if (currentWeapon != null)
             currentWeapon.Fire();
-    }
-
-    protected override void OnDamageTaken(float value)
-    {
-        //uiManager.SetShownHealth(currentHealth);
     }
 
     public void SwitchGun()

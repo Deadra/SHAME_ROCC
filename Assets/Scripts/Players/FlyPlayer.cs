@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.Utility;
 
+/// <summary>
+/// Класс для игрока на Fly Motion. Может возрождаться на стартовой позиции по нажатию кнопки
+/// </summary>
 public class FlyPlayer : BasePlayer
 {
     public override void Start()

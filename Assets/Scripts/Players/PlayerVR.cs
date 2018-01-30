@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Класс для игрока на HTC Vive. 
+/// Обладает всеми возможностями класса игрока на компьютере
+/// </summary>
 public class PlayerVR : PlayerDesktop {
 
     [SerializeField] Transform cameraRig;
@@ -21,6 +25,7 @@ public class PlayerVR : PlayerDesktop {
             gameObject.SetLayerRecursively("Avatar", Layer.OwnedBody);
             gameObject.SetLayerRecursively("[CameraRig]/Camera (head)/Camera (eye)/Canvas", Layer.OwnedUI);
         }
+
         base.Start();
         startingPosition = cameraRig.transform.position;
         leftHand = transform.Find("Avatar/HandBase/HandL").gameObject;
