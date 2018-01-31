@@ -26,11 +26,6 @@ public class SceneManager : NetworkBehaviour
     [SerializeField]
     List<pair> spawnPoints;
 
-   // [Header("Enemies Spawn Points")]
-    
-    //[SerializeField] List<Transform> spawnPoints;
-    //[SerializeField] List<int>       enemyCount;
-
     private Dictionary<GameObject, Transform> spawnedEnemies;
     private List<GameObject> enemyPrefabs;
 
@@ -52,6 +47,14 @@ public class SceneManager : NetworkBehaviour
         spawnedEnemies  = new Dictionary<GameObject, Transform>();
 
         EHub.EventEnemyDeath += new EnemyDeathHandler(EntityDeathDetected);
+    }
+
+    public void OnDestroy()
+    {
+        StopAllCoroutines();
+
+        if (!IAmUseless)
+            instance = null;
     }
 
     void Start()
@@ -82,14 +85,6 @@ public class SceneManager : NetworkBehaviour
         enemy.GetComponent<FrogAI>().patrolingCenter = spawnPoint;
         NetworkServer.Spawn(enemy);
         spawnedEnemies.Add(enemy, spawnPoint);
-    }
-
-    public void OnDestroy()
-    {
-        StopAllCoroutines();
-
-        if (!IAmUseless)
-            instance = null;
     }
     
     /// <summary>

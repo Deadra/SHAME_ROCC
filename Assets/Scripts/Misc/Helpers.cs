@@ -40,6 +40,19 @@ public static class Helpers
     {
         return gameObject.transform.root.gameObject.GetComponentInChildren<T>();
     }
+
+    public static T GetComponent<T>(this GameObject gameObject, string transformPath)
+    {
+        if (!gameObject.transform.Find(transformPath))
+        {
+            Debug.LogErrorFormat("Helpers.GetComponent: Can't find transform path \"{0}\" at game object {1}",
+                                 transformPath, gameObject.name);
+            return default(T);
+        }
+
+        return gameObject.transform.Find(transformPath).GetComponent<T>();
+    }
+
     public static void EnableAllComponentsInRoot<T>(this GameObject gameObject, bool enabled = true) where T : Behaviour
     {
         foreach (var component in gameObject.transform.root.gameObject.GetComponentsInChildren<T>())

@@ -4,6 +4,15 @@ using UnityEngine.Networking;
 public delegate void EntityDeathHandler(BaseEntity killedUnit);
 public delegate void EnemyDeathHandler(GameObject enemy);
 
+/// <summary>
+/// Концентратор событий. При возникновении события, о котором ему сообщает некий объект,
+/// он рассылает уведомление о событии всем желающим. 
+/// </summary>
+/// <remarks>
+/// Пример работы: в момент смерти лягухи она вызывает SignalEnemyDeath, а поскольку
+/// SceneManager подписан на событие EventEnemyDeath, он получает уведомление о смерти лягухи
+/// и запускает её респаун.
+/// </remarks>
 public class EventHub : NetworkBehaviour
 {
     public event EntityDeathHandler EventEntityDeath;
@@ -11,7 +20,6 @@ public class EventHub : NetworkBehaviour
 
     public void SignalEntityDeath(BaseEntity killedEntity)
     {
-        Debug.Log("EventHub: Signaling units death");
         if (EventEntityDeath != null && isServer)
         {
             EventEntityDeath(killedEntity);
@@ -19,7 +27,6 @@ public class EventHub : NetworkBehaviour
     }
     public void SignalEnemyDeath(GameObject enemy)
     {
-        Debug.Log("EventHub: Signaling enemy death");
         if (EventEnemyDeath != null && isServer)
         {
             EventEnemyDeath(enemy);

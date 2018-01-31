@@ -165,7 +165,7 @@ MonoBehaviour:
   ricochet: 1
   ricochetAngle: 10
   minimumRayCastLength: 1
-  damage: 3
+  damage: 5
   hitParticle: {fileID: 198727360672484034, guid: b7b60ff79e922ca4dbd5f455379a7ee2,
     type: 2}
 --- !u!114 &114577147373815668

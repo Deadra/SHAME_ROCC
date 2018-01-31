@@ -31,7 +31,7 @@ public class FrogMover : BaseMover
         rb = this.GetComponent<Rigidbody>();
         nextMove = Time.time;
         nextJump = Time.time;
-        Physics.IgnoreCollision(this.GetComponent<Collider>(), transform.Find("FrogHead").GetComponent<Collider>());
+        Physics.IgnoreCollision(this.GetComponent<Collider>(), gameObject.GetComponent<Collider>("FrogHead"));
     }
 
     public void JumpTowards()

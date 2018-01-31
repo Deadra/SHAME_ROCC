@@ -10,7 +10,7 @@ public class Frog : BaseEntity
         base.Start();
 
         if (!isServer)
-            transform.Find("Trigger").GetComponent<Collider>().enabled = false;
+            gameObject.GetComponent<Collider>("Trigger").enabled = false;
     }
 
     protected override void RpcOnDeath()
