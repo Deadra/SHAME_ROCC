@@ -12,8 +12,8 @@ public class XDPlayer : BasePlayer
         if (isLocalPlayer)
         {
             gameObject.DefineMainCamera("Camera");
-
             gameObject.SetLayerRecursively("Camera/Canvas", Layer.OwnedUI);
+            gameObject.GetComponent<Collider>("BottomCollider").enabled = false;
         }
     }
 }
