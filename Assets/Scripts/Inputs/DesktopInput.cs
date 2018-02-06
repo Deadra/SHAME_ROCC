@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 /// <summary>
 /// В зависимости от ввода игрока этот класс вызывает функции управления игровым персонажем 
 /// </summary>
+[RequireComponent(typeof(PlayerDesktop), typeof(MoverDesktop))]
 public class DesktopInput : NetworkBehaviour
 {
     PlayerDesktop player;
@@ -29,13 +30,13 @@ public class DesktopInput : NetworkBehaviour
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             mover.Strafe(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetButton("Jump"))
             mover.Jump();
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetButton("Fire1"))
             player.FireGun();
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetButtonDown("Fire3"))
             player.SwitchGun();
     }
 }

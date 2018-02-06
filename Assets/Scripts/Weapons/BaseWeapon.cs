@@ -12,8 +12,8 @@ public class BaseWeapon : NetworkBehaviour
     public BaseEntity Holder { get; set; }
     public TeamList Team { get; set; }
 
-    [HideInInspector] [SyncVar]
-    public NetworkInstanceId parentNetID;
+    [HideInInspector] [SyncVar] public NetworkInstanceId parentNetID;
+    [HideInInspector] [SyncVar] public int slotIndex;
 
     /// <summary>
     /// В момент появления пушки на клиенте ищет предка по netID и становится его дитём.
@@ -23,8 +23,8 @@ public class BaseWeapon : NetworkBehaviour
     {
          GameObject parentObject = ClientScene.FindLocalObject(parentNetID);
 
-        if (parentObject && parentObject.GetComponentInChildren<PlayerDesktop>())
-            transform.SetParent(parentObject.GetComponentInChildren<PlayerDesktop>().weaponSlotTransform);
+        if (parentObject && parentObject.GetComponentInChildren<BasePlayer>())
+            transform.SetParent(parentObject.GetComponentInChildren<BasePlayer>().getWeaponSlot(slotIndex));
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
