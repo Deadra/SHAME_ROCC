@@ -26,6 +26,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1098805940727024
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4411418979067292}
+  m_Layer: 0
+  m_Name: GunSlotLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1108186252705628
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +130,6 @@ GameObject:
   - component: {fileID: 4324169023787440}
   - component: {fileID: 54324522678423324}
   - component: {fileID: 114311289658100484}
-  - component: {fileID: 114903474869537666}
   - component: {fileID: 114880094469021052}
   - component: {fileID: 114442748580158506}
   - component: {fileID: 114402665518998184}
@@ -123,8 +137,10 @@ GameObject:
   - component: {fileID: 114493025811243524}
   - component: {fileID: 114194845444314406}
   - component: {fileID: 114174070346686540}
+  - component: {fileID: 114566280878742808}
   - component: {fileID: 114057575270799342}
   - component: {fileID: 114283304420443480}
+  - component: {fileID: 114279494499739930}
   m_Layer: 0
   m_Name: PlayerBuggy
   m_TagString: Player
@@ -241,6 +257,21 @@ GameObject:
   - component: {fileID: 114541925050067950}
   m_Layer: 5
   m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1372016925427334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4798920847665962}
+  m_Layer: 0
+  m_Name: GunSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,6 +531,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1795326890148748
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4228620217990542}
+  m_Layer: 0
+  m_Name: GunSlotRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1842414162479736
 GameObject:
   m_ObjectHideFlags: 1
@@ -681,6 +727,19 @@ Transform:
   m_Father: {fileID: 4324169023787440}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &4228620217990542
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795326890148748}
+  m_LocalRotation: {x: 0.579228, y: 0.45451957, z: 0.40557975, w: 0.54167515}
+  m_LocalPosition: {x: -0.439, y: 0.5519999, z: -0.7659993}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 4798920847665962}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 15, y: 95, z: 90}
 --- !u!4 &4271292495686624
 Transform:
   m_ObjectHideFlags: 1
@@ -751,6 +810,7 @@ Transform:
   - {fileID: 4779450015022430}
   - {fileID: 4643521041781590}
   - {fileID: 4893717431021190}
+  - {fileID: 4798920847665962}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -810,6 +870,19 @@ Transform:
   m_Father: {fileID: 4842561931220076}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!4 &4411418979067292
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098805940727024}
+  m_LocalRotation: {x: 0.579228, y: -0.45451957, z: -0.40557975, w: 0.54167515}
+  m_LocalPosition: {x: 0.41, y: 0.552, z: -0.766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4798920847665962}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 15, y: -95, z: -90}
 --- !u!4 &4495312882530376
 Transform:
   m_ObjectHideFlags: 1
@@ -889,6 +962,21 @@ Transform:
   - {fileID: 224480110224351934}
   m_Father: {fileID: 4324169023787440}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4798920847665962
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372016925427334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4411418979067292}
+  - {fileID: 4228620217990542}
+  m_Father: {fileID: 4324169023787440}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4842561931220076
 Transform:
@@ -1968,6 +2056,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   maxHealth: 500
+  weapons:
+  - {fileID: 114918664034952024, guid: 94a61fb3ff4c5334d81a899f96e5713d, type: 2}
+  weaponSlots:
+  - {fileID: 4411418979067292}
+  - {fileID: 4228620217990542}
   healthBar: {fileID: 114582270718621424}
   minimapCamera: {fileID: 1321823961148956}
 --- !u!114 &114194845444314406
@@ -2001,6 +2094,17 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114279494499739930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191266563680930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfe5a5c0ca9ab14496dc7a57287205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114283304420443480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2236,6 +2340,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114566280878742808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191266563680930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726cc5bc4da708a43924453e3428c90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114582270718621424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2320,17 +2435,6 @@ MonoBehaviour:
   maxRolloffDistance: 500
   dopplerLevel: 1
   useDoppler: 1
---- !u!114 &114903474869537666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1191266563680930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!146 &146531756384164470
 WheelCollider:
   m_ObjectHideFlags: 1
