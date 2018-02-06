@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
-/// Класс для игрока на компьютере. Обладает оружием и может его менять.
+/// Класс для игрока на компьютере.
 /// </summary>
 public class PlayerDesktop : BasePlayer
 {

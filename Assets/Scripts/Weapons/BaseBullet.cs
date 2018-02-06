@@ -27,7 +27,6 @@ public class BaseBullet : NetworkBehaviour
         rb.AddForce(transform.forward * launchForce);
     }
 
-    /// <param name="col"></param>
     void OnCollisionEnter(Collision col)
     {
         DestroyBullet(col);

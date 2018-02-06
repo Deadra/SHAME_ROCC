@@ -18,4 +18,26 @@ public class XDPlayer : BasePlayer
             spawnGunsInAllSlots();
         }
     }
+    /// <param name="col"></param>
+    void OnTriggerEnter(Collider col)
+    {
+        var entity = col.gameObject.GetComponentInRootAndChildren<BaseEntity>();
+
+        if (entity != null)
+            CauseDamage(entity);
+    }
+
+    /// <summary>
+    /// Нанесение повреждений при столкновении
+    /// </summary>
+    void CauseDamage(BaseEntity entity)
+    {
+        if (entity.Team == this.Team && !Settings.friendlyFire)
+            return;
+
+        float relativeVelocity = System.Math.Abs(Vector3.Dot(entity.gameObject.GetComponentInRoot<Rigidbody>().velocity,
+                                                             this.gameObject.GetComponentInRoot<Rigidbody>().velocity));
+        if (relativeVelocity > 5)
+            entity.TakeDamage(relativeVelocity * 20, this);
+    }
 }

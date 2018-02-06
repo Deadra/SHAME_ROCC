@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Основной класс для игровых персонажей. В момент сметри возрождается на стартовой позиции,
-/// обладает интерфейсом: миникартой и полосой здоровья
+/// обладает интерфейсом: миникартой и полосой здоровья. Обладает оружием и может его менять.
 /// </summary>
 [RequireComponent(typeof(SpawnManager))]
 public class BasePlayer : BaseEntity
