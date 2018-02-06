@@ -29,12 +29,12 @@ public class ExplosiveBullet : BaseBullet
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)
         {
-            Rigidbody rb = hit.gameObject.GetComponentInRoot<Rigidbody>();
+            Rigidbody rb = hit.gameObject.GetComponentInParent<Rigidbody>();
 
             if (rb != null && rb.tag != "Projectile")
                 rb.AddExplosionForce(power, transform.position, radius, 3.0F);
 
-            BaseEntity entityHit = hit.gameObject.GetComponentInRoot<BaseEntity>();
+            BaseEntity entityHit = hit.gameObject.GetComponentInParent<BaseEntity>();
 
             if (entityHit != null && (Settings.friendlyFire || entityHit.Team != Team))
             {

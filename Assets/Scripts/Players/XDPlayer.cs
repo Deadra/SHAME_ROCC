@@ -21,7 +21,7 @@ public class XDPlayer : BasePlayer
     /// <param name="col"></param>
     void OnTriggerEnter(Collider col)
     {
-        var entity = col.gameObject.GetComponentInRootAndChildren<BaseEntity>();
+        var entity = col.gameObject.GetComponentInParentAndChildren<BaseEntity>();
 
         if (entity != null)
             CauseDamage(entity);
@@ -35,8 +35,8 @@ public class XDPlayer : BasePlayer
         if (entity.Team == this.Team && !Settings.friendlyFire)
             return;
 
-        float relativeVelocity = System.Math.Abs(Vector3.Dot(entity.gameObject.GetComponentInRoot<Rigidbody>().velocity,
-                                                             this.gameObject.GetComponentInRoot<Rigidbody>().velocity));
+        float relativeVelocity = System.Math.Abs(Vector3.Dot(entity.gameObject.GetComponentInParent<Rigidbody>().velocity,
+                                                             this.gameObject.GetComponentInParent<Rigidbody>().velocity));
         if (relativeVelocity > 5)
             entity.TakeDamage(relativeVelocity * 20, this);
     }
