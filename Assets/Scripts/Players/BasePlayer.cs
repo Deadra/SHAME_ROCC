@@ -7,6 +7,10 @@ using System.Collections.Generic;
 /// Основной класс для игровых персонажей. В момент сметри возрождается на стартовой позиции,
 /// обладает интерфейсом: миникартой и полосой здоровья. Обладает оружием и может его менять.
 /// </summary>
+/// <remarks>
+/// В BasePlayer нет прямой зависимости от SpawnManager, однако он нужен для правильного 
+/// функционирования FireArm, которое может спаунить этот класс
+/// </remarks>
 [RequireComponent(typeof(SpawnManager))]
 public class BasePlayer : BaseEntity
 {

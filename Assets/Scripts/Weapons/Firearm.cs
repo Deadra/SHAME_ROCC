@@ -5,6 +5,10 @@ using UnityEngine.UI;
 /// <summary>
 /// Оружие, стреляющее пулями
 /// </summary>
+/// <remarks>
+/// Чтобы пули можно было спаунить, оружию нужен SpawnManager,
+/// прикреплённый к префабу игрока
+/// </remarks>
 public class Firearm : BaseWeapon
 {
     [SerializeField] public Transform bulletSpawnPoint;
@@ -15,7 +19,7 @@ public class Firearm : BaseWeapon
     public override void Start()
     {
         base.Start();
-        Team = this.transform.root.GetComponentInChildren<BaseEntity>().Team;
+        Team = GetComponentInParent<BaseEntity>().Team;
         if (ammoCounter != null)
             ammoCounter.text = string.Format("{0}", ammo);
     }
@@ -25,7 +29,7 @@ public class Firearm : BaseWeapon
     /// </summary>
     protected override void OnPrimaryFire()
     {
-        var spawnManager = transform.root.GetComponentInChildren<SpawnManager>();
+        var spawnManager = GetComponentInParent<SpawnManager>();
         spawnManager.CmdSpawnBullet(this.gameObject);
         
         if (ammoCounter != null)

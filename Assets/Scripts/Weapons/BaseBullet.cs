@@ -5,6 +5,12 @@ using UnityEngine.Networking;
 /// Базовый класс для пули. Это просто летящий объект, 
 /// при столкновении с чем-то существенным вызывающий OnHit()
 /// </summary>
+/// <remarks>
+/// В BaseBullet нет зависимости от DontGoThroughThings, но 
+/// если не добавить этот скрипт к пуле, на высоких скоростях 
+/// она будут проходить сквозь стены.
+/// </remarks>
+[RequireComponent(typeof(DontGoThroughThings))]
 public class BaseBullet : NetworkBehaviour
 {
     private Rigidbody rb;
