@@ -17,7 +17,7 @@ public enum PlatformType
     XDMotion    = 0,
     FlyMotion   = 1,
     FiveDMotion = 2,
-
+//----------------------
     Desktop     = 3,
     HTCVive     = 4
 };

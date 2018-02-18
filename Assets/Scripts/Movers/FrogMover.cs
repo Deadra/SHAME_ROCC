@@ -127,7 +127,7 @@ public class FrogMover : BaseMover
         if (canBite)
         {
             //Debug.Log(string.Format("Can bite! Collided with {0}", col.gameObject));
-            BaseEntity enemy = col.collider.gameObject.GetComponent<BaseEntity>();
+            BaseEntity enemy = col.collider.gameObject.GetComponentInParent<BaseEntity>();
             //Debug.Log("pam");
             if (enemy != null && enemy.Team != this.GetComponent<BaseEntity>().Team)
             {

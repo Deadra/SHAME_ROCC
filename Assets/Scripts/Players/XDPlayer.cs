@@ -14,6 +14,30 @@ public class XDPlayer : BasePlayer
             gameObject.DefineMainCamera("Camera");
             gameObject.SetLayerRecursively("Camera/Canvas", Layer.OwnedUI);
             gameObject.GetComponent<Collider>("BottomCollider").enabled = false;
+
+            spawnGunsInAllSlots();
         }
+    }
+    /// <param name="col"></param>
+    void OnTriggerEnter(Collider col)
+    {
+        var entity = col.gameObject.GetComponentInParentAndChildren<BaseEntity>();
+
+        if (entity != null)
+            CauseDamage(entity);
+    }
+
+    /// <summary>
+    /// Нанесение повреждений при столкновении
+    /// </summary>
+    void CauseDamage(BaseEntity entity)
+    {
+        if (entity.Team == this.Team && !Settings.friendlyFire)
+            return;
+
+        float relativeVelocity = System.Math.Abs(Vector3.Dot(entity.gameObject.GetComponentInParent<Rigidbody>().velocity,
+                                                             this.gameObject.GetComponentInParent<Rigidbody>().velocity));
+        if (relativeVelocity > 5)
+            entity.TakeDamage(relativeVelocity * 20, this);
     }
 }

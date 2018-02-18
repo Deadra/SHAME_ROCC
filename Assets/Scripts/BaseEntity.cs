@@ -43,21 +43,21 @@ public class BaseEntity : NetworkBehaviour
     {
         if (!isLocalPlayer)
         {
-            gameObject.EnableAllComponentsInRoot<Camera>(false);
-            gameObject.EnableAllComponentsInRoot<AudioListener>(false);
-            gameObject.EnableAllComponentsInRoot<PlatformDataSender>(false);
-            gameObject.EnableAllComponentsInRoot<SteamVR_RenderModel>(false);
-            gameObject.EnableAllComponentsInRoot<SteamVR_Camera>(false);
-            gameObject.EnableAllComponentsInRoot<CarController>(false);
-            gameObject.EnableAllComponentsInRoot<CarUserControl>(false);
-            gameObject.EnableAllComponentsInRoot<AeroplaneController>(false);
-            gameObject.EnableAllComponentsInRoot<AeroplaneUserControl4Axis>(false);
-            gameObject.EnableAllComponentsInRoot<AeroplaneControlSurfaceAnimator>(false);
+            gameObject.EnableComponentsInParentAndChildren<Camera>(false);
+            gameObject.EnableComponentsInParentAndChildren<AudioListener>(false);
+            gameObject.EnableComponentsInParentAndChildren<PlatformDataSender>(false);
+            gameObject.EnableComponentsInParentAndChildren<SteamVR_RenderModel>(false);
+            gameObject.EnableComponentsInParentAndChildren<SteamVR_Camera>(false);
+            gameObject.EnableComponentsInParentAndChildren<CarController>(false);
+            gameObject.EnableComponentsInParentAndChildren<CarUserControl>(false);
+            gameObject.EnableComponentsInParentAndChildren<AeroplaneController>(false);
+            gameObject.EnableComponentsInParentAndChildren<AeroplaneUserControl4Axis>(false);
+            gameObject.EnableComponentsInParentAndChildren<AeroplaneControlSurfaceAnimator>(false);
         }
 
         if (!isServer)
         {
-            gameObject.EnableAllComponentsInRoot<BaseAI>(false);
+            gameObject.EnableComponentsInParentAndChildren<BaseAI>(false);
         }
     }
 

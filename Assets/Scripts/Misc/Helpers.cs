@@ -31,12 +31,7 @@ public static class Helpers
         return false;
     }
 
-    public static T GetComponentInRoot<T>(this GameObject gameObject)
-    {
-        return gameObject.transform.root.gameObject.GetComponent<T>();
-    }
-
-    public static T GetComponentInRootAndChildren<T>(this GameObject gameObject)
+    public static T GetComponentInParentAndChildren<T>(this GameObject gameObject)
     {
         return gameObject.transform.root.gameObject.GetComponentInChildren<T>();
     }
@@ -53,7 +48,7 @@ public static class Helpers
         return gameObject.transform.Find(transformPath).GetComponent<T>();
     }
 
-    public static void EnableAllComponentsInRoot<T>(this GameObject gameObject, bool enabled = true) where T : Behaviour
+    public static void EnableComponentsInParentAndChildren<T>(this GameObject gameObject, bool enabled = true) where T : Behaviour
     {
         foreach (var component in gameObject.transform.root.gameObject.GetComponentsInChildren<T>())
             component.enabled = enabled;

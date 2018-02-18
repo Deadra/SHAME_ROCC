@@ -2677,6 +2677,7 @@ GameObject:
   - component: {fileID: 114530659434168340}
   - component: {fileID: 114886596509510154}
   - component: {fileID: 114497780458484716}
+  - component: {fileID: 114547566035658074}
   m_Layer: 8
   m_Name: PlayerAircraft
   m_TagString: Player
@@ -12483,6 +12484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   maxHealth: 700
+  weapons: []
+  weaponSlots: []
   healthBar: {fileID: 114097349804550658}
   minimapCamera: {fileID: 1775421427001354}
 --- !u!114 &114326177428972710
@@ -12576,6 +12579,17 @@ MonoBehaviour:
     i15: 170
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114547566035658074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810640489198592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfe5a5c0ca9ab14496dc7a57287205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114631415966988506
 MonoBehaviour:
   m_ObjectHideFlags: 1

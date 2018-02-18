@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 114656326173563918}
   - component: {fileID: 114329149481857590}
   - component: {fileID: 95853783272214148}
+  - component: {fileID: 114981903612203576}
   m_Layer: 0
   m_Name: PlayerTram
   m_TagString: Untagged
@@ -1075,6 +1076,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   maxHealth: 9999999
+  weapons: []
+  weaponSlots: []
   healthBar: {fileID: 114950959818377330}
   minimapCamera: {fileID: 0}
 --- !u!114 &114343164236398364
@@ -1260,6 +1263,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114981903612203576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221278671109626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfe5a5c0ca9ab14496dc7a57287205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222315509873275700
 CanvasRenderer:
   m_ObjectHideFlags: 1
