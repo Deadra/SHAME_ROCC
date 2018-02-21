@@ -45,6 +45,9 @@ public class SpawnManager : NetworkBehaviour
     [ClientRpc]
     private void RpcSpawnBullet(GameObject caller, GameObject bullet)
     {
+        if(caller == null || bullet == null)
+            return;
+
         var weapon = caller.GetComponent<Firearm>();
 
         weapon.SpawnBulletSetup(bullet);

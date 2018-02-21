@@ -47,6 +47,12 @@ public class Firearm : BaseWeapon
     /// <remarks>Эту функцию вызывает SpawnManager</remarks>
     public void SpawnBulletSetup(GameObject bullet)
     {
+        if (bullet == null)
+        {
+            Debug.LogErrorFormat("Firearm.SpawnBulletSetup: got null object at {0}", gameObject.name);
+            return;
+        }
+
         bullet.GetComponent<BaseBullet>().Team = Team;
         bullet.GetComponent<BaseBullet>().Holder = Holder;
         bullet.transform.position = bulletSpawnPoint.position;

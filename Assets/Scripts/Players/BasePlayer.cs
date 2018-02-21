@@ -16,6 +16,8 @@ public class BasePlayer : BaseEntity
 {
     [SerializeField] private List<BaseWeapon> weapons;
     private int currentWeaponIndex = 0;
+    bool fireAllowed = true;
+    bool switchAllowed = true;
     [SerializeField] private List<Transform> weaponSlots;
     private Dictionary<Transform, BaseWeapon> currentWeapons;
 
@@ -64,12 +66,18 @@ public class BasePlayer : BaseEntity
 
     public void FireGun()
     {
+        if (!fireAllowed)
+            return;
+
         foreach(var currentWeapon in currentWeapons)
             currentWeapon.Value.Fire();
     }
 
     public void SwitchGun()
     {
+        if (!switchAllowed)
+            return;
+        switchAllowed = false;
         currentWeaponIndex += 1;
         currentWeaponIndex = currentWeaponIndex % weapons.Count;
 
@@ -85,8 +93,10 @@ public class BasePlayer : BaseEntity
         if (weaponIndex >= weapons.Count)
             return;
 
+        fireAllowed = false;
         for (int i = 0; i < weaponSlots.Count; i++)
             CmdSpawnGun(weaponIndex, i);
+
     }
 
     /// <summary>
@@ -120,6 +130,11 @@ public class BasePlayer : BaseEntity
         var slot = weaponSlots[slotIndex];
         currentWeapons[slot] = weapon.GetComponent<BaseWeapon>();
         SpawnGunSetup(weapon.GetComponent<BaseWeapon>());
+        if(isLocalPlayer)
+        {
+            fireAllowed = true;
+            switchAllowed = true;
+        }
     }
 
     /// <summary>
