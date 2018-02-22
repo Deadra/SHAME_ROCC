@@ -18,7 +18,7 @@ public class ExplosiveBullet : BaseBullet
     protected float baseDamage = 20.0F;
 
     [SerializeField]
-    protected ParticleSystem ps;
+    protected ParticleSystem explosion;
 
     /// <summary>
     /// Обработчик столкновения
@@ -41,13 +41,15 @@ public class ExplosiveBullet : BaseBullet
                 Vector3 direction = rb.transform.position - transform.position;
                 float amountOfDamage = baseDamage - baseDamage * (direction.magnitude / radius);
                 entityHit.TakeDamage(amountOfDamage, Holder);
-                //Debug.Log(string.Format("Entity {0} took {1} damage.", rb.gameObject, amountOfDamage));
             }
 
         }
-        ParticleSystem particle = Instantiate(ps, explosionPos, Quaternion.Euler(Vector3.up)); //Vector3.forward
-       // Debug.LogFormat("particle: {0}, ps: {1}, explosionPos: {2}", particle, ps, explosionPos);
-        particle.transform.Rotate(new Vector3(-90, 0, 0));
-        particle.Play();
+
+        if (explosion != null)
+        {
+            ParticleSystem particle = Instantiate(explosion, explosionPos, Quaternion.Euler(Vector3.up)); 
+            particle.transform.Rotate(new Vector3(-90, 0, 0));
+            particle.Play();
+        }
     }
 }

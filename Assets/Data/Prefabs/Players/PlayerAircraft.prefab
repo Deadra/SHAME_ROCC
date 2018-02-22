@@ -2669,11 +2669,11 @@ GameObject:
   - component: {fileID: 114115378411944244}
   - component: {fileID: 114794431587209240}
   - component: {fileID: 114078227452599390}
-  - component: {fileID: 114631415966988506}
   - component: {fileID: 114326177428972710}
   - component: {fileID: 95576460416780314}
   - component: {fileID: 114116713098305480}
   - component: {fileID: 114306285645578830}
+  - component: {fileID: 114629698977369806}
   - component: {fileID: 114530659434168340}
   - component: {fileID: 114886596509510154}
   - component: {fileID: 114497780458484716}
@@ -12590,7 +12590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe5a5c0ca9ab14496dc7a57287205c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114631415966988506
+--- !u!114 &114629698977369806
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -12598,11 +12598,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810640489198592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b821cfe117414d14ea5ad71c5b3c503f, type: 3}
+  m_Script: {fileID: 11500000, guid: fac824393153be142bb08d078a1d2f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRollAngle: 80
-  maxPitchAngle: 80
 --- !u!114 &114718680517466978
 MonoBehaviour:
   m_ObjectHideFlags: 1

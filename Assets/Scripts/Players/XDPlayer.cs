@@ -3,6 +3,11 @@
 /// <summary>
 /// Класс для игрока на XD Motion.
 /// </summary>
+/// <remarks>
+/// В XDPlayer нет прямой зависимости от PlatformDataSender, однако он нужен
+/// для передачи данных на Simserver
+/// </remarks>
+[RequireComponent(typeof(PlatformDataSender))]
 public class XDPlayer : BasePlayer
 {
     public override void Start()

@@ -18,6 +18,7 @@ public class StandartBullet : BaseBullet
         if (entityHit != null && (Settings.friendlyFire || entityHit.Team != Team))
             entityHit.TakeDamage(damage, Holder);
 
-        Instantiate(hitParticle, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+        if (hitParticle != null)
+            Instantiate(hitParticle, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
     }
 }

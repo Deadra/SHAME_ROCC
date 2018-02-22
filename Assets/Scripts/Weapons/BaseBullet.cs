@@ -8,9 +8,11 @@ using UnityEngine.Networking;
 /// <remarks>
 /// В BaseBullet нет зависимости от DontGoThroughThings, но 
 /// если не добавить этот скрипт к пуле, на высоких скоростях 
-/// она будут проходить сквозь стены.
+/// она будет проходить сквозь стены. Также нет зависимостей и от
+/// DestroyAtferTime, однако пуля должна исчезать из игровой сцены, 
+/// если даже она никуда не попала
 /// </remarks>
-[RequireComponent(typeof(DontGoThroughThings))]
+[RequireComponent(typeof(DontGoThroughThings), typeof(DestroyAtferTime))]
 public class BaseBullet : NetworkBehaviour
 {
     private Rigidbody rb;

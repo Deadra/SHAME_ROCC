@@ -20,6 +20,10 @@ public class Firearm : BaseWeapon
     {
         base.Start();
         Team = GetComponentInParent<BaseEntity>().Team;
+
+        if (bulletSpawnPoint == null)
+            Debug.LogErrorFormat("BaseWeapon: no bulletSpawnPoint at {0}", gameObject.name);
+
         if (ammoCounter != null)
             ammoCounter.text = string.Format("{0}", ammo);
     }
@@ -64,6 +68,7 @@ public class Firearm : BaseWeapon
             Physics.IgnoreCollision(col, bullet.GetComponent<Collider>());
         }
 
-        muzzleFlashParticle.Play();
+        if (muzzleFlashParticle != null)
+            muzzleFlashParticle.Play();
     }
 }
