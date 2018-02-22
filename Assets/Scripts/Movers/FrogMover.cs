@@ -38,7 +38,7 @@ public class FrogMover : BaseMover
     {
         if (Time.time > nextMove)
         {
-            nextMove = Time.time + moveTime;
+            nextMove = Time.time + moveTime + Random.Range(0, 0.5f);
             moveStarted = Time.time;
         }
         if (Time.time > moveStarted + 1 && Time.time < moveStarted + 2)
