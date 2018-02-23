@@ -11,7 +11,13 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Box515
-  externalObjects: {}
+    6400000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #225'
+    second: {fileID: 2100000, guid: 3ea293f88662fd94a96153f6692d7504, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,7 +49,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

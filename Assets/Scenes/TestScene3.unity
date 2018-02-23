@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 63095327}
-  m_IndirectSpecularColor: {r: 0.18177763, g: 0.22744806, b: 0.30742127, a: 1}
+  m_IndirectSpecularColor: {r: 0.18177721, g: 0.22744758, b: 0.3074205, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -12407,35 +12407,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7277178
+      value: 0.7277179
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.09886704
+      value: 0.098867044
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6773593
+      value: -0.67735934
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.042854402
+      value: 0.042854406
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.67082125
+      value: 0.6708213
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3620516
+      value: -0.36205164
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.61070037
+      value: 0.6107004
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.21438868
+      value: 0.2143887
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b06e73f2557254249880ee23a9f453f6, type: 3}
       propertyPath: m_LocalScale.x
@@ -60604,6 +60604,7 @@ GameObject:
   - component: {fileID: 2016616226}
   - component: {fileID: 2016616228}
   - component: {fileID: 2016616227}
+  - component: {fileID: 2016616229}
   m_Layer: 0
   m_Name: storage_building-1_A_LOD0
   m_TagString: Untagged
@@ -60666,6 +60667,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016616225}
+  m_Mesh: {fileID: 4300000, guid: 752540f04d42c864c82cf92823ad6fd1, type: 3}
+--- !u!64 &2016616229
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016616225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 752540f04d42c864c82cf92823ad6fd1, type: 3}
 --- !u!1 &2016714498
 GameObject:

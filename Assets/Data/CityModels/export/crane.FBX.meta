@@ -30,7 +30,26 @@ ModelImporter:
     4300002: Box317
     4300004: Line10
     4300006: Box322
-  externalObjects: {}
+    6400000: Box316
+    6400002: Box317
+    6400004: Box322
+    6400006: Line10
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass01
+    second: {fileID: 2100000, guid: 84071cf8a60c28c4192ff030a869d8cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_metal2
+    second: {fileID: 2100000, guid: f4c141c462a34244f82f8bd599ae2cb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Whitemet1
+    second: {fileID: 2100000, guid: 579e63032997b064cb7389dc8f07a44e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -62,7 +81,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

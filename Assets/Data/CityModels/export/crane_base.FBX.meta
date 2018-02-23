@@ -12,7 +12,18 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Box514
-  externalObjects: {}
+    6400000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_metal2
+    second: {fileID: 2100000, guid: f4c141c462a34244f82f8bd599ae2cb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #226'
+    second: {fileID: 2100000, guid: 579e63032997b064cb7389dc8f07a44e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +55,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

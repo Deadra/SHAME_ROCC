@@ -29,7 +29,21 @@ ModelImporter:
     4300002: Tube01
     4300004: Plane20
     4300006: Cylinder04
-  externalObjects: {}
+    6400000: Cylinder04
+    6400002: Plane04
+    6400004: Plane20
+    6400006: Tube01
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 05 - Default
+    second: {fileID: 2100000, guid: 7de61c93b3c3a894e9f09fa23727308e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey_metal2
+    second: {fileID: 2100000, guid: f4c141c462a34244f82f8bd599ae2cb0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -61,7 +75,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

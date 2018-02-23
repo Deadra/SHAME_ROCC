@@ -232,6 +232,51 @@ ModelImporter:
     4300084: Line139
     4300086: Box013
     4300088: Box014
+    6400000: Box013
+    6400002: Box014
+    6400004: Cylinder075
+    6400006: Cylinder076
+    6400008: Cylinder077
+    6400010: Cylinder080
+    6400012: Cylinder107
+    6400014: Cylinder108
+    6400016: Cylinder130
+    6400018: Cylinder131
+    6400020: Cylinder132
+    6400022: Line138
+    6400024: Line139
+    6400026: Line140
+    6400028: Line143
+    6400030: Line144
+    6400032: Line146
+    6400034: Line149
+    6400036: Line155
+    6400038: Line157
+    6400040: Line160
+    6400042: Line161
+    6400044: Line163
+    6400046: Line179
+    6400048: Line182
+    6400050: Line184
+    6400052: Line185
+    6400054: Line187
+    6400056: Line188
+    6400058: Line189
+    6400060: Line190
+    6400062: Line191
+    6400064: Line193
+    6400066: Line195
+    6400068: Line196
+    6400070: Line199
+    6400072: Line200
+    6400074: Shape013
+    6400076: Shape014
+    6400078: Torus008
+    6400080: Torus010
+    6400082: Torus012
+    6400084: Tube031
+    6400086: Tube039
+    6400088: Tube040
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -309,7 +354,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -320,6 +365,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
