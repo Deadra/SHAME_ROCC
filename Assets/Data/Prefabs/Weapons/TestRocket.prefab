@@ -203,7 +203,7 @@ MonoBehaviour:
   accelerationTime: 2
   ricochet: 0
   ricochetAngle: 5
-  minimumRayCastLength: 1
+  minimumRayCastLength: 2
   radius: 8
   power: 1000
   baseDamage: 90
@@ -276,7 +276,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1296632735036572}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
