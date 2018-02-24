@@ -3,7 +3,7 @@
 /// <summary>
 /// Этот класс отвечает за перемещения и повороты игрока на компьютере
 /// </summary>
-public class MoverDesktop : BaseMover
+public class DesktopController : BaseController
 {
     [SerializeField] Transform desktopCamera;
     [SerializeField] float minCameraPitch = -80;

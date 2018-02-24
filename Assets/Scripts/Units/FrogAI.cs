@@ -29,12 +29,12 @@ public class FrogAI : BaseAI
     [SerializeField] private float visionDistance = 30.0f;
 
     private BaseEntity currentTargetEntity;
-    private FrogMover mover;
+    private FrogController mover;
     private Vector3 lastKnownLocation;
 
     void Start()
     {
-        mover = this.GetComponent<FrogMover>();
+        mover = this.GetComponent<FrogController>();
         currentTarget = patrolingCenter.position;
         FindObjectOfType<EventHub>().EventEntityDeath += new EntityDeathHandler(EntityDeathDetected);
     }

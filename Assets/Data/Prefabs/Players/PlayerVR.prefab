@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 114891745987693316}
   - component: {fileID: 114774042514498078}
   m_Layer: 0
-  m_Name: VRPlayer
+  m_Name: PlayerVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,8 +1894,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   maxHealth: 100
-  healthBar: {fileID: 114440839141051644}
-  minimapCamera: {fileID: 1832305787895630}
   weapons:
   - {fileID: 114841809039375206, guid: 73feb25e602365543a461336ef8925a9, type: 2}
   - {fileID: 114918664034952024, guid: 94a61fb3ff4c5334d81a899f96e5713d, type: 2}
@@ -1903,7 +1901,9 @@ MonoBehaviour:
   - {fileID: 114106759330178294, guid: b475438c01b12554eacc6e3e94ab58b1, type: 2}
   - {fileID: 114207465696927178, guid: a280b4059a12f10489a027bf6fd7fc30, type: 2}
   - {fileID: 114253409343794898, guid: 4ef2b14528ed5d34982f76aede13207f, type: 2}
-  weaponSlot: {fileID: 4207121679056412}
+  weaponSlots: []
+  healthBar: {fileID: 114440839141051644}
+  minimapCamera: {fileID: 1832305787895630}
   cameraRig: {fileID: 4330245759839968}
   leftShoulder: {fileID: 4155091961839240}
   leftHandEnd: {fileID: 4217834893740968}

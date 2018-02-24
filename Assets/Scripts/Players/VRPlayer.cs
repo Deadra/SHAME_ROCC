@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 /// Класс для игрока на HTC Vive. 
 /// Обладает всеми возможностями класса игрока на компьютере
 /// </summary>
-public class PlayerVR : PlayerDesktop {
+public class VRPlayer : DesktopPlayer {
 
     [SerializeField] Transform cameraRig;
     [SerializeField] Transform leftShoulder;

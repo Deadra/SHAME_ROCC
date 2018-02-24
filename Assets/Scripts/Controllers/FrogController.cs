@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 /// <summary>
 /// Этот класс отвечает за перемещение лягушки
 /// </summary>
-public class FrogMover : BaseMover
+public class FrogController : BaseController
 {
     private Rigidbody rb;
     [SerializeField] float jumpForce;

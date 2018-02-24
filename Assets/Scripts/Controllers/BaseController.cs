@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-public class BaseMover : NetworkBehaviour
+public class BaseController : NetworkBehaviour
 {
     protected Rigidbody objectToMove;
 

@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 /// <summary>
 /// Класс для игрока на компьютере.
 /// </summary>
-public class PlayerDesktop : BasePlayer
+public class DesktopPlayer : BasePlayer
 {
     public override void Start()
     {

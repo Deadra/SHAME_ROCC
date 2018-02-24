@@ -4,16 +4,16 @@ using UnityEngine.Networking;
 /// <summary>
 /// В зависимости от ввода игрока этот класс вызывает функции управления игровым персонажем 
 /// </summary>
-[RequireComponent(typeof(PlayerDesktop), typeof(MoverDesktop))]
+[RequireComponent(typeof(DesktopPlayer), typeof(DesktopController))]
 public class DesktopInput : NetworkBehaviour
 {
-    PlayerDesktop player;
-    MoverDesktop mover;
+    DesktopPlayer player;
+    DesktopController mover;
 
     void Start()
     {
-        player = GetComponent<PlayerDesktop>();
-        mover = GetComponent<MoverDesktop>();
+        player = GetComponent<DesktopPlayer>();
+        mover = GetComponent<DesktopController>();
     }
 
     void FixedUpdate()

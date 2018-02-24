@@ -5,12 +5,12 @@ using UnityEngine;
 public class VRManager : VRInputIncapsulator
 {
     private VRTeleport teleport;
-    [SerializeField] private PlayerVR player;
+    [SerializeField] private VRPlayer player;
 
     void Start()
     {
         if (player == null)
-            player = GetComponent<PlayerVR>();
+            player = GetComponent<VRPlayer>();
         teleport = GetComponent<VRTeleport>();
         //player = GetComponentInChildren<PlayerDesktop>();
     }
