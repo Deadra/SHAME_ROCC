@@ -17,6 +17,7 @@ public class FiveDPlayer : BasePlayer
         if (isLocalPlayer)
         {
             gameObject.DefineMainCamera("Camera");
+            gameObject.SetLayerRecursively("Tram_Blue", Layer.OwnedBody);
         }
     }
 }
