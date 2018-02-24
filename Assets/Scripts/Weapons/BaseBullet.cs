@@ -83,13 +83,13 @@ public class BaseBullet : NetworkBehaviour
 
         if (Physics.Raycast(transform.position, raycastDirection, out hitInfo, raycastLength))
         {
-            //Debug.Log("Hit");
             if (hitted != null || !hitInfo.collider || hitInfo.collider.isTrigger)
                 return;
             
             if (hitInfo.collider.gameObject.GetComponent<BaseBullet>() &&
                 hitInfo.collider.gameObject.GetComponent<BaseBullet>().Team == Team)
                 return;
+   
             OnHit(hitInfo);
 
             if (!ricochet || Mathf.Abs(Vector3.Angle(hitInfo.normal, raycastDirection) - 90) > ricochetAngle)

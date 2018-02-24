@@ -7,18 +7,10 @@ using UnityEngine;
 /// </summary>
 public class ExplosiveBullet : BaseBullet
 {
-
-    [SerializeField]
-    protected float radius = 5.0F;
-
-    [SerializeField]
-    protected float power = 1000.0F;
-
-    [SerializeField]
-    protected float baseDamage = 20.0F;
-
-    [SerializeField]
-    protected ParticleSystem explosion;
+    [SerializeField] protected float radius = 5.0F;
+    [SerializeField] protected float power = 1000.0F;
+    [SerializeField] protected float baseDamage = 20.0F;
+    [SerializeField] protected ParticleSystem explosion;
 
     /// <summary>
     /// Обработчик столкновения
@@ -42,7 +34,6 @@ public class ExplosiveBullet : BaseBullet
                 float amountOfDamage = baseDamage - baseDamage * (direction.magnitude / radius);
                 entityHit.TakeDamage(amountOfDamage, Holder);
             }
-
         }
 
         if (explosion != null)
