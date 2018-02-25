@@ -94,6 +94,7 @@ public class BaseBullet : NetworkBehaviour
 
             if (!ricochet || Mathf.Abs(Vector3.Angle(hitInfo.normal, raycastDirection) - 90) > ricochetAngle)
             {
+                Destroy(this.gameObject, 0.5f);
                 destroy = true;
                 hitted = hitInfo.collider.gameObject;
             }

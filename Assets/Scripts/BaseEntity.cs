@@ -87,6 +87,11 @@ public class BaseEntity : NetworkBehaviour
             brain.AttackedBy(attacker);
     }
 
+    public void TakeDeadlyDamage()
+    {
+        TakeDamage(currentHealth + 1.0f);
+    }
+
     protected virtual void OnDamageTaken(float value) { }
 
     protected virtual void RpcOnDeath()
