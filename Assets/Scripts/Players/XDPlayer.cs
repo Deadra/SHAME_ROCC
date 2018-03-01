@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Класс для игрока на XD Motion.
@@ -10,6 +11,9 @@
 [RequireComponent(typeof(PlatformDataSender))]
 public class XDPlayer : BasePlayer
 {
+    [SerializeField] private float collisionDamage = 80;
+    [SerializeField] private float collisionDamageSpeed = 5;
+
     public override void Start()
     {
         base.Start();
@@ -26,6 +30,9 @@ public class XDPlayer : BasePlayer
     /// <param name="col"></param>
     void OnTriggerEnter(Collider col)
     {
+        if (!isLocalPlayer || col.gameObject.GetComponent<Collider>().isTrigger)
+            return;
+        
         var entity = col.gameObject.GetComponentInParentAndChildren<BaseEntity>();
 
         if (entity != null)
@@ -40,9 +47,7 @@ public class XDPlayer : BasePlayer
         if (entity.Team == this.Team && !Settings.friendlyFire)
             return;
 
-        float relativeVelocity = System.Math.Abs(Vector3.Dot(entity.gameObject.GetComponentInParent<Rigidbody>().velocity,
-                                                             this.gameObject.GetComponentInParent<Rigidbody>().velocity));
-        if (relativeVelocity > 5)
-            entity.TakeDamage(relativeVelocity * 20, this);
+        if (Math.Abs(this.gameObject.GetComponentInParent<Rigidbody>().velocity.magnitude) > collisionDamageSpeed)
+            entity.TakeDamage(collisionDamage, this);
     }
 }
