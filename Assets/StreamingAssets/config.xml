@@ -12,11 +12,11 @@
   <FiveDServerPort>20446</FiveDServerPort>
 
   <!--Server addresses for online games-->
-  <Server1>10.51.71.11</Server1>
-  <Server2>10.51.71.21</Server2>
-  <Server3>10.51.71.31</Server3>
-  <Server4>0.0.0.0</Server4>
-
+  <Server1>10.51.71.11</Server1>  <!--XD01-->
+  <Server2>10.51.71.21</Server2>  <!--XD02-->
+  <Server3>10.51.71.31</Server3>  <!--Fly-->
+  <Server4>10.51.71.229</Server4> <!--Laptop-->
+  <Server5>0.0.0.0</Server5>
 
   <!--Game settings-->
   <FriendlyFire>true</FriendlyFire><!--true or false-->

@@ -27,10 +27,10 @@ public class XDInput : NetworkBehaviour
 
         mover.Move(h, v, b, handbrake);
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("XDFire"))
             player.FireGun();
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("XDWeaponSwitch"))
             player.SwitchGun();
     }
 }
