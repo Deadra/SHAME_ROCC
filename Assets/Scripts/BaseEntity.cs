@@ -53,6 +53,7 @@ public class BaseEntity : NetworkBehaviour
             gameObject.EnableComponentsInParentAndChildren<AeroplaneController>(false);
             gameObject.EnableComponentsInParentAndChildren<AeroplaneUserControl4Axis>(false);
             gameObject.EnableComponentsInParentAndChildren<AeroplaneControlSurfaceAnimator>(false);
+            gameObject.EnableComponentsInParentAndChildren<Animator>(false);
         }
 
         if (!isServer)
