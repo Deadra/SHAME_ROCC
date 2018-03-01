@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -16,7 +16,7 @@ namespace UnityStandardAssets.Vehicles.Car
         KPH
     }
 
-    public class CarController : MonoBehaviour
+    public class CarController : NetworkBehaviour
     {
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
@@ -124,10 +124,34 @@ namespace UnityStandardAssets.Vehicles.Car
             var revsRangeMax = ULerp(m_RevRangeBoundary, 1f, gearNumFactor);
             Revs = ULerp(revsRangeMin, revsRangeMax, m_GearFactor);
         }
+        [Command]
+        void CmdMove(float steering, float accel, float footbrake, float handbrake)
+        {
+            RpcMove(steering, accel, footbrake, handbrake);
+        }
 
+        [ClientRpc]
+        void RpcMove(float steering, float accel, float footbrake, float handbrake)
+        {
+            if (isLocalPlayer)
+                return;
+
+            Move(steering, accel, footbrake, handbrake);
+        }
+
+        int moveCount = 0;
 
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
+            if (isLocalPlayer)
+            {
+                if (moveCount++ % 10 == 0)
+                {
+
+                    CmdMove(steering, accel, footbrake, handbrake);
+                }
+            }
+
             for (int i = 0; i < 4; i++)
             {
                 Quaternion quat;

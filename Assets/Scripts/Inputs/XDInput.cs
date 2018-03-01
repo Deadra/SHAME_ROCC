@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.Utility;
 using UnityStandardAssets.Vehicles.Car;
 
 /// <summary>
@@ -9,13 +10,15 @@ using UnityStandardAssets.Vehicles.Car;
 [RequireComponent(typeof(XDPlayer), typeof(CarController))]
 public class XDInput : NetworkBehaviour
 {
-    XDPlayer player;
-    CarController mover;
+    private XDPlayer player;
+    private CarController mover;
+    private ObjectResetter objectResetter;
 
     void Start()
     {
         player = GetComponent<XDPlayer>();
         mover = GetComponent<CarController>();
+        objectResetter = GetComponent<ObjectResetter>();
     }
 
     void FixedUpdate()
@@ -26,6 +29,9 @@ public class XDInput : NetworkBehaviour
         float handbrake = CrossPlatformInputManager.GetAxis("Jump");
 
         mover.Move(h, v, b, handbrake);
+
+        if (Input.GetButtonDown("Reset"))
+            objectResetter.DelayedReset(0.2f);
 
         if (Input.GetButton("XDFire"))
             player.FireGun();

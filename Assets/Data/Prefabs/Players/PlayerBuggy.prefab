@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 114283304420443480}
   - component: {fileID: 114279494499739930}
   - component: {fileID: 65149119212976694}
+  - component: {fileID: 114854375128070338}
   m_Layer: 0
   m_Name: PlayerBuggy
   m_TagString: Player
@@ -2189,15 +2190,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.07692308
+  m_SendInterval: 0.1
   m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 2
-  m_SyncSpin: 1
-  m_MovementTheshold: 0.0001
-  m_VelocityThreshold: 0.000001
-  m_SnapThreshold: 3
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 2
+  m_RotationSyncCompression: 1
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 10
+  m_InterpolateMovement: 1
 --- !u!114 &114442748580158506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2425,6 +2426,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114854375128070338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191266563680930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643c971818f68d3439e84b5d8bdafe07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114880094469021052
 MonoBehaviour:
   m_ObjectHideFlags: 1

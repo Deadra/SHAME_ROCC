@@ -22,12 +22,4 @@ public class FlyPlayer : BasePlayer
             gameObject.SetLayerRecursively("Camera/Canvas", Layer.OwnedUI);
         }
     }
-
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Input.GetButtonDown("Reset"))
-            GetComponentInChildren<ObjectResetter>().DelayedReset(0.2f);
-    }
 }
