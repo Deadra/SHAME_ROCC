@@ -168,7 +168,7 @@ public static class Settings
                         continue;
 
                     case "PlatformType":
-                        platformType = (PlatformType)Enum.Parse(typeof(PlatformType), child.InnerText);
+                        platformType = (PlatformType) Enum.Parse(typeof(PlatformType), child.InnerText);
                         continue;
 
                     case "FriendlyFire":

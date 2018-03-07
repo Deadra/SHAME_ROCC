@@ -30,7 +30,7 @@ public class XDPlayer : BasePlayer
     /// <param name="col"></param>
     void OnTriggerEnter(Collider col)
     {
-        if (!isLocalPlayer || col.gameObject.GetComponent<Collider>().isTrigger)
+        if (!isLocalPlayer || col.isTrigger)
             return;
         
         var entity = col.gameObject.GetComponentInParentAndChildren<BaseEntity>();
