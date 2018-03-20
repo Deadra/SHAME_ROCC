@@ -15,7 +15,7 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(DontGoThroughThings), typeof(DestroyAtferTime))]
 public class BaseBullet : NetworkBehaviour
 {
-    private Rigidbody rb;
+    private new Rigidbody rigidbody;
     [SerializeField] private float launchForce;
     [SerializeField] private float accelerationForce = 0.0f;
     [SerializeField] private float accelerationTime = 2.0f;
@@ -31,8 +31,8 @@ public class BaseBullet : NetworkBehaviour
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * launchForce);
+        rigidbody = this.GetComponent<Rigidbody>();
+        rigidbody.AddForce(transform.forward * launchForce);
     }
 
     void OnCollisionEnter(Collision col)
@@ -61,25 +61,21 @@ public class BaseBullet : NetworkBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        RaycastHit hitInfo;
-        Vector3 velocity = rb.velocity;
-        float raycastLength;
-        Vector3 raycastDirection;
+        Vector3 velocity = rigidbody.velocity;
+        Vector3 raycastDirection = velocity.normalized;
+        float raycastLength = velocity.magnitude * Time.fixedDeltaTime;
         timeFromLaunch += Time.fixedDeltaTime;
 
         if (velocity == Vector3.zero) //At the first FixedUpdate velocity is still a zero vector 
         {
-            raycastLength = launchForce / rb.mass * Time.fixedDeltaTime * (2.0f / 100.0f); //magic number (⌒_⌒;)
+            raycastLength = launchForce / rigidbody.mass * Time.fixedDeltaTime * (2.0f / 100.0f); //magic number (⌒_⌒;)
             raycastDirection = transform.forward.normalized;
-        }
-        else
-        {
-            raycastLength = velocity.magnitude * Time.fixedDeltaTime;
-            raycastDirection = velocity.normalized;
         }
 
         if (raycastLength < minimumRayCastLength)
             raycastLength = minimumRayCastLength;
+
+        RaycastHit hitInfo;
 
         if (Physics.Raycast(transform.position, raycastDirection, out hitInfo, raycastLength))
         {
@@ -101,7 +97,7 @@ public class BaseBullet : NetworkBehaviour
         }
 
         if (accelerationTime > 0.0f && timeFromLaunch < accelerationTime)
-            rb.AddForce(raycastDirection * accelerationForce, ForceMode.Acceleration);
+            rigidbody.AddForce(raycastDirection * accelerationForce, ForceMode.Acceleration);
     }
 
     /// <summary>

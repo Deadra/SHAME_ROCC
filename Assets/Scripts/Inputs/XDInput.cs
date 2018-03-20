@@ -17,18 +17,18 @@ public class XDInput : NetworkBehaviour
     void Start()
     {
         player = GetComponent<XDPlayer>();
-        mover = GetComponent<CarController>();
+        mover  = GetComponent<CarController>();
         objectResetter = GetComponent<ObjectResetter>();
     }
 
     void FixedUpdate()
     {
-        float h = CrossPlatformInputManager.GetAxis("XDHorizontal");
-        float v = CrossPlatformInputManager.GetAxis("XDVertical");
-        float b = CrossPlatformInputManager.GetAxis("XDBrake");
-        float handbrake = CrossPlatformInputManager.GetAxis("Jump");
+        float steering     = CrossPlatformInputManager.GetAxis("XDHorizontal");
+        float acceleration = CrossPlatformInputManager.GetAxis("XDVertical");
+        float footBrake    = CrossPlatformInputManager.GetAxis("XDBrake");
+        float handbrake    = CrossPlatformInputManager.GetAxis("Jump");
 
-        mover.Move(h, v, b, handbrake);
+        mover.Move(steering, acceleration, footBrake, handbrake);
 
         if (Input.GetButtonDown("Reset"))
             objectResetter.DelayedReset(0.2f);

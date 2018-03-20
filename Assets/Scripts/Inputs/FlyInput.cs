@@ -20,10 +20,10 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         
         private void FixedUpdate()
         {
-            float roll = CrossPlatformInputManager.GetAxis("Roll");
-            float pitch = CrossPlatformInputManager.GetAxis("Pitch");
+            float roll   = CrossPlatformInputManager.GetAxis("Roll");
+            float pitch  = CrossPlatformInputManager.GetAxis("Pitch");
             float thrust = CrossPlatformInputManager.GetAxis("Thrust");
-            bool airBrakes = CrossPlatformInputManager.GetButton("Fire1");
+            bool  airBrakes = CrossPlatformInputManager.GetButton("Fire1");
 
             aeroplane.Move(roll, -pitch, 0, -thrust, airBrakes);
 

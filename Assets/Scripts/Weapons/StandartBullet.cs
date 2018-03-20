@@ -13,10 +13,10 @@ public class StandartBullet : BaseBullet
     /// </summary>
     protected override void OnHit(RaycastHit hitInfo)
     {
-        BaseEntity entityHit = hitInfo.collider.gameObject.GetComponentInParent<BaseEntity>();
+        var hittedEntity = hitInfo.collider.gameObject.GetComponentInParent<BaseEntity>();
 
-        if (entityHit != null && (Settings.friendlyFire || entityHit.Team != Team))
-            entityHit.TakeDamage(damage, Holder);
+        if (hittedEntity != null && (Settings.friendlyFire || hittedEntity.Team != Team))
+            hittedEntity.TakeDamage(damage, Holder);
 
         if (hitParticle != null)
             Instantiate(hitParticle, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
