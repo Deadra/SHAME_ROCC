@@ -112,8 +112,13 @@ public class NetManager : NetworkManager
     {
         Debug.Log("Пытаемся создать сервер");
         NetworkClient.ShutdownAll();
-
         StartHost();
+
+        if (!NetworkServer.active)
+        {
+            Debug.LogError("Не удаётся запустить игру. Возможно, экземпляр игры уже запущен");
+            Application.Quit();
+        }
     }
 
     /// <summary>
@@ -205,11 +210,8 @@ public class NetManager : NetworkManager
     /// </summary>
     private void StartOfflineGame()
     {
-        int platformType = (int)Settings.platformType;
-        var player = Instantiate(spawnPrefabs[platformType],
-                                 spawnPoints[platformType].transform.position,
-                                 spawnPoints[platformType].transform.rotation);
-        spawnedPlayers.Add(player);
+        StartupHost();
+        this.maxConnections = 1;
     }
 
     /// <summary>
