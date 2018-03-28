@@ -10,16 +10,10 @@ using UnityStandardAssets.Vehicles.Car;
 [RequireComponent(typeof(XDPlayer), typeof(CarController))]
 public class XDInput : NetworkBehaviour
 {
-    private XDPlayer player;
-    private CarController mover;
-    private ObjectResetter objectResetter;
-
-    void Start()
-    {
-        player = GetComponent<XDPlayer>();
-        mover  = GetComponent<CarController>();
-        objectResetter = GetComponent<ObjectResetter>();
-    }
+    [SerializeField] private XDPlayer player;
+    [SerializeField] private CarController mover;
+    [SerializeField] private ObjectResetter objectResetter;
+    [SerializeField] private XDCameraController cameraController;
 
     void FixedUpdate()
     {
@@ -38,5 +32,12 @@ public class XDInput : NetworkBehaviour
 
         if (Input.GetButtonDown("XDWeaponSwitch"))
             player.SwitchGun();
+
+        if (Input.GetButton("XDLookLeft"))
+            cameraController.LookLeft();
+        else if (Input.GetButton("XDLookRight"))
+            cameraController.LookRight();
+        else
+            cameraController.LookStraight();
     }
 }
