@@ -24,6 +24,6 @@
 
   <!--Launch client settings. These options may be overridden by launch arguments, mostly when you run the game through the SimServer-->
   <GameMode>Offline</GameMode><!--Online or Offline-->
-  <PlatformType>XDMotion</PlatformType><!--XDMotion, FlyMotion, FiveDMotion, Desktop or HTCVive-->
+  <PlatformType>FlyMotion</PlatformType><!--XDMotion, FlyMotion, FiveDMotion, Desktop or HTCVive-->
 
 </configuration>
