@@ -1131,7 +1131,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -2077,6 +2077,8 @@ MonoBehaviour:
   - {fileID: 4228620217990542}
   healthBar: {fileID: 114582270718621424}
   minimapCamera: {fileID: 1321823961148956}
+  collisionDamage: 80
+  collisionDamageSpeed: 5
 --- !u!114 &114194845444314406
 MonoBehaviour:
   m_ObjectHideFlags: 1
