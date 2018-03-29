@@ -38,11 +38,11 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             if (Input.GetButtonDown("Reset"))
                 objectResetter.DelayedReset(0.2f);
 
-            /*if (Input.GetButton("FlyFire"))
+            if (Input.GetButton("FlyFire"))
                 player.FireGun();
 
             if (Input.GetButtonDown("FlyWeaponSwitch"))
-                player.SwitchGun();*/
+                player.SwitchGun();
         }
     }
 }

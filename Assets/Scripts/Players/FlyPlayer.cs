@@ -20,6 +20,8 @@ public class FlyPlayer : BasePlayer
             gameObject.DefineMainCamera("CameraParent/Camera");
 
             gameObject.SetLayerRecursively("CameraParent/Canvas", Layer.OwnedUI);
+
+            spawnGunsInAllSlots();
         }
     }
 }
