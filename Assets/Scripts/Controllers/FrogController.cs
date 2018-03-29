@@ -13,7 +13,7 @@ public class FrogController : BaseController
     float moveTime = 4;
     float moveStarted;
     float nextMove;
-    float jumpCooldown = 3f;
+    float jumpCooldown = 2f;
     float nextJump;
     const float jumpForceFactor = 0.9f;
 
@@ -55,7 +55,7 @@ public class FrogController : BaseController
     {
         if (Time.time > nextJump)
         {
-            nextJump = Time.time + jumpCooldown;
+            nextJump = Time.time + jumpCooldown + Random.Range(0.0f, 2.0f);
             Vector3 forward = head.forward;
             forward.y = 0;
             forward = forward.normalized;

@@ -20,8 +20,8 @@ public class XDPlayer : BasePlayer
 
         if (isLocalPlayer)
         {
-            gameObject.DefineMainCamera("Camera");
-            gameObject.SetLayerRecursively("Camera/Canvas", Layer.OwnedUI);
+            gameObject.DefineMainCamera("CameraParent/Camera");
+            gameObject.SetLayerRecursively("CameraParent/Canvas", Layer.OwnedUI);
             gameObject.GetComponent<Collider>("BottomCollider").enabled = false;
 
             spawnGunsInAllSlots();
