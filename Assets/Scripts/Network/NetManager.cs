@@ -22,6 +22,7 @@ public class NetManager : NetworkManager
     public GameObject FiveDMotionPrefab;
     public GameObject DesktopPrefab;
     public GameObject HTCVivePrefab;
+    public GameObject SpectatorPrefab;
 
     [Header("Player Spawn Points")]
     public NetworkStartPosition XDMotionSpawnPoint;
@@ -29,6 +30,7 @@ public class NetManager : NetworkManager
     public NetworkStartPosition FiveDMotionSpawnPoint;
     public NetworkStartPosition DesktopSpawnPoint;
     public NetworkStartPosition HTCViveSpawnPoint;
+    public NetworkStartPosition SpectatorSpawnPoint;
 
     [Header("Other Prefabs")]
     public List<GameObject> enemyPrefabs;
@@ -64,6 +66,7 @@ public class NetManager : NetworkManager
         spawnPrefabs.Insert((int)PlatformType.FiveDMotion, FiveDMotionPrefab);
         spawnPrefabs.Insert((int)PlatformType.Desktop, DesktopPrefab);
         spawnPrefabs.Insert((int)PlatformType.HTCVive, HTCVivePrefab);
+        spawnPrefabs.Insert((int)PlatformType.Spectator, SpectatorPrefab);
 
         spawnPoints = new List<NetworkStartPosition>();
         spawnPoints.Add(XDMotionSpawnPoint);
@@ -71,6 +74,7 @@ public class NetManager : NetworkManager
         spawnPoints.Add(FiveDMotionSpawnPoint);
         spawnPoints.Add(DesktopSpawnPoint);
         spawnPoints.Add(HTCViveSpawnPoint);
+        spawnPoints.Add(SpectatorSpawnPoint);
 
         spawnPrefabs.AddRange(enemyPrefabs);
         spawnPrefabs.AddRange(otherPrefabs);

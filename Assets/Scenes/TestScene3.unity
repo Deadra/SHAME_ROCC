@@ -4057,11 +4057,14 @@ MonoBehaviour:
     type: 2}
   HTCVivePrefab: {fileID: 1423233682857516, guid: 03ca37c84a5b91942b7dc425bb041f4a,
     type: 2}
+  SpectatorPrefab: {fileID: 1058099154827992, guid: 8937c5acdcae02a45956561cd6efabc7,
+    type: 2}
   XDMotionSpawnPoint: {fileID: 392822740}
   FlyMotionSpawnPoint: {fileID: 52304673}
   FiveDMotionSpawnPoint: {fileID: 249417926}
   DesktopSpawnPoint: {fileID: 1161247639}
   HTCViveSpawnPoint: {fileID: 1430924745}
+  SpectatorSpawnPoint: {fileID: 845985114}
   enemyPrefabs:
   - {fileID: 1698130307231556, guid: 56155a8d87b1b31458bbb881327f0d87, type: 2}
   otherPrefabs:
@@ -33652,6 +33655,46 @@ Transform:
   m_PrefabParentObject: {fileID: 4276278570570806, guid: acbd67aa8310e2a4e98042bb3ef1d16a,
     type: 2}
   m_PrefabInternal: {fileID: 844831053}
+--- !u!1 &845985112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 845985113}
+  - component: {fileID: 845985114}
+  m_Layer: 0
+  m_Name: SpectatorSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &845985113
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845985112}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -540.9, y: 71.9, z: 7.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1857379453}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845985114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845985112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1050975500, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &846456666
 GameObject:
   m_ObjectHideFlags: 0
@@ -71173,6 +71216,7 @@ Transform:
   - {fileID: 392822739}
   - {fileID: 52304672}
   - {fileID: 249417925}
+  - {fileID: 845985113}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

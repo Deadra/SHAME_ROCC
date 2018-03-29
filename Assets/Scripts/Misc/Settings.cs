@@ -19,7 +19,8 @@ public enum PlatformType
     FiveDMotion = 2,
 //----------------------
     Desktop     = 3,
-    HTCVive     = 4
+    HTCVive     = 4,
+    Spectator   = 5
 };
 
 /// <summary>

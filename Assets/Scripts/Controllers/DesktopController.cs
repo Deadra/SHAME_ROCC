@@ -5,7 +5,7 @@
 /// </summary>
 public class DesktopController : BaseController
 {
-    [SerializeField] Transform desktopCamera;
+    [SerializeField] protected Transform desktopCamera;
     [SerializeField] float minCameraPitch = -80;
     [SerializeField] float maxCameraPitch = 80;
     [SerializeField] float verticalSens = 1.2f;
@@ -26,7 +26,7 @@ public class DesktopController : BaseController
         desktopCamera.localRotation = Quaternion.Euler(currentRotation);
     }
 
-    public void Strafe(float horValue, float vertValue)
+    public virtual void Strafe(float horValue, float vertValue)
     {
         float fallingSpeed = objectToMove.velocity.y;
         Vector3 newSpeed = Vector3.ClampMagnitude(transform.forward * horValue * moveSpeed + transform.right * vertValue * moveSpeed, moveSpeed);
