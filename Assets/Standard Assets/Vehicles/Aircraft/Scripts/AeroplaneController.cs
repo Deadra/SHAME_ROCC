@@ -77,14 +77,14 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         int moveCount = 0;
         public void Move(float rollInput, float pitchInput, float yawInput, float throttleInput, bool airBrakes)
         {
-            if (isLocalPlayer)
+            /*if (isLocalPlayer)
             {
                 if (moveCount++ % 10 == 0)
                 {
 
                     CmdMove(rollInput, pitchInput, yawInput, throttleInput, airBrakes);
                 }
-            }
+            }*/
 
             // transfer input parameters into properties.s
             RollInput = rollInput;

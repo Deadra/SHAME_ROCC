@@ -13059,6 +13059,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac824393153be142bb08d078a1d2f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aeroplane: {fileID: 114871139285364838}
+  player: {fileID: 114306285645578830}
+  objectResetter: {fileID: 114326177428972710}
+  cameraController: {fileID: 114562430970775304}
 --- !u!114 &114702275935078292
 MonoBehaviour:
   m_ObjectHideFlags: 1

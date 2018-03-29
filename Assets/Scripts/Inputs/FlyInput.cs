@@ -1,28 +1,25 @@
 using System;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 
 namespace UnityStandardAssets.Vehicles.Aeroplane
 {
     [RequireComponent(typeof(AeroplaneController), typeof(FlyPlayer), typeof(ObjectResetter))]
-    public class FlyInput : MonoBehaviour
+    public class FlyInput : NetworkBehaviour
     {
-        private AeroplaneController aeroplane;
-        private FlyPlayer player;
-        private ObjectResetter objectResetter;
-        private FlyCameraController cameraController;
+        [SerializeField] private AeroplaneController aeroplane;
+        [SerializeField] private FlyPlayer player;
+        [SerializeField] private ObjectResetter objectResetter;
+        [SerializeField] private FlyCameraController cameraController;
 
-        private void Awake()
-        {
-            aeroplane = GetComponent<AeroplaneController>();
-            player = GetComponent<FlyPlayer>();
-            objectResetter = GetComponent<ObjectResetter>();
-            cameraController = GetComponent<FlyCameraController>();
-        }
         
         private void FixedUpdate()
         {
+            if (!isLocalPlayer)
+                return;
+
             float roll   = CrossPlatformInputManager.GetAxis("Roll");
             float pitch  = CrossPlatformInputManager.GetAxis("Pitch");
             float thrust = CrossPlatformInputManager.GetAxis("Thrust");

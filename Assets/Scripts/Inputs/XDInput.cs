@@ -17,6 +17,9 @@ public class XDInput : NetworkBehaviour
 
     void FixedUpdate()
     {
+        if (!isLocalPlayer)
+            return;
+
         float steering     = CrossPlatformInputManager.GetAxis("XDHorizontal");
         float acceleration = CrossPlatformInputManager.GetAxis("XDVertical");
         float footBrake    = CrossPlatformInputManager.GetAxis("XDBrake");
