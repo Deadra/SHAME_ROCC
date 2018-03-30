@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200cddd7e74dd9a4490cd496c8467728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 2
   maxHealth: 100
   weapons:
   - {fileID: 114841809039375206, guid: 73feb25e602365543a461336ef8925a9, type: 2}
@@ -1741,6 +1741,7 @@ MonoBehaviour:
   horizontalSens: 3
   moveSpeed: 3.5
   jumpForce: 300
+  followingInterpolation: 0.2
   playerTransform: {fileID: 4632782263386264}
   lookDirection: {fileID: 4946770836157276}
   uiText: {fileID: 114801912103053866}
@@ -1844,7 +1845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Not attached
 --- !u!114 &114891310665711368
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Linq;
 
 /// <summary>
 /// Сообщение, содержащее информацию о том, какой префаб выбрал клиент
@@ -230,6 +231,6 @@ public class NetManager : NetworkManager
 
     public List<GameObject> GetConnectedPlayers()
     {
-        return spawnedPlayers;
+        return spawnedPlayers.Where((x) => x != null).ToList();
     }
 }

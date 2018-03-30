@@ -14,6 +14,16 @@ public class SpectatorController : DesktopController
     private List<GameObject> connectedPlayers;
 
     private bool attached = false;
+    private bool Attached
+    {
+        get { return attached; }
+        set
+        {
+            attached = value;
+            uiText.text = attached ? "Attached" : "Not attached";
+        }
+    }
+
     private Transform targetPlayer;
     private Vector3 targetOffset;
     private Vector3 deltaMove;
@@ -21,7 +31,7 @@ public class SpectatorController : DesktopController
     public override void Strafe(float horValue, float vertValue)
     {
         deltaMove = playerTransform.position + lookDirection.forward * horValue + lookDirection.right * vertValue;
-        if (!attached)
+        if (!Attached)
         {
             playerTransform.position += lookDirection.forward * horValue + lookDirection.right * vertValue;
             deltaMove = Vector3.zero;
@@ -34,9 +44,9 @@ public class SpectatorController : DesktopController
 
     public override void Jump()
     {
-        if (attached)
+        if (Attached)
         {
-            attached = false;
+            Attached = false;
             return;
         }
 
@@ -46,7 +56,9 @@ public class SpectatorController : DesktopController
         }
 
         connectedPlayers = netManager.GetConnectedPlayers();
-        //uiText.text = connectedPlayers.Count.ToString();
+        if (connectedPlayers.Count == 1)
+            return;
+
 
         float minVal = float.MaxValue;
         int minInd = 0;
@@ -62,27 +74,32 @@ public class SpectatorController : DesktopController
                 }
             }
         }
-
         AttachTo(connectedPlayers[minInd]);
-        uiText.text = minVal.ToString();
-        
     }
 
     private void AttachTo(GameObject go)
     {
         targetPlayer = go.transform;
         targetOffset = go.transform.position - this.transform.position;
-        attached = true;
+        Attached = true;
     }
 
     private void LateUpdate()
     {
-        if (attached)
+        if (Attached)
         {
+            if (targetPlayer == null)
+            {
+                Attached = false;
+                return;
+            }
+
             targetOffset -= deltaMove;
             this.transform.position = Vector3.Lerp(this.transform.position, targetPlayer.position - targetOffset, followingInterpolation);
         }
     }
+
+    
 
 
 }
