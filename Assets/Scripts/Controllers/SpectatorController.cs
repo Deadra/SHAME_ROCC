@@ -24,6 +24,8 @@ public class SpectatorController : DesktopController
         }
     }
 
+    private bool wasMoved;
+
     private Transform targetPlayer;
     private Vector3 targetOffset;
     private Vector3 deltaMove;
@@ -40,6 +42,7 @@ public class SpectatorController : DesktopController
         {
             deltaMove = lookDirection.forward * horValue + lookDirection.right * vertValue;
         }
+        wasMoved = true;
     }
 
     public override void Jump()
@@ -81,6 +84,7 @@ public class SpectatorController : DesktopController
     {
         targetPlayer = go.transform;
         targetOffset = go.transform.position - this.transform.position;
+        deltaMove = Vector3.zero;
         Attached = true;
     }
 
@@ -94,9 +98,15 @@ public class SpectatorController : DesktopController
                 return;
             }
 
+            if (!wasMoved)
+            {
+                deltaMove = Vector3.zero;
+            }
+
             targetOffset -= deltaMove;
             this.transform.position = Vector3.Lerp(this.transform.position, targetPlayer.position - targetOffset, followingInterpolation);
         }
+        wasMoved = false;
     }
 
     
