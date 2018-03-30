@@ -227,4 +227,9 @@ public class NetManager : NetworkManager
         SettingsMessage msg = netMsg.ReadMessage<SettingsMessage>();
         Settings.UpdateClientSettings(msg);
     }
+
+    public List<GameObject> GetConnectedPlayers()
+    {
+        return spawnedPlayers;
+    }
 }

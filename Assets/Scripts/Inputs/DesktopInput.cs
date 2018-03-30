@@ -30,7 +30,7 @@ public class DesktopInput : NetworkBehaviour
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             mover.Strafe(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
             mover.Jump();
 
         if (Input.GetButton("Fire1"))

@@ -33,7 +33,7 @@ public class DesktopController : BaseController
         objectToMove.velocity = newSpeed + new Vector3(0, fallingSpeed, 0);
     }
 
-    public void Jump()
+    public virtual void Jump()
     {
         if (CheckLanded())
         {
