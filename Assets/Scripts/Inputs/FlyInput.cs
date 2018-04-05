@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
             float cameraX = CrossPlatformInputManager.GetAxis("FlyLookHorisontal");
             float cameraY = CrossPlatformInputManager.GetAxis("FlyLookVertical");
-
+            Debug.Log(cameraY);
             cameraController.SetCameraRotation(cameraX, cameraY);
 
             if (Input.GetButtonDown("Reset"))

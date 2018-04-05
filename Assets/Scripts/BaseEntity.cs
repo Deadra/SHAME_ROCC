@@ -48,8 +48,8 @@ public class BaseEntity : NetworkBehaviour
             gameObject.EnableComponentsInParentAndChildren<PlatformDataSender>(false);
             gameObject.EnableComponentsInParentAndChildren<SteamVR_RenderModel>(false);
             gameObject.EnableComponentsInParentAndChildren<SteamVR_Camera>(false);
-            gameObject.EnableComponentsInParentAndChildren<CarController>(false);
-            gameObject.EnableComponentsInParentAndChildren<CarUserControl>(false);
+            //gameObject.EnableComponentsInParentAndChildren<CarController>(false);
+            //gameObject.EnableComponentsInParentAndChildren<CarUserControl>(false);
             gameObject.EnableComponentsInParentAndChildren<AeroplaneController>(false);
             gameObject.EnableComponentsInParentAndChildren<AeroplaneUserControl4Axis>(false);
             gameObject.EnableComponentsInParentAndChildren<AeroplaneControlSurfaceAnimator>(false);

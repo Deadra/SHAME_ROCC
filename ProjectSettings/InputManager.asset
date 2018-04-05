@@ -601,8 +601,8 @@ InputManager:
     m_Name: FlyLookHorisontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: joystick button 7
+    positiveButton: joystick button 9
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -610,15 +610,15 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 11
-    joyNum: 1
+    type: 0
+    axis: 2
+    joyNum: 2
   - serializedVersion: 3
     m_Name: FlyLookVertical
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: joystick button 8
+    positiveButton: joystick button 6
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -626,9 +626,9 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 12
-    joyNum: 1
+    type: 0
+    axis: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: FlyLookHorisontal
     descriptiveName: 
@@ -643,7 +643,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 27
+    axis: 3
     joyNum: 1
   - serializedVersion: 3
     m_Name: FlyLookVertical
@@ -659,5 +659,5 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 26
+    axis: 3
     joyNum: 1
