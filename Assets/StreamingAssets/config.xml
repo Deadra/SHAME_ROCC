@@ -24,6 +24,6 @@
 
   <!--Launch client settings. These options may be overridden by launch arguments, mostly when you run the game through the SimServer-->
   <GameMode>Online</GameMode><!--Online or Offline-->
-  <PlatformType>Spectator</PlatformType><!--XDMotion, FlyMotion, FiveDMotion, Desktop, HTCVive or Spectator-->
+  <PlatformType>XDMotion</PlatformType><!--XDMotion, FlyMotion, FiveDMotion, Desktop, HTCVive or Spectator-->
 
 </configuration>
