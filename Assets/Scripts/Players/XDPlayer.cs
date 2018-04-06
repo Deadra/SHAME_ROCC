@@ -11,6 +11,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlatformDataSender))]
 public class XDPlayer : BasePlayer
 {
+    [Header("XDPlayer settings: ")]
     [SerializeField] private float collisionDamage = 80;
     [SerializeField] private float collisionDamageSpeed = 5;
 

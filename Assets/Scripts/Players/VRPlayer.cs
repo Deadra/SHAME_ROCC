@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 /// Обладает всеми возможностями класса игрока на компьютере
 /// </summary>
 public class VRPlayer : DesktopPlayer {
-
+    [Header("VRPlayer settings: ")]
     [SerializeField] Transform cameraRig;
     [SerializeField] Transform leftShoulder;
     [SerializeField] Transform leftHandEnd;

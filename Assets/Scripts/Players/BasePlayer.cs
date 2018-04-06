@@ -14,6 +14,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(SpawnManager))]
 public class BasePlayer : BaseEntity
 {
+    [Header("BasePlayer settings: ")]
     [SerializeField] private List<BaseWeapon> weapons;
     private int currentWeaponIndex = 0;
     bool fireAllowed = true;
@@ -22,9 +23,23 @@ public class BasePlayer : BaseEntity
     private Dictionary<Transform, BaseWeapon> currentWeapons;
 
     [SerializeField] private Slider healthBar;
-    [SerializeField] private GameObject minimapCamera;
+
     protected Vector3 startingPosition;
     protected Quaternion startingRotation;
+
+    [System.Serializable]
+    private class MinimapSettings
+    {
+        public Camera camera;
+        public Rigidbody rigidBody;
+        public bool changeSize = false;
+        public float minSize = 120;
+        public float maxSize = 360;
+        public float speedToMaxSize = 150;
+        public float interpolationSpeed = 0.3f;
+    }
+
+    [SerializeField] private MinimapSettings camParam;
 
     public override void Start()
     {
@@ -47,13 +62,24 @@ public class BasePlayer : BaseEntity
 
         healthBar.value = currentHealth / maxHealth;
 
-        if (minimapCamera)
+        if (camParam.camera)
         {
-            Vector3 pos = transform.position;
-            pos.y += 500;
-            minimapCamera.transform.position = pos;
-            minimapCamera.transform.rotation = Quaternion.LookRotation(Vector3.down, transform.forward);
+            MoveCamera();
         }
+    }
+
+    private void MoveCamera()
+    {
+        Vector3 pos = transform.position;
+        pos.y += 500;
+        Camera cam = camParam.camera;
+        cam.transform.position = pos;
+        cam.transform.rotation = Quaternion.LookRotation(Vector3.down, transform.forward);
+        //cam.transform.LookAt(this.transform.position);
+
+        float speedRatio = camParam.rigidBody.velocity.sqrMagnitude * 12.96f  / (camParam.speedToMaxSize * camParam.speedToMaxSize);
+        float targetSize = Mathf.Lerp(camParam.minSize, camParam.maxSize, speedRatio);
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, camParam.interpolationSpeed);
     }
 
     [ClientRpc]
