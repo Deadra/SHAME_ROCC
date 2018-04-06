@@ -103,16 +103,6 @@ public class AddMinimap : MonoBehaviour
         spawnedQuad.layer = minimapLayer.LayerIndex;
         spawnedQuad.isStatic = true;
 	}
-    /*
-	void OnDrawGizmos()
-	{
-		Bounds bounds = target.GetComponent<Collider> ().bounds;
-		Gizmos.color = Color.black;
-		Gizmos.DrawSphere (bounds.min, 0.2f);
-
-		Gizmos.color = Color.white;
-		Gizmos.DrawSphere (bounds.max, 0.2f);
-	}*/
 	
     [System.Serializable]
     public class SingleUnityLayer
