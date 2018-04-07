@@ -15,6 +15,7 @@ public class Firearm : BaseWeapon
     [SerializeField] public GameObject bulletPrefab;
     [SerializeField] ParticleSystem muzzleFlashParticle;
     [SerializeField] Text ammoCounter;
+    [SerializeField] AudioSource audioSource;
 
     public override void Start()
     {
@@ -38,6 +39,9 @@ public class Firearm : BaseWeapon
         
         if (ammoCounter != null)
             ammoCounter.text = string.Format("{0}", ammo);
+
+        if (audioSource != null)
+            audioSource.PlayOneShot(audioSource.clip);
     }
 
     private Collider[] GetAllColliders()
