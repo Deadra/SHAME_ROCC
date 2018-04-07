@@ -12935,8 +12935,8 @@ MonoBehaviour:
     rigidBody: {fileID: 54682264283380316}
     changeSize: 1
     minSize: 150
-    maxSize: 370
-    speedToMaxSize: 200
+    maxSize: 550
+    speedToMaxSize: 250
     interpolationSpeed: 0.3
 --- !u!114 &114326177428972710
 MonoBehaviour:
