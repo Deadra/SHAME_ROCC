@@ -43,3 +43,34 @@ MonoBehaviour:
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   waterColor: {r: 0.375, g: 0.8189655, b: 1, a: 1}
+  matColorList:
+  - pairName: Road
+    referenceMaterial: {fileID: 2100000, guid: db31076ba1760ef4f9c335f799c085ec, type: 2}
+    color: {r: 1, g: 0.53333336, b: 0, a: 1}
+  - pairName: House
+    referenceMaterial: {fileID: 2100000, guid: aea251acab222444d9c767c8f1fb5e1a, type: 2}
+    color: {r: 0.11724187, g: 0, b: 1, a: 1}
+  - pairName: House2
+    referenceMaterial: {fileID: 2100000, guid: 888acdbba4181064a9be534454bf377f, type: 2}
+    color: {r: 0.11724187, g: 0, b: 1, a: 1}
+  - pairName: AirfieldPavement
+    referenceMaterial: {fileID: 2100000, guid: 38e0f6c0765a5374f9a428840748d450, type: 2}
+    color: {r: 0.6397059, g: 0.6397059, b: 0.6397059, a: 1}
+  - pairName: Hangar
+    referenceMaterial: {fileID: 2100000, guid: 84fc48b8afd62ee499d2e2edf0b75d04, type: 2}
+    color: {r: 0.3602941, g: 0.3602941, b: 0.3602941, a: 1}
+  - pairName: ElevAsphalt
+    referenceMaterial: {fileID: 2100000, guid: 7de61c93b3c3a894e9f09fa23727308e, type: 2}
+    color: {r: 0.6392157, g: 0.6392157, b: 0.6392157, a: 1}
+  - pairName: ElevMetal
+    referenceMaterial: {fileID: 2100000, guid: 579e63032997b064cb7389dc8f07a44e, type: 2}
+    color: {r: 0.39705884, g: 0.39705884, b: 0.39705884, a: 1}
+  - pairName: Elev
+    referenceMaterial: {fileID: 2100000, guid: 3ea293f88662fd94a96153f6692d7504, type: 2}
+    color: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
+  - pairName: Truck1
+    referenceMaterial: {fileID: 2100000, guid: f89bd211cd8836941af876b5950e0cd3, type: 2}
+    color: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
+  - pairName: Truck2
+    referenceMaterial: {fileID: 2100000, guid: f6f91d101c67c164eb801e6c29f626e8, type: 2}
+    color: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}

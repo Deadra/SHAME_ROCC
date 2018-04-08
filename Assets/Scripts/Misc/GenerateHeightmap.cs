@@ -52,8 +52,16 @@ public class GenerateHeightmap : MonoBehaviour {
                 bool gotHit = Physics.Raycast(new Vector3(x, GenSettings.raycastAltitude, z), Vector3.down, out hit, maxDist);
                 float altitude = gotHit ? (maxDist - hit.distance) * normCoef : 0.0f;
 
-                colors[row * (int)textureSize + col] = 
-                    hit.collider.gameObject == waterGameObject  ?  GenSettings.waterColor : GenSettings.gradient.Evaluate(altitude);
+                Color color;
+                if (CheckHitSomethingSpecial(hit, out color))
+                {
+                    colors[row * (int)textureSize + col] = color;
+                }
+                else
+                {
+                    colors[row * (int)textureSize + col] = 
+                        hit.collider.gameObject == waterGameObject ? GenSettings.waterColor : GenSettings.gradient.Evaluate(altitude);
+                }
             }
         }
             
@@ -73,6 +81,34 @@ public class GenerateHeightmap : MonoBehaviour {
 
         waterGameObject.GetComponent<Collider>().enabled = false;
         targetPlane.enabled = false;
+    }
+
+    private bool CheckHitSomethingSpecial (RaycastHit hit, out Color col)
+    {
+        GameObject go = hit.collider.gameObject;
+        if (go.GetComponentInChildren<TerrainCollider>() != null)
+        {
+            col = Color.black;
+            return false;
+        }
+
+        Renderer rend = go.GetComponentInChildren<Renderer>();
+        if (rend != null)
+        {
+            Material[] mats = rend.sharedMaterials;
+
+            foreach (var mat in mats)
+            {
+                if (GenSettings.matColor.ContainsKey(mat))
+                {
+                    col = GenSettings.matColor[mat];
+                    return true;
+                }
+            }
+        }
+
+        col = Color.black;
+        return false;
     }
 
 }
