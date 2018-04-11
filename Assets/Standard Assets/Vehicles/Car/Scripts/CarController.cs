@@ -143,14 +143,14 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
-            if (isLocalPlayer)
+            /*if (isLocalPlayer)
             {
                 if (moveCount++ % 10 == 0)
                 {
 
                     CmdMove(steering, accel, footbrake, handbrake);
                 }
-            }
+            }*/
 
             for (int i = 0; i < 4; i++)
             {

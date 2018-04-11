@@ -39,9 +39,6 @@ public class Firearm : BaseWeapon
         
         if (ammoCounter != null)
             ammoCounter.text = string.Format("{0}", ammo);
-
-        if (audioSource != null)
-            audioSource.PlayOneShot(audioSource.clip);
     }
 
     private Collider[] GetAllColliders()
@@ -74,5 +71,8 @@ public class Firearm : BaseWeapon
 
         if (muzzleFlashParticle != null)
             muzzleFlashParticle.Play();
+
+        if (audioSource != null)
+            audioSource.PlayOneShot(audioSource.clip);
     }
 }
