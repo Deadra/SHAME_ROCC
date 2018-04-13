@@ -15,7 +15,9 @@
   <Server1>10.51.71.11</Server1>  <!--XD01-->
   <Server2>10.51.71.21</Server2>  <!--XD02-->
   <Server3>10.51.71.31</Server3>  <!--Fly-->
-  <Server4>10.51.71.229</Server4> <!--Laptop-->
+  <Server3>10.51.71.41</Server3>  <!--FiveD-->
+  <Server4>10.51.71.229</Server4> <!--Laptop1-->
+  <Server4>10.51.71.236</Server4> <!--Laptop2-->
   <Server5>0.0.0.0</Server5>
 
   <!--Game settings-->
