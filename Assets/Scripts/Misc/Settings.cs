@@ -178,7 +178,7 @@ public static class Settings
                 }
 
                 Match nameMatch = Regex.Match(child.Name, @"Server\d");
-                if (nameMatch.Success)
+                if (nameMatch.Success && !networkServersIP.Contains(child.InnerText))
                     networkServersIP.Add(child.InnerText);
             }
         }

@@ -38,14 +38,16 @@ public static class Helpers
 
     public static T GetComponent<T>(this GameObject gameObject, string transformPath)
     {
-        if (!gameObject.transform.Find(transformPath))
+        var wantedTransform = gameObject.transform.Find(transformPath);
+
+        if (wantedTransform == null)
         {
             Debug.LogErrorFormat("Helpers.GetComponent: Can't find transform path \"{0}\" at game object {1}",
                                  transformPath, gameObject.name);
             return default(T);
         }
 
-        return gameObject.transform.Find(transformPath).GetComponent<T>();
+        return wantedTransform.GetComponent<T>();
     }
 
     public static void EnableComponentsInParentAndChildren<T>(this GameObject gameObject, bool enabled = true) where T : Behaviour
@@ -56,33 +58,37 @@ public static class Helpers
 
     public static void SetLayerRecursively(this GameObject gameObject, string transformPath, Layer layer)
     {
-        if (!gameObject.transform.Find(transformPath))
+        var wantedTransform = gameObject.transform.Find(transformPath);
+
+        if (wantedTransform == null)
         {
             Debug.LogErrorFormat("Helpers.SetLayerRecursively: Can't find transform path \"{0}\" at game object {1}", 
                                  transformPath, gameObject.name);
             return;
         }
 
-        foreach (Transform transform in gameObject.transform.Find(transformPath).GetComponentsInChildren<Transform>(true))
+        foreach (Transform transform in wantedTransform.GetComponentsInChildren<Transform>(true))
             transform.gameObject.layer = (int)layer;
     }
 
     public static void DefineMainCamera(this GameObject gameObject, string transformPath)
     {
-        if (!gameObject.transform.Find(transformPath))
+        var wantedTransform = gameObject.transform.Find(transformPath);
+
+        if (wantedTransform == null)
         {
             Debug.LogErrorFormat("Helpers.DefineMainCamera: Can't find transform path \"{0}\" at game object {1}", 
                                  transformPath, gameObject.name);
             return;
         }
 
-        if (!gameObject.transform.Find(transformPath).GetComponentInChildren<Camera>())
+        if (!wantedTransform.GetComponentInChildren<Camera>())
         {
             Debug.LogErrorFormat("Helpers.DefineMainCamera: Game object {0} has no Camera component at transform path \"{1}\"", 
                                  gameObject.name, transformPath);
             return;
         }
 
-        gameObject.transform.Find(transformPath).tag = "MainCamera";
+        wantedTransform.tag = "MainCamera";
     }
 }

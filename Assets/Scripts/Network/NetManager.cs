@@ -61,13 +61,13 @@ public class NetManager : NetworkManager
     }
 
     private void Start()
-    {
-        spawnPrefabs.Insert((int)PlatformType.XDMotion, XDMotionPrefab);
-        spawnPrefabs.Insert((int)PlatformType.FlyMotion, FlyMotionPrefab);
-        spawnPrefabs.Insert((int)PlatformType.FiveDMotion, FiveDMotionPrefab);
-        spawnPrefabs.Insert((int)PlatformType.Desktop, DesktopPrefab);
-        spawnPrefabs.Insert((int)PlatformType.HTCVive, HTCVivePrefab);
-        spawnPrefabs.Insert((int)PlatformType.Spectator, SpectatorPrefab);
+    {   
+        spawnPrefabs.Insert((int)PlatformType.XDMotion,     XDMotionPrefab);
+        spawnPrefabs.Insert((int)PlatformType.FlyMotion,    FlyMotionPrefab);
+        spawnPrefabs.Insert((int)PlatformType.FiveDMotion,  FiveDMotionPrefab);
+        spawnPrefabs.Insert((int)PlatformType.Desktop,      DesktopPrefab);
+        spawnPrefabs.Insert((int)PlatformType.HTCVive,      HTCVivePrefab);
+        spawnPrefabs.Insert((int)PlatformType.Spectator,    SpectatorPrefab);
 
         spawnPoints = new List<NetworkStartPosition>();
         spawnPoints.Add(XDMotionSpawnPoint);
@@ -183,12 +183,12 @@ public class NetManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
     {
         NetworkMessage message = extraMessageReader.ReadMessage<NetworkMessage>();
-        int selectedClass = message.prefabIndex;
-        Debug.Log("Подключился клиент " + (PlatformType)selectedClass);
+        int selectedPrefab = message.prefabIndex;
+        Debug.Log("Подключился клиент " + (PlatformType)selectedPrefab);
 
-        GameObject player = Instantiate(spawnPrefabs[selectedClass],
-                                        spawnPoints[selectedClass].transform.position,
-                                        spawnPoints[selectedClass].transform.rotation) as GameObject;
+        GameObject player = Instantiate(spawnPrefabs[selectedPrefab],
+                                        spawnPoints[selectedPrefab].transform.position,
+                                        spawnPoints[selectedPrefab].transform.rotation) as GameObject;
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         spawnedPlayers.Add(player);
 
