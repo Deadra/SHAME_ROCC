@@ -11,6 +11,7 @@ public enum GameMode
     Online  = 1
 };
 
+/// <summary>Тип платформы, на которой запущена игра</summary>
 /// <remarks>Для корректного запуска игры важно, чтобы первые 3 элемента (симуляторы) имели именно такие значения</remarks>
 public enum PlatformType
 {
@@ -32,9 +33,13 @@ public class SettingsMessage : UnityEngine.Networking.MessageBase
 }
 
 /// <summary>
-/// Этот класс обеспечивает доступ к настройкам приложения, т.е.
-/// к инфе из конфиг-файла и из параметров запуска
+/// Этот класс хранит настройки приложения.
 /// </summary>
+/// <details>
+/// Настройки сначала читаются из конфигурационного файла, затем - из аргументов запуска.
+/// Значения из аргументов запуска перекрывают значения из конфигурационного файла.
+/// Настройки, задаваемые сервером, передаются на клиенты после подключения к сетевой игре.
+/// </details>
 public static class Settings
 {
     public static GameMode gameMode
@@ -195,8 +200,9 @@ public static class Settings
 
         return settingsMessage;
     }
+
     /// <summary>
-    /// Обновляет настроки на стороне клиента на те, что пришли от сервера
+    /// Обновляет настройки на стороне клиента на те, что пришли от сервера
     /// </summary>
     /// <param name="settings"></param>
     public static void UpdateClientSettings(SettingsMessage settings)

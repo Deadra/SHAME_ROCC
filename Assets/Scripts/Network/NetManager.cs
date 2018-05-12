@@ -15,6 +15,10 @@ public class NetworkMessage : MessageBase
 /// <summary>
 /// Основной класс для создания сетевой игры.
 /// </summary>
+/// <details>
+/// Позволяет указывать различные префабы игроков для различных платформ и целей.
+/// Запускает игру в режиме онлайн или оффлайн, может подключаться к уже запущенной игре.
+/// </details>
 public class NetManager : NetworkManager
 {
     [Header("Player Prefab Settings")]
@@ -83,7 +87,7 @@ public class NetManager : NetworkManager
         spawnedPlayers = new List<GameObject>();
 
         if (Settings.gameMode == GameMode.Online)
-            StartCoroutine(JointGame());
+            StartCoroutine(JoinGame());
         else
             StartOfflineGame();
 
@@ -94,7 +98,7 @@ public class NetManager : NetworkManager
     }
 
     /// <summary>
-    /// Обязательно перед закрытием программы делаем полный Disconnect, иначе будут ошибки.
+    /// Закрывает все сетевые соединения при закрытии программы
     /// </summary>
     private void OnApplicationQuit()
     {
@@ -111,7 +115,7 @@ public class NetManager : NetworkManager
     }
 
     /// <summary>
-    /// Запускаем хост.
+    /// Запускает хост, т.е. становится сервером игры.
     /// </summary>
     private void StartupHost()
     {
@@ -127,10 +131,9 @@ public class NetManager : NetworkManager
     }
 
     /// <summary>
-    /// Подключаемся к серверу.
+    /// Подключается к серверу
     /// </summary>
-    /// <returns></returns>
-    private IEnumerator JointGame()
+    private IEnumerator JoinGame()
     {
         string[] address = Settings.networkServersIP.ToArray();
 
@@ -210,8 +213,7 @@ public class NetManager : NetworkManager
     }
 
     /// <summary>
-    /// Запускает оффлайн игру, т.е. просто спаунит нужный префаб
-    /// на сцену без установки сетевого соединения
+    /// Запускает оффлайн игру
     /// </summary>
     private void StartOfflineGame()
     {

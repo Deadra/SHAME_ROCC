@@ -5,7 +5,7 @@ using UnityEngine;
 using System;
 
 /// <summary>
-/// Отсюда посылаются все данные на сервер
+/// Этот класс отправляет телеметрию префаба игрока на SimServer
 /// </summary>
 public class PlatformDataSender : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class PlatformDataSender : MonoBehaviour
     /// <remarks>Оно не работает</remarks>
     private bool m_isSmooth = false;
     /// <summary>
-    /// Чем меньше число тем дольше мы будет ждать достижения целевого значения.
+    /// Чем меньше число тем дольше мы будем ждать достижения целевого значения.
     /// Число для мгновенного достижения целевого значения примерно 12
     /// </summary>
     private float m_InterpolateSpeed = 8f;
