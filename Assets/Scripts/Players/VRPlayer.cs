@@ -41,6 +41,7 @@ public class VRPlayer : DesktopPlayer {
 
     void Update()
     {
+        base.Update();
         DrawLimb(leftHand, leftShoulder, leftHandEnd);
         DrawLimb(rightHand, rightShoulder, rightHandEnd);
     }
