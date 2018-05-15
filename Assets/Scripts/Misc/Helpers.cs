@@ -63,8 +63,8 @@ public static class Helpers
             return;
         }
 
-        foreach (Transform transform in gameObject.transform.Find(transformPath).GetComponentsInChildren<Transform>(true))
-            transform.gameObject.layer = (int)layer;
+        foreach (Transform tr in gameObject.transform.Find(transformPath).GetComponentsInChildren<Transform>(true))
+            tr.gameObject.layer = (int)layer;
     }
 
     public static void DefineMainCamera(this GameObject gameObject, string transformPath)

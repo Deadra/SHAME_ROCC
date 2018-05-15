@@ -11,7 +11,7 @@ public class DesktopPlayer : BasePlayer
     {
         base.Start();
 
-        if (isLocalPlayer)
+        if (isLocalPlayer && !(this is VRPlayer))
         {
             gameObject.DefineMainCamera("CameraBase/Camera");
 
