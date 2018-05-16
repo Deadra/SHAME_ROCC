@@ -48,6 +48,8 @@ public class BasePlayer : BaseEntity
         currentWeapons = new Dictionary<Transform, BaseWeapon>();
         foreach (var slot in weaponSlots)
             currentWeapons.Add(slot, null);
+        
+        spawnGunsInAllSlots();
 
         startingPosition = transform.position;
         startingRotation = transform.rotation;

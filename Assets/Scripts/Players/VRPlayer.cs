@@ -20,10 +20,10 @@ public class VRPlayer : DesktopPlayer {
     {
         if (isLocalPlayer)
         {
-            gameObject.DefineMainCamera("[CameraRig]/Camera (head)/Camera (eye)");
+            gameObject.DefineMainCamera("[CameraRig]/Camera (eye)");
 
             gameObject.SetLayerRecursively("Avatar", Layer.OwnedBody);
-            gameObject.SetLayerRecursively("[CameraRig]/Camera (head)/Camera (eye)/Canvas", Layer.OwnedUI);
+            gameObject.SetLayerRecursively("[CameraRig]/Controller (left)/Canvas", Layer.OwnedUI);
         }
 
         base.Start();
@@ -41,6 +41,7 @@ public class VRPlayer : DesktopPlayer {
 
     void Update()
     {
+        base.Update();
         DrawLimb(leftHand, leftShoulder, leftHandEnd);
         DrawLimb(rightHand, rightShoulder, rightHandEnd);
     }
