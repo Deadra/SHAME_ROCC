@@ -24,6 +24,7 @@ public class VRPlayer : DesktopPlayer {
 
             gameObject.SetLayerRecursively("Avatar", Layer.OwnedBody);
             gameObject.SetLayerRecursively("[CameraRig]/Controller (left)/Canvas", Layer.OwnedUI);
+            spawnGunsInAllSlots();
         }
 
         base.Start();
@@ -39,7 +40,7 @@ public class VRPlayer : DesktopPlayer {
         cameraRig.transform.position = startingPosition;
     }
 
-    void Update()
+    protected override void Update()
     {
         base.Update();
         DrawLimb(leftHand, leftShoulder, leftHandEnd);

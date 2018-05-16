@@ -385,9 +385,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9970588, g: 1, b: 0.78676474, a: 1}
-  m_Intensity: 9.32
-  m_Range: 35.66
-  m_SpotAngle: 32
+  m_Intensity: 3
+  m_Range: 40
+  m_SpotAngle: 45
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -424,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: 99
   coolDown: 0.5
+  slotIndex: 0
   lightSource: {fileID: 108820652954317392}
 --- !u!114 &114357461201623030
 MonoBehaviour:
