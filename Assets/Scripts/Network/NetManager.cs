@@ -42,7 +42,6 @@ public class NetManager : NetworkManager
     public List<GameObject> otherPrefabs;
 
     private static NetworkManager instance = null;
-    private bool isServer;
     private List<NetworkStartPosition> spawnPoints;
     public short NetworkMessageID { get; private set; }
     public short SettingsMessageID { get; private set; } 

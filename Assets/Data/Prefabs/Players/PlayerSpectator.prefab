@@ -945,8 +945,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 600
+  near clip plane: 300
+  far clip plane: 2000
   field of view: 60
   orthographic: 1
   orthographic size: 120
@@ -1550,7 +1550,14 @@ MonoBehaviour:
   weaponSlots:
   - {fileID: 4170257160091182}
   healthBar: {fileID: 114192651037735854}
-  minimapCamera: {fileID: 1959428128419704}
+  camParam:
+    camera: {fileID: 0}
+    rigidBody: {fileID: 0}
+    changeSize: 0
+    minSize: 120
+    maxSize: 360
+    speedToMaxSize: 150
+    interpolationSpeed: 0.3
 --- !u!114 &114192651037735854
 MonoBehaviour:
   m_ObjectHideFlags: 1
