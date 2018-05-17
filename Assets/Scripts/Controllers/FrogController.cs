@@ -19,6 +19,8 @@ public class FrogController : BaseController
 
     [SerializeField] Animator headAnimator;
     [SerializeField] Animator bodyAnimator;
+    [SyncVar(hook = "OnChangeHeadState")] string headAnimatorState;
+    [SyncVar(hook = "OnChangeBodyState")] string bodyAnimatorState;
 
     public bool Aggressive { get; set; }
 
@@ -60,7 +62,7 @@ public class FrogController : BaseController
             forward.y = 0;
             forward = forward.normalized;
             rb.AddForce((forward + Vector3.up * jumpForceFactor).normalized * jumpForce);
-            RpcAnimateBody("Jump");
+            AnimateBody("Jump");
             if (Aggressive)
                 Bite();
         }
@@ -123,7 +125,7 @@ public class FrogController : BaseController
     {
         //Debug.Log(string.Format("Frog collided with {0}", col.collider.gameObject));
         if (isServer)
-            RpcAnimateHead("Close");
+            AnimateHead("Close");
         if (canBite)
         {
             //Debug.Log(string.Format("Can bite! Collided with {0}", col.gameObject));
@@ -142,31 +144,45 @@ public class FrogController : BaseController
     void Bite()
     {
         canBite = true;
-        if (Physics.Raycast(head.position, head.forward, 8.0f))
+
+        if (!isServer)
+            return;
+            if (Physics.Raycast(head.position, head.forward, 8.0f))
         {
             int c = Random.Range(0, 2);
             switch (c)
             {
                 case 0:
-                    RpcAnimateHead("Open1");
+                    AnimateHead("Open1");
                     break;
 
                 case 1:
-                    RpcAnimateHead("Open2");
+                    AnimateHead("Open2");
                     break;
             }
         }
     }
 
-    [ClientRpc]
-    void RpcAnimateHead(string trigger)
+    void AnimateHead(string trigger)
     {
+        headAnimatorState = trigger;
         headAnimator.SetTrigger(trigger);
     }
 
-    [ClientRpc]
-    void RpcAnimateBody(string trigger)
+    void AnimateBody(string trigger)
     {
+        bodyAnimatorState = trigger;
         bodyAnimator.SetTrigger(trigger);
+    }
+
+    void OnChangeHeadState(string state)
+    {
+        headAnimatorState = state;
+        headAnimator.SetTrigger(headAnimatorState);
+    }
+    void OnChangeBodyState(string state)
+    {
+        bodyAnimatorState = state;
+        bodyAnimator.SetTrigger(bodyAnimatorState);
     }
 }
