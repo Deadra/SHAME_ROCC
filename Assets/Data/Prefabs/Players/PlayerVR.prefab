@@ -1914,6 +1914,8 @@ MonoBehaviour:
   leftHandEnd: {fileID: 4217834893740968}
   rightShoulder: {fileID: 4243772217145754}
   rightHandEnd: {fileID: 4250336135669686}
+  leftHand: {fileID: 1884427237044622}
+  rightHand: {fileID: 1706787044508694}
 --- !u!114 &114112277696560458
 MonoBehaviour:
   m_ObjectHideFlags: 1

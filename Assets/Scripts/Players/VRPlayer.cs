@@ -13,11 +13,13 @@ public class VRPlayer : DesktopPlayer {
     [SerializeField] Transform rightShoulder;
     [SerializeField] Transform rightHandEnd;
     GameObject neck;
-    GameObject leftHand;
-    GameObject rightHand;
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
 
     public override void Start()
     {
+        base.Start();
+
         if (isLocalPlayer)
         {
             gameObject.DefineMainCamera("[CameraRig]/Camera (eye)");
@@ -27,10 +29,9 @@ public class VRPlayer : DesktopPlayer {
             spawnGunsInAllSlots();
         }
 
-        base.Start();
         startingPosition = cameraRig.transform.position;
-        leftHand = transform.Find("Avatar/HandBase/HandL").gameObject;
-        rightHand = transform.Find("Avatar/HandBase/HandR").gameObject;
+        //leftHand = transform.Find("Avatar/HandBase/HandL").gameObject;
+        //rightHand = transform.Find("Avatar/HandBase/HandR").gameObject;
     }
 
     [ClientRpc]
