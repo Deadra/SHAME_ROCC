@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimsTest : MonoBehaviour {
-
+public class AnimsTest : MonoBehaviour
+{
     [SerializeField] Animator headAnimator;
     [SerializeField] Animator bodyAnimator;
-	
-    void Start ()
+
+    void Start()
     {
         Physics.IgnoreCollision(this.GetComponent<Collider>(), this.GetComponentsInChildren<Collider>()[1]);
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown("j"))
         {
             headAnimator.SetTrigger("Open1");
@@ -33,6 +34,5 @@ public class AnimsTest : MonoBehaviour {
         {
             bodyAnimator.SetTrigger("Jump");
         }
-
-	}
+    }
 }

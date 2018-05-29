@@ -1,15 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class Frog : BaseEntity {
-
+public class Frog : BaseEntity
+{
     [SerializeField] ParticleSystem deathParticle;
 
-    protected override void OnDeath()
+    public override void Start()
+    {
+        base.Start();
+
+        if (!isServer)
+            gameObject.GetComponent<Collider>("Trigger").enabled = false;
+    }
+
+    protected override void RpcOnDeath()
+    {
+        RpcOnDeathParticles();
+        EHub.SignalEnemyDeath(this.gameObject);
+        base.RpcOnDeath();
+    }
+
+    [ClientRpc]
+    void RpcOnDeathParticles()
     {
         Instantiate(deathParticle, transform.position, Quaternion.LookRotation(Vector3.up));
-        Destroy(this.gameObject);
-        base.OnDeath();
     }
 }

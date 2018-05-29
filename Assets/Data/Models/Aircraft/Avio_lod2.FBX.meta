@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: ea2728e8890b6694b842873d70a08807
+timeCreated: 1512465567
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Box001
+    100004: Cylinder075
+    100006: Cylinder077
+    100008: Cylinder080
+    100010: Cylinder107
+    100012: Cylinder130
+    100014: Cylinder131
+    100016: Cylinder132
+    100018: Line138
+    100020: Line139
+    100022: Line143
+    100024: Line146
+    100026: Line155
+    100028: Line160
+    100030: Line161
+    100032: Line163
+    100034: Line182
+    100036: Line184
+    100038: Line185
+    100040: Line186
+    100042: Line187
+    100044: Line188
+    100046: Line189
+    100048: Line190
+    100050: Line191
+    100052: Line193
+    100054: Line194
+    100056: Line195
+    100058: Line196
+    100060: Line199
+    100062: Line201
+    100064: Line202
+    100066: Line203
+    100068: Line204
+    100070: pilot003
+    100072: Shape013
+    100074: Torus008
+    100076: Torus010
+    100078: Torus012
+    100080: Tube031
+    400000: //RootNode
+    400002: Box001
+    400004: Cylinder075
+    400006: Cylinder077
+    400008: Cylinder080
+    400010: Cylinder107
+    400012: Cylinder130
+    400014: Cylinder131
+    400016: Cylinder132
+    400018: Line138
+    400020: Line139
+    400022: Line143
+    400024: Line146
+    400026: Line155
+    400028: Line160
+    400030: Line161
+    400032: Line163
+    400034: Line182
+    400036: Line184
+    400038: Line185
+    400040: Line186
+    400042: Line187
+    400044: Line188
+    400046: Line189
+    400048: Line190
+    400050: Line191
+    400052: Line193
+    400054: Line194
+    400056: Line195
+    400058: Line196
+    400060: Line199
+    400062: Line201
+    400064: Line202
+    400066: Line203
+    400068: Line204
+    400070: pilot003
+    400072: Shape013
+    400074: Torus008
+    400076: Torus010
+    400078: Torus012
+    400080: Tube031
+    2300000: Box001
+    2300002: Cylinder075
+    2300004: Cylinder077
+    2300006: Cylinder080
+    2300008: Cylinder107
+    2300010: Cylinder130
+    2300012: Cylinder131
+    2300014: Cylinder132
+    2300016: Line138
+    2300018: Line139
+    2300020: Line143
+    2300022: Line146
+    2300024: Line155
+    2300026: Line160
+    2300028: Line161
+    2300030: Line163
+    2300032: Line182
+    2300034: Line184
+    2300036: Line185
+    2300038: Line186
+    2300040: Line187
+    2300042: Line188
+    2300044: Line189
+    2300046: Line190
+    2300048: Line191
+    2300050: Line193
+    2300052: Line194
+    2300054: Line195
+    2300056: Line196
+    2300058: Line199
+    2300060: Line201
+    2300062: Line202
+    2300064: Line203
+    2300066: Line204
+    2300068: Shape013
+    2300070: Torus008
+    2300072: Torus010
+    2300074: Torus012
+    2300076: Tube031
+    3300000: Box001
+    3300002: Cylinder075
+    3300004: Cylinder077
+    3300006: Cylinder080
+    3300008: Cylinder107
+    3300010: Cylinder130
+    3300012: Cylinder131
+    3300014: Cylinder132
+    3300016: Line138
+    3300018: Line139
+    3300020: Line143
+    3300022: Line146
+    3300024: Line155
+    3300026: Line160
+    3300028: Line161
+    3300030: Line163
+    3300032: Line182
+    3300034: Line184
+    3300036: Line185
+    3300038: Line186
+    3300040: Line187
+    3300042: Line188
+    3300044: Line189
+    3300046: Line190
+    3300048: Line191
+    3300050: Line193
+    3300052: Line194
+    3300054: Line195
+    3300056: Line196
+    3300058: Line199
+    3300060: Line201
+    3300062: Line202
+    3300064: Line203
+    3300066: Line204
+    3300068: Shape013
+    3300070: Torus008
+    3300072: Torus010
+    3300074: Torus012
+    3300076: Tube031
+    4300000: Cylinder130
+    4300002: Line193
+    4300004: Line194
+    4300006: Line195
+    4300008: Line196
+    4300010: Line199
+    4300012: Line185
+    4300014: Line186
+    4300016: Line187
+    4300018: Line188
+    4300020: Line189
+    4300022: Line190
+    4300024: Line191
+    4300026: Line160
+    4300028: Line138
+    4300030: Line139
+    4300032: Cylinder131
+    4300034: Cylinder132
+    4300036: Line201
+    4300038: Cylinder080
+    4300040: Line143
+    4300042: Line146
+    4300044: Tube031
+    4300046: Torus010
+    4300048: Torus012
+    4300050: Shape013
+    4300052: Cylinder107
+    4300054: Line182
+    4300056: Line163
+    4300058: Line155
+    4300060: Cylinder075
+    4300062: Torus008
+    4300064: Cylinder077
+    4300066: Line184
+    4300068: Line161
+    4300070: Box001
+    4300072: Line202
+    4300074: Line203
+    4300076: Line204
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 3868802badf50c14b87ae68654951e7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: e0d7723412f17544d9bd5fc53414a040, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 450396e2e5d3f8a4fa8632e62f6b6d3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 06 - Default
+    second: {fileID: 2100000, guid: 0b0a647f4d1ec3b4ea745b806ae13cc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bamboo Dark
+    second: {fileID: 2100000, guid: 498ccabf5ecabe94aa282643b5819a2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #79'
+    second: {fileID: 2100000, guid: bd3d3f2cbfe022b4baa9fb3a24256b2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #80'
+    second: {fileID: 2100000, guid: 1a13c03007b43374aaaceb0d2cd4b0db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 56f1cb9eb56ee9948827563041dbbe5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leather_4
+    second: {fileID: 2100000, guid: 750ec193f0e3a18488aee3efd3e46483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: old metal with scratches
+    second: {fileID: 2100000, guid: 244f6ecbc8ac9734cae9950de55aca38, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

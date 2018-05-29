@@ -1,31 +1,57 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Networking;
 
 public delegate void EntityDeathHandler(BaseEntity killedUnit);
+public delegate void EnemyDeathHandler(GameObject enemy);
 
-public class EventHub : MonoBehaviour {
-
-
-    public event EntityDeathHandler EntityDeathEvent;
+/// <summary>
+/// Концентратор событий. При возникновении события, о котором ему сообщает некий объект,
+/// он рассылает уведомление о событии всем желающим. 
+/// </summary>
+/// <remarks>
+/// Пример работы: в момент смерти лягухи она вызывает SignalEnemyDeath, а поскольку
+/// SceneManager подписан на событие EventEnemyDeath, он получает уведомление о смерти лягухи
+/// и запускает её респаун.
+/// </remarks>
+public class EventHub : NetworkBehaviour
+{
+    public event EntityDeathHandler EventEntityDeath;
+    public event EnemyDeathHandler  EventEnemyDeath;
 
     public void SignalEntityDeath(BaseEntity killedEntity)
     {
-        Debug.Log("EventHub: Signaling units death");
-        if (EntityDeathEvent != null)
+        if (EventEntityDeath != null && isServer)
         {
-            EntityDeathEvent(killedEntity);
+            EventEntityDeath(killedEntity);
+        }
+    }
+    public void SignalEnemyDeath(GameObject enemy)
+    {
+        if (EventEnemyDeath != null && isServer)
+        {
+            EventEnemyDeath(enemy);
         }
     }
 
-	// Use this for initialization
-	void Awake () {
-        if (FindObjectsOfType<EventHub>().Length > 1)
-            Debug.LogError("Multiple instances of EventHub (singletone) on the scene!");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private static EventHub instance = null;
+    private bool IAmUseless = false;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Debug.LogWarningFormat("Multiple instances of {0} (singleton) on the scene (objects {1}, {2})! Exterminate!!!1", 
+                                    this.GetType(), instance.gameObject.name, gameObject.name);
+            IAmUseless = true;
+            Destroy(this);
+        }
+    }
+
+    public void OnDestroy()
+    {
+        if (!IAmUseless)
+            instance = null;
+    }
 }

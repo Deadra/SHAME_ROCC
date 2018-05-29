@@ -1,27 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class StandartBullet : BaseBullet {
-
+/// <summary>
+/// Обычная пуля, способная наносить повреждения BaseEntity
+/// </summary>
+public class StandartBullet : BaseBullet
+{
     [SerializeField] private float damage;
     [SerializeField] private ParticleSystem hitParticle;
 
-    protected override void SetOff(Collision col)
+    /// <summary>
+    /// Обработчик столкновения
+    /// </summary>
+    protected override void OnHit(RaycastHit hitInfo)
     {
-        //Debug.Log(col.collider.gameObject);
-        BaseEntity entityHit = col.collider.gameObject.GetComponent<BaseEntity>();
-        if (entityHit != null)
-        {
-            if (entityHit.Team != team)
-            {
-                entityHit.TakeDamage(damage);
-            }
-        }
-        Instantiate(hitParticle, col.contacts[0].point, Quaternion.LookRotation(col.contacts[0].normal));
+        var hittedEntity = hitInfo.collider.gameObject.GetComponentInParent<BaseEntity>();
 
-        BaseEntity target = col.collider.gameObject.GetComponentInParent<BaseEntity>();
-        if (target != null)
-            target.TakeDamage(damage, holder);
+        if (hittedEntity != null && (Settings.friendlyFire || hittedEntity.Team != Team))
+            hittedEntity.TakeDamage(damage, Holder);
+
+        if (hitParticle != null)
+            Instantiate(hitParticle, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
     }
 }

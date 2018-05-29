@@ -1,24 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class BaseWeapon : MonoBehaviour {
-
-    [SerializeField] protected int ammo = 100;
+/// <summary>
+/// Базовый класс для оружия
+/// </summary>
+public class BaseWeapon : NetworkBehaviour
+{
+    [SerializeField] protected int ammo = 99;
     [SerializeField] protected float coolDown = 0.5f;
     private float nextShotTime;
-    protected BaseEntity holder;
-    public BaseEntity Holder
-    {
-        get { return holder;}
-        set { holder = value; }
-    }
+    public BaseEntity Holder { get; set; }
+    public TeamList Team { get; set; }
 
-    protected TeamList team;
-    public TeamList Team
+    [HideInInspector] [SyncVar] public NetworkInstanceId parentNetID;
+    [HideInInspector] [SyncVar] public int slotIndex;
+
+    /// <summary>
+    /// В момент появления пушки на клиенте ищет предка по netID и становится его дитём.
+    /// Это нужно, когда пушка появилась на сервере до того, как клиент подключился к игре
+    /// </summary>
+    public override void OnStartClient()
     {
-        get { return team;}
-        set { team = value; }
+         GameObject parentObject = ClientScene.FindLocalObject(parentNetID);
+
+        if (parentObject && parentObject.GetComponentInChildren<BasePlayer>())
+            transform.SetParent(parentObject.GetComponentInChildren<BasePlayer>().getWeaponSlot(slotIndex));
+
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
     }
 
     public virtual void Start()
@@ -38,6 +47,5 @@ public class BaseWeapon : MonoBehaviour {
 
     protected virtual void OnPrimaryFire()
     {
-
     }
 }

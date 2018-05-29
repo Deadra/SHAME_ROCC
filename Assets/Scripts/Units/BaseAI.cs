@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Networking;
 
-public class BaseAI : MonoBehaviour {
-
+public class BaseAI : NetworkBehaviour
+{
     public virtual void AttackedBy(BaseEntity attacker)
     {
-
     }
 }
